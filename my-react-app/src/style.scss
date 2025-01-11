@@ -1,3 +1,6 @@
+@import './components/partials/mixins'; 
+@import './components/partials/variables';
+
 *{ 
     margin: 0;
     padding: 0;
@@ -5,5 +8,14 @@
 } 
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f5f5f5;
+    background-color: #e0d8d8;
+} 
+
+.container{ 
+    background-color: #ca2929; 
+} 
+
+.navbar{ 
+    background-color: var(--nav-color); 
+    @include nav-bar;
 }

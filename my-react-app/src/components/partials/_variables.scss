@@ -1,0 +1,10 @@
+$nav-color: rgba(17, 37, 150, 0.5);
+
+:root{ 
+    --nav-color: #{$nav-color}; 
+    
+} 
+[data-theme="dark"] {  
+    --nav-color: rgba(235, 46, 13, 0.5);  
+    
+}
