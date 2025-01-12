@@ -1,10 +1,19 @@
 $nav-color: rgba(17, 37, 150, 0.5);
+$white-color: #fff;
+$body-font: "Roboto", sans-serif;
+/*Přepínač*/
+$switcher-font: MedievalSharp, Arial, Helvetica, sans-serif;
+$slider-color: #f1c40f;
+$slider-active: #2ecc71;
 
-:root{ 
-    --nav-color: #{$nav-color}; 
-    
-} 
-[data-theme="dark"] {  
-    --nav-color: rgba(235, 46, 13, 0.5);  
-    
+:root {
+  --nav-color: #{$nav-color};
+  --white-color: #{$white-color};
+  /*Přepínač*/
+  --switcher-family-font: #{$switcher-font};
+  --slider-color: #{$slider-color};
+  --slider-active: #{$slider-active};
+}
+[data-theme="dark"] {
+  --nav-color: rgba(235, 57, 13, 0.5);
 }
