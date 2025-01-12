@@ -3,7 +3,7 @@
 // import viteLogo from '/vite.svg'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 /** Komponenty */
-import Welcome from "./components/Welcome";
+import Header from "./components/Header";
 // import "./App.css";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           {/* Definujeme routy */}
-          <Route path="/*" element={<Welcome />} />
+          <Route path="/*" element={<Header />} />
         </Routes>
       </BrowserRouter>
     </>
