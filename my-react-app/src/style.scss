@@ -29,9 +29,18 @@ body {
   width: 100%;
   min-height: 100vh;
   min-height: 100dvh;
+} 
+
+main { 
+  margin-top: 3.5rem;
 }
 .container {
-  background-color: #ca2929;
+  background-color: #ca2929; 
+  width: 80%; 
+  display: flex;  
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;
 }
 /** hlavička **/
 
@@ -63,4 +72,11 @@ body {
       }
     }
   }
+} 
+
+/*** MainContent komponenta ***/ 
+.HomeSection{  
+  display: flex; 
+  justify-content: center;
+  
 }
