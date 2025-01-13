@@ -29,12 +29,20 @@ body {
   width: 100%;
   min-height: 100vh;
   min-height: 100dvh;
-} 
-
+}  
+header{  
+  position: relative;
+ 
+}
 main {  
   min-height: 100vh; 
   min-height: 100dvh;
-  margin-top: 3.5rem;
+  margin-top: 13.5rem;
+} 
+/** Logo *********/ 
+.LogoSK{  
+  cursor: pointer;
+  width: 10rem;   
 }
 .container {
   background-color: #ca2929; 
@@ -52,8 +60,10 @@ main {
 /************/
 .navbar {
   font-family: var(--switcher-family-font);
-  background-color: var(--nav-color);
-  @include nav-bar;
+  background-color: var(--nav-color); 
+   display: flex;
+  @include nav-bar; 
+  
   ul {
     display: flex;
     gap: 40px;
@@ -72,7 +82,13 @@ main {
         text-decoration: none;
         color: var(--white-color);
       }
+    } 
+    @media (max-width: 720px){ 
+      display: none;
     }
+  } 
+  &.hidden {
+    display: none; // Skryje navigaci
   }
 } 
 
@@ -81,4 +97,15 @@ main {
   display: flex; 
   justify-content: center;
   
+} 
+
+/** hamburger v nav */ 
+.menu-icon {
+    display: none;        
+    @media (max-width: 720px) { 
+      position: fixed;
+      display: block; 
+      font-size: $font-size-hamburger; 
+      right: 10px;
+    }
 }
