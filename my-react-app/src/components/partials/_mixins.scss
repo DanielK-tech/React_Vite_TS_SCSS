@@ -4,7 +4,8 @@
 @mixin nav-bar {
   padding: 10px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; 
+  gap: 1rem;
   align-items: center;
   position: fixed;
   width: 100%;
@@ -14,7 +15,8 @@
   .switcher-box {
     display: flex;
     align-items: center;
-
+    height: 1.5rem; 
+    width: 15rem;
     .switch {
       /* Label */
       position: relative;
@@ -31,12 +33,14 @@
 
     .switcher-description {
       display: flex;
-      font-family: var(--switcher-family-font);
-
+      font-family: var(--switcher-family-font);  
+      width:  10rem;    
+     
       p,
       i {
         margin-right: 15px;
-        font-size: 20px;
+        font-size: 20px; 
+        
       }
     }
 
@@ -68,7 +72,7 @@
 
     .round {
       border-radius: 34px;
-
+      
       &::before {
         border-radius: 50%;
       }

@@ -1,3 +1,4 @@
+$body-color: #e0d8d8;
 $nav-color: rgba(17, 37, 150, 0.5);
 $white-color: #fff;
 $body-font: "Roboto", sans-serif;
@@ -6,7 +7,8 @@ $switcher-font: MedievalSharp, Arial, Helvetica, sans-serif;
 $slider-color: #f1c40f;
 $slider-active: #2ecc71;
 
-:root {
+:root { 
+  --body-color: #{$body-color};
   --nav-color: #{$nav-color};
   --white-color: #{$white-color};
   /*Přepínač*/
@@ -14,6 +16,7 @@ $slider-active: #2ecc71;
   --slider-color: #{$slider-color};
   --slider-active: #{$slider-active};
 }
-[data-theme="dark"] {
+[data-theme="dark"] { 
+  --body-color: #333;
   --nav-color: rgba(235, 57, 13, 0.5);
 }
