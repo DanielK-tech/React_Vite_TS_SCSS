@@ -31,7 +31,9 @@ body {
   min-height: 100dvh;
 } 
 
-main { 
+main {  
+  min-height: 100vh; 
+  min-height: 100dvh;
   margin-top: 3.5rem;
 }
 .container {

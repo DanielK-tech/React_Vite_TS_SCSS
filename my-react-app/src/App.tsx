@@ -3,9 +3,11 @@
 // import viteLogo from '/vite.svg'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 /** Komponenty */
-import Header from "./components/Header"; 
+import Header from "./components/Header";  
+import Footer from "./components/Footer";
 import HomeInfo from "./components/MainContent"; 
-import About from "./components/AboutMe";
+import About from "./components/AboutMe"; 
+import Contact from "./components/Contact";
 // import "./App.css";
 
 function App() {
@@ -19,9 +21,11 @@ function App() {
               <Routes>
                   {/* Definujeme routy */}
                   <Route path="/*" element={<HomeInfo />} /> {/* Úvodní stránka */} 
-                  <Route path="/about" element={<About />} /> {/* O mně */}
+                  <Route path="/about" element={<About />} /> {/* O mně */} 
+                  <Route path="/contact" element={<Contact />} /> {/* Kontakt */}
               </Routes> 
-              </main>
+              </main> 
+              <Footer /> {/* Patička dostupná na všech stránkách */}
           </BrowserRouter>          
       </>
   );
