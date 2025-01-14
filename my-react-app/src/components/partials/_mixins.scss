@@ -139,5 +139,12 @@
 ***********************************************/ 
 .hidden { 
   display: none;
+} 
+
+/**********************************
+           Border Radius 
+**********************************/ 
+@mixin border-radius($radius){ 
+  border-radius: $radius; 
 }
 

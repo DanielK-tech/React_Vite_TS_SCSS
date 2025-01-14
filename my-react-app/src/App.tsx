@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import HomeInfo from "./components/MainContent"; 
 import About from "./components/AboutMe"; 
 import Contact from "./components/Contact";
+import OurService from "./components/OurServices";
 // import "./App.css";
 
 function App() {
@@ -19,11 +20,12 @@ function App() {
               <Header /> {/* Navigace dostupná na všech stránkách */} 
               <main>
               <Routes>
-                  {/* Definujeme routy */}
+                  {/* Definujeme routy v mainu */}
                   <Route path="/*" element={<HomeInfo />} /> {/* Úvodní stránka */} 
                   <Route path="/about" element={<About />} /> {/* O mně */} 
                   <Route path="/contact" element={<Contact />} /> {/* Kontakt */}
-              </Routes> 
+              </Routes>  
+                {/* <OurService /> Nabídka služeb */}
               </main> 
               <Footer /> {/* Patička dostupná na všech stránkách */}
           </BrowserRouter>          
