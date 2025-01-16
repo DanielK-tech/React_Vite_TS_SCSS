@@ -8,7 +8,7 @@ import Footer from "./components/Footer";
 import HomeInfo from "./components/MainContent"; 
 import About from "./components/AboutMe"; 
 import Contact from "./components/Contact";
-import OurService from "./components/OurServices";
+
 // import "./App.css";
 
 function App() {

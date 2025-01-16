@@ -64,6 +64,15 @@ const Header: React.FC = () => {
                         <NavLink to="/about" onClick={scrollToTop}>
                             O mě
                         </NavLink>
+                    </li> 
+                    <li className="Aktivity">                
+                           <a  href="">Aktivity</a> 
+                        <ul className="submenu" id="Submenu"> 
+                            <li><NavLink to="/hyporehabilitace">*3</NavLink></li> {/* dodělat vlastní komponenty a routy v app */}
+                            <li><NavLink to="/hyporehabilitace">*3</NavLink></li>
+                            <li><NavLink to="/hyporehabilitace">*3</NavLink></li>
+                            <li>*4</li>
+                        </ul>
                     </li>
                     <li>
                         <NavLink to="/contact" onClick={scrollToTop}>

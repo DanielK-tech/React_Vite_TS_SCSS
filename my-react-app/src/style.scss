@@ -47,7 +47,38 @@ main {
 .LogoSK{  
   cursor: pointer;
   width: 10rem;   
+}  
+/****************************** 
+*********** Skryté menu ******* 
+******************************/ 
+.Aktivity {
+  position: relative;
+  
+  // Základní stav submenu - skryté
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;  // Umístí submenu pod hlavní položku
+    left: 0; 
+    padding-top: 2.5rem;
+    min-width: 200px;  // Můžete upravit podle potřeby
+  }
+
+  // Při hoveru nad .Aktivity se zobrazí submenu
+  &:hover {
+    .submenu {
+      display: block;
+    }
+  } 
+} 
+
+.UlSubMenu{ 
+  
+ 
 }
+/*****************************
+*** Univerzální konteiner ***
+******************************/ 
 .container {
   background-color: #ca2929;    
   width: 80%; 
