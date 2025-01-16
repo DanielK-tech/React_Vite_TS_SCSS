@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
 import { NavLink } from "react-router-dom";
 //Link, 
@@ -9,7 +9,10 @@ import cross from "./img/cross.png";
 
 const Header: React.FC = () => {
     // Stav pro režim (Light/Dark)
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(() => {
+        const savedMode = localStorage.getItem("theme"); // Získání hodnoty z localStorage
+        return savedMode === "dark"; // Nastavení na true, pokud je "dark"
+    });
     const [isMenuOpen, setIsMenuOpen] = useState(false); // Stav pro menu
 
     // Přepínání režimu
@@ -20,9 +23,19 @@ const Header: React.FC = () => {
                 "data-theme",
                 newMode ? "dark" : "light"
             );
+            // Uložení do localStorage
+            localStorage.setItem("theme", newMode ? "dark" : "light");
             return newMode;
         });
-    };
+    }; 
+
+    // Efekt pro nastavení režimu při načtení stránky
+    useEffect(() => {
+        const savedMode = localStorage.getItem("theme");
+        if (savedMode) {
+            document.body.setAttribute("data-theme", savedMode);
+        }
+    }, []);
 
     // Funkce pro scrollování nahoru
     const scrollToTop = () => {
