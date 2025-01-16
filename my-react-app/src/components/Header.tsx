@@ -68,7 +68,7 @@ const Header: React.FC = () => {
                     <li className="Aktivity">                
                            Aktivity 
                            <div className="arrowDown "> 
-                           <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                           <i className="fa fa-chevron-down" aria-hidden="true"></i>
                             </div>   
                         <ul className="submenu" id="Submenu"> 
                             <li><NavLink to="/hyporehabilitace">*3</NavLink></li> {/* dodělat vlastní komponenty a routy v app */}
