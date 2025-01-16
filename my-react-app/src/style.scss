@@ -52,7 +52,16 @@ main {
 *********** Skryté menu ******* 
 ******************************/ 
 .Aktivity {
-  position: relative;
+  position: relative; 
+  font-family: $switcher-font; 
+  color: $white-color;
+
+  .arrowDown{ 
+   display: inline-block; 
+   margin-left: 10px;
+   font-size: 1.0rem;
+    
+  }
   
   // Základní stav submenu - skryté
   .submenu {
@@ -70,12 +79,9 @@ main {
       display: block;
     }
   } 
-} 
+}  
 
-.UlSubMenu{ 
-  
- 
-}
+
 /*****************************
 *** Univerzální konteiner ***
 ******************************/ 

@@ -66,7 +66,10 @@ const Header: React.FC = () => {
                         </NavLink>
                     </li> 
                     <li className="Aktivity">                
-                           <a  href="">Aktivity</a> 
+                           Aktivity 
+                           <div className="arrowDown "> 
+                           <i className="fa fa-arrow-circle-down" aria-hidden="true"></i>
+                            </div>   
                         <ul className="submenu" id="Submenu"> 
                             <li><NavLink to="/hyporehabilitace">*3</NavLink></li> {/* dodělat vlastní komponenty a routy v app */}
                             <li><NavLink to="/hyporehabilitace">*3</NavLink></li>
@@ -117,6 +120,17 @@ const Header: React.FC = () => {
                         <NavLink to="/about" onClick={scrollToTop}>
                             O mě
                         </NavLink>
+                    </li> 
+                    <li className="Aktivity">
+                          {/* přidat vyjíždějící menu */}
+                            Aktivity 
+                            <ul className="submenu" id="Submenu"> 
+                            <li><NavLink to="/hyporehabilitace">*3</NavLink></li> {/* dodělat vlastní komponenty a routy v app */}
+                            <li><NavLink to="/hyporehabilitace">*3</NavLink></li>
+                            <li><NavLink to="/hyporehabilitace">*3</NavLink></li>
+                            <li>*4</li>
+                        </ul>
+                        
                     </li>
                     <li>
                         <NavLink
