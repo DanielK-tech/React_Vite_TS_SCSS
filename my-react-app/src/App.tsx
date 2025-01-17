@@ -5,7 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 /** Komponenty */
 import Header from "./components/Header";  
 import Footer from "./components/Footer";
-import HomeInfo from "./components/MainContent"; 
+import HomeInfo from "./components/MainContent";  
+import Foto from "./components/FotoSection";
 import About from "./components/AboutMe"; 
 import Contact from "./components/Contact";
 
@@ -27,6 +28,7 @@ function App() {
               </Routes>  
                 {/* <OurService /> Nabídka služeb */}
               </main> 
+              <Foto /> {/* Fotogalerie */}
               <Footer /> {/* Patička dostupná na všech stránkách */}
           </BrowserRouter>          
       </>

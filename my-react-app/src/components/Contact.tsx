@@ -2,7 +2,7 @@ import React from "react";
 
 const Contact: React.FC = () => {
     return (    
-        <section className="HomeSection" id="Home" tabIndex={0}>
+        <section className="HomeSection oneHundertDVH" id="Home" tabIndex={0}>
             <div className="container">
                 <h2>Kontakt</h2>
                 <p>SK Blind Guardians</p>
