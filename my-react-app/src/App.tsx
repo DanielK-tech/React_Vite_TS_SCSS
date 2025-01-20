@@ -6,9 +6,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";  
 import Footer from "./components/Footer";
 import HomeInfo from "./components/MainContent";  
-import Foto from "./components/FotoSection";
 import About from "./components/AboutMe"; 
-import Contact from "./components/Contact";
+import Contact from "./components/Contact"; 
+/**FotoGalerie */ 
+import GaleryPhoto from "./components/subComponents/PhotoGalery";
 
 // import "./App.css";
 
@@ -24,11 +25,12 @@ function App() {
                   {/* Definujeme routy v mainu */}
                   <Route path="/*" element={<HomeInfo />} /> {/* Úvodní stránka */} 
                   <Route path="/about" element={<About />} /> {/* O mně */} 
-                  <Route path="/contact" element={<Contact />} /> {/* Kontakt */}
+                  <Route path="/contact" element={<Contact />} /> {/* Kontakt */} 
+                  <Route path="/foto-galery" element={<GaleryPhoto />} /> {/* Kontakt */}
               </Routes>  
                 {/* <OurService /> Nabídka služeb */}
               </main> 
-              <Foto /> {/* Fotogalerie */}
+              
               <Footer /> {/* Patička dostupná na všech stránkách */}
           </BrowserRouter>          
       </>

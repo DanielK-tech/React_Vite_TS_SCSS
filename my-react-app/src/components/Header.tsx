@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import React from "react";
 import { NavLink } from "react-router-dom";
 //Link, 
+/* ikonky */ 
 
 //obrázky 
 import logo from "./img/Logo.png"; 
@@ -66,12 +67,12 @@ const Header: React.FC = () => {
                         </NavLink>
                     </li> 
                     <li className="Aktivity">                
-                           Aktivity 
+                          <a href="#">Aktivity </a> 
                            <div className="arrowDown "> 
                            <i className="fa fa-chevron-down" aria-hidden="true"></i>
                             </div>   
                         <ul className="submenu" id="Submenu"> 
-                            <li><NavLink to="/hyporehabilitace">*3</NavLink></li> {/* dodělat vlastní komponenty a routy v app */}
+                            <li><NavLink to="/foto-galery"><i className="fa-solid fa-photo-film"></i>Fotogalerie</NavLink></li> {/* dodělat vlastní komponenty a routy v app */}
                             <li><NavLink to="/hyporehabilitace">*3</NavLink></li>
                             <li><NavLink to="/hyporehabilitace">*3</NavLink></li>
                             <li>*4</li>
@@ -123,9 +124,9 @@ const Header: React.FC = () => {
                     </li> 
                     <li className="Aktivity">
                           {/* přidat vyjíždějící menu */}
-                            Aktivity 
+                           <a href="#">Aktivity </a> 
                             <ul className="submenu" id="Submenu"> 
-                            <li><NavLink to="/hyporehabilitace">*3</NavLink></li> {/* dodělat vlastní komponenty a routy v app */}
+                            <li><NavLink to="/foto-galery"><i className="fa-solid fa-photo-film"></i>Fotogalerie</NavLink></li> {/* dodělat vlastní komponenty a routy v app */}
                             <li><NavLink to="/hyporehabilitace">*3</NavLink></li>
                             <li><NavLink to="/hyporehabilitace">*3</NavLink></li>
                             <li>*4</li>

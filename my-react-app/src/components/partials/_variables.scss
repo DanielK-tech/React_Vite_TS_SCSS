@@ -1,10 +1,19 @@
 $body-color: #e0d8d8;
-$nav-color: rgba(17, 37, 150, 0.5);
+// $nav-color: rgba(17, 37, 150, 0.5);
+$nav-color: rgba(127, 224, 61, 0.5);
 $white-color: #fff;
 $body-font: "Roboto", sans-serif; 
 $font-size-hamburger: 2.8rem; 
 $btn-hover: #f1c40f; 
+/**Základní barvy **/ 
+$Yellow: #f1c40f; 
+$Green: rgba(127, 224, 61, 0.5);
 $black-color: #000;
+$under-ligting: radial-gradient(
+        circle farthest-corner at 10% 20%,
+        rgba(14, 161, 26, 0.678) 17.8%,
+        rgb(255, 50, 4) 100.2%
+    );
 /*Přepínač*/
 $switcher-font: MedievalSharp, Arial, Helvetica, sans-serif;
 $slider-color: #f1c40f;
@@ -14,7 +23,9 @@ $slider-active: #2ecc71;
   --body-color: #{$body-color};
   --nav-color: #{$nav-color};
   --white-color: #{$white-color}; 
-  --btn-hover: #{$btn-hover};
+  --black-color: #{$black-color}; 
+  --btn-hover: #{$btn-hover}; 
+  --under-lighting: #{$under-ligting};
   /*Přepínač*/
   --switcher-family-font: #{$switcher-font};
   --slider-color: #{$slider-color};
@@ -23,5 +34,6 @@ $slider-active: #2ecc71;
 }
 [data-theme="dark"] { 
   --body-color: #333;
-  --nav-color: rgba(235, 57, 13, 0.5);
+  --nav-color: rgba(165, 42, 13, 0.5); 
+   --black-color: #fff;
 }

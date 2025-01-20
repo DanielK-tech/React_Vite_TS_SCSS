@@ -15,7 +15,7 @@ import Horse10 from "./img/Horse10.jpg";
 const SlidingImages: React.FC = () => {
   return (  
     <section className="HomeSection" id="Home" tabIndex={0}> 
-    <h3>Koníci</h3>     
+    <h3>Fotky z akcí <i className="fa-solid fa-face-smile-beam"></i></h3>     
      <div className="sliding-images-container"> 
         <div className="sliding-images-track"> 
             <img src={Horse1} alt=""/>

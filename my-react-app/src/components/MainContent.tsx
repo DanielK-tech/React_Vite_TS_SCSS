@@ -1,6 +1,8 @@
 import { useState } from "react";
-import React from "react"; 
-import OurService from "./OurServices";
+import React from "react";  
+/** Komponenty ** */
+import OurService from "./OurServices"; 
+import Foto from "./FotoSection";
 
 const Main: React.FC = () => {
     return (
@@ -9,7 +11,8 @@ const Main: React.FC = () => {
                 <h1>SK Blind Guardians</h1>
                 <h3>Hyporehabilitace a aktivity s využitím koní.</h3>
             </div> 
-            <OurService />
+            <OurService />  
+            <Foto />
         </section>
     );
 };

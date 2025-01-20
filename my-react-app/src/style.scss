@@ -30,6 +30,7 @@ body {
     width: 100%;
     min-height: 100vh;
     min-height: 100dvh;
+    color: var(--black-color);
 }
 header {
     position: relative;
@@ -41,24 +42,46 @@ main {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-}  
+}
 footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 10px;
     background-color: var(--nav-color);
     color: var(--white-color);
     width: 100%;
     height: 5rem;
     font-family: var(--switcher-family-font);
     font-size: 1.2rem;
+    i {
+        font-size: 1.8rem;
+        &:hover {
+            cursor: pointer;
+            color: var(--btn-hover);
+        }
+    }
+    p {
+        position: relative;
+        &::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-image: var(--under-lighting);
+            filter: blur(10px);
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+        }
+    }
 }
 
 /***********************
           100dvh  
  **********************/
-.oneHundertDVH{ 
-  @include dvh(50dvh);
+.oneHundertDVH {
+    @include dvh(50dvh);
 }
 /** Logo *********/
 .LogoSK {
@@ -83,15 +106,29 @@ footer {
     .submenu {
         display: none;
         position: absolute;
+
         top: 100%; // Umístí submenu pod hlavní položku
         left: 0;
         padding-top: 2.5rem;
-        min-width: 200px; 
-        background-color: var(--body-color); 
-        @include border-radius(5px); 
-        box-shadow: 2px 3px 16px 10px $black-color;
-    }
+        min-width: 200px;
 
+        background-color: var(--body-color);
+        @include border-radius(5px);
+        box-shadow: 2px 3px 16px 10px $black-color;
+        li {
+            margin: 0 auto;
+            i {
+                font-size: 1.5rem;
+                padding-right: 10px;
+                &:hover {
+                    color: $Yellow;
+                }
+            }
+        }
+        a {
+            font-size: 1.5rem;
+        }
+    }
     // Při hoveru nad .Aktivity se zobrazí submenu
     &:hover {
         .submenu {
@@ -131,7 +168,9 @@ footer {
         }
     }
 }
-/** hlavička **/
+/*************************************************************************** 
+                                                hlavička 
+***************************************************************************/
 
 // Dark-Light Mode
 @include dark-mode;
@@ -160,9 +199,47 @@ footer {
                 position: relative;
                 text-decoration: none;
                 color: var(--white-color);
+
+                transition: 0.5s;
+                &::before {
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    background-image: var(--under-lighting);
+                    filter: blur(10px);
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    z-index: -1;
+                }
+                &:hover,
+                &:active {
+                    color: var(--btn-hover);
+                    transition: border-bottom 2.5s; //<= začínáme s podtržením
+                    border-bottom: 2px solid transparent;
+                }
+
+                &:hover::after,
+                &:active::after {
+                    width: 100%;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    // top: 100px;
+                    left: 0;
+                    bottom: 0;
+                    width: 0;
+                    height: 2px;
+                    background-color: $Yellow;
+
+                    /* barva podtržítka*/
+                    transition: width 2.5s;
+                    z-index: 1;
+                }
             }
         }
-        @media (max-width: 720px) {
+        @media (max-width: 880px) {
             display: none;
         }
     }
@@ -171,7 +248,9 @@ footer {
     }
 }
 
-/*** MainContent komponenta a další (hlavní třída sekcí) ***/
+/*****************************************************************  
+        MainContent komponenta a další (hlavní třída sekcí) 
+*****************************************************************/
 .HomeSection {
     display: flex;
     justify-content: center;
@@ -179,6 +258,9 @@ footer {
     gap: 2rem;
     flex-direction: column;
     width: 100%;
+    h3 {
+        font-size: 2.5rem;
+    }
 }
 
 /***********************************
@@ -201,14 +283,90 @@ footer {
     }
 }
 
-/** hamburger v nav */
+/************************************
+  *          Hamburger menu
+  ************************************/
+
 .menu-icon {
     display: none;
-    @media (max-width: 720px) {
+    @media (max-width: 880px) {
         position: fixed;
         display: block;
         font-size: $font-size-hamburger;
         right: 10px;
+    }
+}
+
+/***************************** 
+            Mini menu  
+*****************************/
+.menu-container-mini {
+    position: fixed;
+    display: none;
+    text-align: center;
+    padding-top: 10px;
+    font-size: 1.5rem;
+    width: 100%;
+    z-index: 10000000;
+    background-color: var(--nav-color);
+    height: 5.2em;
+    .menu {
+        li {
+            list-style-type: none;
+            .submenu {
+                left: 50%;
+                margin-top: 10px;
+                transform: translate(-50%);
+            }
+            a {
+                text-decoration: none;
+                color: var(--white-color);
+                font-family: var(--switcher-family-font);
+                position: relative;
+                transition: 0.5s;
+                &:hover,
+                &:active {
+                    color: var(--btn-hover);
+                    transition: border-bottom 2.5s; //<= začínáme s podtržením
+                    border-bottom: 2px solid transparent;
+                }
+                &:hover::after,
+                &:active::after {
+                    width: 100%;
+                }
+                &::before {
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                    background-image: var(--under-lighting);
+                    filter: blur(10px);
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    z-index: -1;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    // top: 100px;
+                    left: 0;
+                    bottom: 0;
+                    width: 0;
+                    height: 2px;
+                    background-color: $Yellow;
+
+                    /* barva podtržítka*/
+                    transition: width 2.5s;
+                    z-index: 1;
+                }
+            }
+        }
+    }
+    .cross {
+        position: fixed;
+        right: 10px;
+        top: 5px;
+        width: 2rem;
     }
 }
 
@@ -221,6 +379,7 @@ footer {
     background-color: var(--body-color);
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
     //
     .sliding-images-track {
         display: flex;
@@ -239,6 +398,84 @@ footer {
             width: 200px; /* Nastavte šířku obrázku */
             height: auto;
             margin-right: 10px; /* Mezera mezi obrázky */
+        }
+    }
+}
+
+/*********************************
+         FotoGalerie Komponenta                             TODO: dodělat velikost zobrazovaných fotek
+***********************************/
+
+.PhotoGalery {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    /** kontejner s fotkami*/
+    .thumbnails {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        //fotky nahoře
+        .thumbnail {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: transform 0.2s, border-color 0.2s;
+            &:hover {
+                transform: scale(1.1);
+                border-color: $Yellow;
+            }
+        }
+    }
+    /** zobrazení šipek a křížek */
+    .modal-content {
+        position: relative;
+        display: flex;
+        align-items: center; 
+        justify-content: center;
+        /** křížek */
+        .close {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+        /*Doleva/doprava */
+        .nav {
+            background: none;
+            border: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            position: absolute;
+        }
+        .nav.left {
+            left: 10px;
+        }
+
+        .nav.right {
+            right: 10px;
+        }
+    }
+    /** Obrázek dozbrazovaný */ 
+    .actualViev{ 
+        text-align: center;
+        width: 100%; 
+        height: 100%;
+        .modal-image {
+            max-width: 90%;
+            max-height: 80%;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
         }
     }
 }
