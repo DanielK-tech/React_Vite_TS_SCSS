@@ -133,6 +133,8 @@
 /**********************************
               Box-Shadow
 ***********************************/ 
-
+@mixin svg-footer($value){ 
+ bottom: $footer-height - $value;
+}
 
 

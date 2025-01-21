@@ -9,7 +9,9 @@ import HomeInfo from "./components/MainContent";
 import About from "./components/AboutMe"; 
 import Contact from "./components/Contact"; 
 /**FotoGalerie */ 
-import GaleryPhoto from "./components/subComponents/PhotoGalery";
+import GaleryPhoto from "./components/subComponents/PhotoGalery"; 
+/** SVG **/ 
+import ReactLogo from "./assets/vlny.svg";
 
 // import "./App.css";
 
@@ -29,8 +31,9 @@ function App() {
                   <Route path="/foto-galery" element={<GaleryPhoto />} /> {/* Kontakt */}
               </Routes>  
                 {/* <OurService /> Nabídka služeb */}
-              </main> 
-              
+              </main>                
+              <img src={ReactLogo} alt="" className="FirstSVG" />  
+              {/* <ReactLogo  />  */}
               <Footer /> {/* Patička dostupná na všech stránkách */}
           </BrowserRouter>          
       </>

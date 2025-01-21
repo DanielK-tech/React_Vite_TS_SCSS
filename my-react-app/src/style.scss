@@ -1,6 +1,7 @@
 /* komponenty */
 @use "./components/partials/mixins" as *;
 @use "./components/partials/variables" as *;
+// @use "./assets/vlny.svg" as *;
 // @use './components/img/grass.svg' as *;
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
@@ -23,6 +24,7 @@ body {
 }
 /** root zastává fci body :) **/
 #root {
+    position: relative;
     display: flex;
     font-family: $body-font;
     flex-direction: column;
@@ -36,6 +38,7 @@ header {
     position: relative;
 }
 main {
+    position: relative;
     // min-height: 100vh;
     // min-height: 100dvh;
     margin-top: 13.5rem;
@@ -51,7 +54,7 @@ footer {
     background-color: var(--nav-color);
     color: var(--white-color);
     width: 100%;
-    height: 5rem;
+    height: $footer-height;
     font-family: var(--switcher-family-font);
     font-size: 1.2rem;
     i {
@@ -409,10 +412,10 @@ footer {
 .PhotoGalery {
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
     gap: 1rem;
     min-height: 100vh;
-    min-height: 100dvh; 
+    min-height: 100dvh;
     margin-bottom: 1rem;
 
     /** kontejner s fotkami*/
@@ -439,7 +442,7 @@ footer {
     .modal-content {
         position: relative;
         display: flex;
-        align-items: center; 
+        align-items: center;
         justify-content: center;
         /** křížek */
         .close {
@@ -469,11 +472,11 @@ footer {
             right: 10px;
         }
     }
-    /** Obrázek dozbrazovaný */ 
-    .actualViev{ 
-        text-align: center; 
+    /** Obrázek dozbrazovaný */
+    .actualViev {
+        text-align: center;
         margin-top: 1rem;
-        width: 100%; 
+        width: 100%;
         height: 100%;
         .modal-image {
             max-width: 90%;
@@ -481,4 +484,20 @@ footer {
             box-shadow: 2px 3px 16px 10px $black-color;
         }
     }
+}
+
+/*********************************
+             SVG obrázek 
+***********************************/
+
+.FirstSVG {
+    position: absolute;
+    display: inline;
+    height: 1rem;
+    width: 100%;
+    @include svg-footer(1rem);
+    mask-image: url("./assets/vlny.svg");
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    background-color: var(--body-color);
 }
