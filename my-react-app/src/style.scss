@@ -387,7 +387,7 @@ footer {
     .sliding-images-track {
         display: flex;
         width: fit-content;
-        animation: slide 20s linear infinite; /* Nekonečná animace */
+        animation: slide 30s linear infinite; /* Nekonečná animace */
         /* Klíčové snímky animace */
         @keyframes slide {
             0% {
@@ -398,9 +398,10 @@ footer {
             }
         }
         img {
-            width: 200px; /* Nastavte šířku obrázku */
+            width: 250px; /* Nastavte šířku obrázku */
             height: auto;
-            margin-right: 10px; /* Mezera mezi obrázky */
+            margin-right: 10px; /* Mezera mezi obrázky */ 
+            @include border-radius(5px);
         }
     }
 }
@@ -426,9 +427,10 @@ footer {
         flex-wrap: wrap;
         //fotky nahoře
         .thumbnail {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
+            width: 250px;
+            height: 250px;
+            object-fit: cover; 
+            @include border-radius(5px);
             cursor: pointer;
             border: 2px solid transparent;
             transition: transform 0.2s, border-color 0.2s;
@@ -476,7 +478,7 @@ footer {
     .actualViev {
         text-align: center;
         margin-top: 1rem;
-        width: 100%;
+        width: 100%;    
         height: 100%;
         .modal-image {
             max-width: 90%;
