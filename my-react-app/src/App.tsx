@@ -12,7 +12,6 @@ import Contact from "./components/Contact";
 import GaleryPhoto from "./components/subComponents/PhotoGalery"; 
 /** SVG **/ 
 import ReactLogo from "./assets/vlny.svg";
-
 // import "./App.css";
 
 function App() {

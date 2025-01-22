@@ -81,15 +81,35 @@ footer {
 }
 
 /***********************
-          100dvh  
+          100dvh  Kontakt
  **********************/
-.oneHundertDVH {
-    @include dvh(50dvh);
+.oneHundertDVH { 
+   margin: 0 auto;
+    @include dvh(100dvh); 
+    .contact{ 
+        text-align: center;
+    }
 }
-/** Logo *********/
-.LogoSK {
-    cursor: pointer;
-    width: 10rem;
+/******************************** 
+                Logo 
+ ******************* *********/
+.logo-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    width: 10rem; // Nastaví šířku kontejneru podle obrázku
+    height: 10rem;
+    .LogoSK {
+        position: relative;
+        display: block;
+        cursor: pointer;
+        // width: 10rem;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    
 }
 /****************************** 
 *********** Skryté menu ******* 
@@ -144,7 +164,7 @@ footer {
 *** Univerzální konteiner ***
 ******************************/
 .container {
-    background-color: #ca2929;
+    // background-color: #ca2929;
     width: 80%;
     display: flex;
     flex-direction: column;
@@ -490,14 +510,14 @@ footer {
              SVG obrázek 
 ***********************************/
 
-.FirstSVG {
-    position: absolute;
-    display: inline;
-    height: 1rem;
-    width: 100%;
-    @include svg-footer(1rem);
-    mask-image: url("./assets/vlny.svg");
-    mask-repeat: no-repeat;
-    mask-size: cover;
-    background-color: var(--body-color);
-}
+// .FirstSVG {
+//     position: absolute;
+//     display: inline;
+//     height: 1rem;
+//     width: 100%;
+//     @include svg-footer(1rem);
+//     mask-image: url("./assets/vlny.svg");
+//     mask-repeat: no-repeat;
+//     mask-size: cover;
+//     background-color: var(--body-color);
+// }

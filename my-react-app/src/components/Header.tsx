@@ -50,9 +50,12 @@ const Header: React.FC = () => {
 
     return (
         <header>
-            <nav className={`navbar ${isMenuOpen ? "hidden" : ""}`}>
+            <nav className={`navbar ${isMenuOpen ? "hidden" : ""}`}> 
                 <NavLink to="/" onClick={scrollToTop}>
-                    <img id="Logo" src={logo} alt="Logo" className="LogoSK" />
+                <div className="logo-container"> 
+                    <img id="Logo" src={logo} alt="Logo" className="LogoSK" /> 
+                    
+                </div>
                 </NavLink>
                 <ul>
                     <li>
