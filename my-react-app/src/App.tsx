@@ -1,6 +1,7 @@
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+// import viteLogo from '/vite.svg' 
+// import { useEffect, useRef } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 /** Komponenty */
 import Header from "./components/Header";  
@@ -11,12 +12,11 @@ import Contact from "./components/Contact";
 /**FotoGalerie */ 
 import GaleryPhoto from "./components/subComponents/PhotoGalery"; 
 /** SVG **/ 
-import ReactLogo from "./assets/vlny.svg";
+// import  ReactLogo from './assets/vlny.svg';
 // import "./App.css";
 
 function App() {
-  // const [count, setCount] = useState(0)
-
+  // const [count, setCount] = useState(0)  
   return (
       <>
           <BrowserRouter>
@@ -31,8 +31,7 @@ function App() {
               </Routes>  
                 {/* <OurService /> Nabídka služeb */}
               </main>                
-              <img src={ReactLogo} alt="" className="FirstSVG" />  
-              {/* <ReactLogo  />  */}
+             
               <Footer /> {/* Patička dostupná na všech stránkách */}
           </BrowserRouter>          
       </>

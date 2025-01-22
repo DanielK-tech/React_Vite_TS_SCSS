@@ -95,8 +95,8 @@ footer {
  ******************* *********/
 .logo-container {
     position: relative;
-    display: inline-block;
-    overflow: hidden;
+    display: flex;
+    // overflow: hidden;
     width: 10rem; // Nastaví šířku kontejneru podle obrázku
     height: 10rem;
     .LogoSK {
@@ -108,9 +108,38 @@ footer {
         height: 100%;
         object-fit: cover;
         border-radius: 50%;
-    }
-    
+    } 
+} 
+/******************************** 
+                Logo další
+ ******************* *********/ 
+
+.hippos{     
+   display: flex; 
+   flex-direction: column; 
+   gap: 5px;
+    .obr1 
+    { 
+        width: 6.8rem;
+        height: 3.5rem;
+        background-image: url("./components/img/stredisko.png"); 
+        background-size: cover; 
+        background-position: center; 
+        @include border-radius(5px); 
+        cursor: pointer;
+    } 
+    .obr2{ 
+        width: 6.8rem;
+        height: 3.7rem;
+        background-image: url("./components/img/logoped1.jpg"); 
+        background-size: cover; 
+        background-position: center; 
+        @include border-radius(5px); 
+        cursor: pointer;
+    } 
+  
 }
+
 /****************************** 
 *********** Skryté menu ******* 
 ******************************/
@@ -510,14 +539,15 @@ footer {
              SVG obrázek 
 ***********************************/
 
-// .FirstSVG {
-//     position: absolute;
-//     display: inline;
-//     height: 1rem;
-//     width: 100%;
-//     @include svg-footer(1rem);
-//     mask-image: url("./assets/vlny.svg");
-//     mask-repeat: no-repeat;
-//     mask-size: cover;
-//     background-color: var(--body-color);
-// }
+.FirstSVG {
+    position: absolute;
+    display: inline;
+    height: 1rem;
+    width: 100%; 
+  
+    @include svg-footer(1rem);
+    mask-image: url("./assets/vlny.svg");
+    mask-repeat: no-repeat;
+    mask-size: cover;
+    background-color: var(--body-color);
+}
