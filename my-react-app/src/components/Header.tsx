@@ -3,7 +3,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 //Link, 
 /* ikonky */ 
-
+import "./subComponents/navPictures.scss"
 //obrázky 
 import logo from "./img/Logo.png"; 
 import cross from "./img/cross.png";
@@ -14,7 +14,8 @@ const Header: React.FC = () => {
         const savedMode = localStorage.getItem("theme"); // Získání hodnoty z localStorage
         return savedMode === "dark"; // Nastavení na true, pokud je "dark"
     });
-    const [isMenuOpen, setIsMenuOpen] = useState(false); // Stav pro menu
+    const [isMenuOpen, setIsMenuOpen] = useState(false); // Stav pro menu 
+    //galre   
 
     // Přepínání režimu
     const toggleMode = () => {
@@ -46,14 +47,34 @@ const Header: React.FC = () => {
     // Přepnutí zobrazení menu
     const toggleMenu = () => {
         setIsMenuOpen((prev) => !prev);
-    };
+    }; 
+
+    //odkazy 
+    const Hippos = () => {
+        window.open('https://hiporehabilitace-cr.com/', '_blank');
+    } 
+
+    const Register = () => { 
+        window.open('https://hiporehabilitace-cr.com/provozovatele-hiporehabilitace/registrovana-strediska/', '_blank')
+    }
 
     return (
-        <header>
-            <nav className={`navbar ${isMenuOpen ? "hidden" : ""}`}>
+        <header> 
+            <div className="navPicture"></div>
+            <nav className={`navbar ${isMenuOpen ? "hidden" : ""}`}> 
                 <NavLink to="/" onClick={scrollToTop}>
-                    <img id="Logo" src={logo} alt="Logo" className="LogoSK" />
+                <div className="logo-container"> 
+                    <img id="Logo" src={logo} alt="Logo" className="LogoSK" /> 
+                </div>
                 </NavLink>
+                    <div className="hippos"> 
+                        <div className="obr1" onClick={Register}> 
+                            <div className="glare" ></div>
+                            </div> 
+                        <div className="obr2" onClick={Hippos}> 
+                            <div className="glare" ></div>
+                        </div>
+                    </div>
                 <ul>
                     <li>
                         {" "}

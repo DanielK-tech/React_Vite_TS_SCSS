@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
     };
     return (   
         <footer>
-           
+            
                 <p>&copy; 2025 SK Blind Guardians, všechna práva vyhrazena</p>  
                 <i className="fa-brands fa-facebook" onClick={handleClick}></i>
         </footer>  
