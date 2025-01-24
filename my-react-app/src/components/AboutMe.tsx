@@ -7,7 +7,7 @@ const About: React.FC = () => {
     return (
         <section className="HomeSection" id="Home" tabIndex={0}>
             <div className="container">
-                <h2>O mě</h2>
+                <h2>O nás</h2>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Suscipit quos ipsum, earum repudiandae, architecto labore

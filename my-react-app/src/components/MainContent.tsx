@@ -9,7 +9,7 @@ const Main: React.FC = () => {
         <section className="HomeSection" id="Home" tabIndex={0}>
             <div className="container">
                 <h1>SK Blind Guardians</h1>
-                <h3>Hyporehabilitace a aktivity s využitím koní.</h3>
+                <h3>Hiporehabilitace a aktivity s využitím koní.</h3>
             </div> 
             <OurService />  
             <Foto />

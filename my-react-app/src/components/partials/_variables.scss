@@ -2,42 +2,45 @@ $body-color: #e0d8d8;
 // $nav-color: rgba(17, 37, 150, 0.5);
 $nav-color: rgba(127, 224, 61, 0.5);
 $white-color: #fff;
-$body-font: "Roboto", sans-serif; 
-$font-size-hamburger: 2.8rem; 
-$btn-hover: #f1c40f; 
-/**Základní barvy **/ 
-$Yellow: #f1c40f; 
+$body-font: "Roboto", sans-serif;
+$font-size-hamburger: 2.8rem;
+$btn-hover: #f1c40f;
+/**Základní barvy **/
+$Yellow: #f1c40f;
+
 $Green: rgba(127, 224, 61, 0.5);
 $black-color: #000;
-$under-ligting: radial-gradient(
-        circle farthest-corner at 10% 20%,
-        rgba(14, 161, 26, 0.678) 17.8%,
-        rgb(255, 50, 4) 100.2%
-    ); 
-$box-shadow: 2px 3px 16px 10px $black-color; 
 $GreyColor: #a7a6a6;
+$contact-actvie-card: linear-gradient(315deg, #f1c40f, #2ecc71);
+$under-ligting: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(14, 161, 26, 0.678) 17.8%,
+    rgb(255, 50, 4) 100.2%
+);
+$span-contact: rgba(255, 255, 255, 0.1); 
+$content-contact: rgba(255, 255, 255, 0.05);
+$box-shadow: 2px 3px 16px 10px $black-color;
 /*Přepínač*/
 $switcher-font: MedievalSharp, Arial, Helvetica, sans-serif;
 $slider-color: #f1c40f;
-$slider-active: #2ecc71; 
-/** Veliksoti */ 
+$slider-active: #2ecc71;
+/** Veliksoti */
 $footer-height: 5rem;
 
-:root { 
-  --body-color: #{$body-color};
-  --nav-color: #{$nav-color};
-  --white-color: #{$white-color}; 
-  --black-color: #{$black-color}; 
-  --btn-hover: #{$btn-hover}; 
-  --under-lighting: #{$under-ligting};
-  /*Přepínač*/
-  --switcher-family-font: #{$switcher-font};
-  --slider-color: #{$slider-color};
-  --slider-active: #{$slider-active}; 
-
+:root {
+    --body-color: #{$body-color};
+    --nav-color: #{$nav-color};
+    --white-color: #{$white-color};
+    --black-color: #{$black-color};
+    --btn-hover: #{$btn-hover};
+    --under-lighting: #{$under-ligting};
+    /*Přepínač*/
+    --switcher-family-font: #{$switcher-font};
+    --slider-color: #{$slider-color};
+    --slider-active: #{$slider-active};
 }
-[data-theme="dark"] { 
-  --body-color: #333;
-  --nav-color: rgba(165, 42, 13, 0.5); 
-   --black-color: #fff;
+[data-theme="dark"] {
+    --body-color: #333;
+    --nav-color: rgba(165, 42, 13, 0.5);
+    --black-color: #fff;
 }

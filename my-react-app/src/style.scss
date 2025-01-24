@@ -86,7 +86,8 @@ footer {
 .oneHundertDVH { 
    margin: 0 auto;
     @include dvh(100dvh); 
-    .contact{ 
+    .contact{  
+      
         text-align: center;
     }
 }

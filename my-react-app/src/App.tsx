@@ -8,7 +8,8 @@ import HomeInfo from "./components/MainContent";
 import About from "./components/AboutMe";
 import Contact from "./components/Contact";
 /**FotoGalerie */
-import GaleryPhoto from "./components/subComponents/PhotoGalery";
+import GaleryPhoto from "./components/subComponents/PhotoGalery"; 
+import "leaflet/dist/leaflet.css"; //Mapa!!!!!!!!!!
 /** SVG **/
 // import "./App.css";
 
