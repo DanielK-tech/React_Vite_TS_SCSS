@@ -83,11 +83,10 @@ footer {
 /***********************
           100dvh  Kontakt
  **********************/
-.oneHundertDVH { 
-   margin: 0 auto;
-    @include dvh(100dvh); 
-    .contact{  
-      
+.oneHundertDVH {
+    margin: 0 auto;
+    @include dvh(100dvh);
+    .contact {
         text-align: center;
     }
 }
@@ -109,36 +108,34 @@ footer {
         height: 100%;
         object-fit: cover;
         border-radius: 50%;
-    } 
-} 
+    }
+}
 /******************************** 
                 Logo další
- ******************* *********/ 
+ ******************* *********/
 
-.hippos{     
-   display: flex; 
-   flex-direction: column; 
-   gap: 5px;
-    .obr1 
-    { 
+.hippos {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    .obr1 {
         width: 6.8rem;
         height: 3.5rem;
-        background-image: url("./components/img/stredisko.png"); 
-        background-size: cover; 
-        background-position: center; 
-        @include border-radius(5px); 
+        background-image: url("./components/img/stredisko.png");
+        background-size: cover;
+        background-position: center;
+        @include border-radius(5px);
         cursor: pointer;
-    } 
-    .obr2{ 
+    }
+    .obr2 {
         width: 6.8rem;
         height: 3.7rem;
-        background-image: url("./components/img/logoped1.jpg"); 
-        background-size: cover; 
-        background-position: center; 
-        @include border-radius(5px); 
+        background-image: url("./components/img/logoped1.jpg");
+        background-size: cover;
+        background-position: center;
+        @include border-radius(5px);
         cursor: pointer;
-    } 
-  
+    }
 }
 
 /****************************** 
@@ -450,7 +447,7 @@ footer {
         img {
             width: 250px; /* Nastavte šířku obrázku */
             height: auto;
-            margin-right: 10px; /* Mezera mezi obrázky */ 
+            margin-right: 10px; /* Mezera mezi obrázky */
             @include border-radius(5px);
         }
     }
@@ -467,19 +464,22 @@ footer {
     gap: 1rem;
     min-height: 100vh;
     min-height: 100dvh;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; 
 
     /** kontejner s fotkami*/
     .thumbnails {
         display: flex;
         justify-content: center;
         gap: 10px;
-        flex-wrap: wrap;
+        flex-wrap: wrap; 
+        perspective: 1000px; // Pro 3D efekt 
+        
+
         //fotky nahoře
         .thumbnail {
             width: 250px;
             height: 250px;
-            object-fit: cover; 
+            object-fit: cover;
             @include border-radius(5px);
             cursor: pointer;
             border: 2px solid transparent;
@@ -491,49 +491,89 @@ footer {
         }
     }
     /** zobrazení šipek a křížek */
-    .modal-content {
-        position: relative;
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9); // Průhledné černé pozadí
+        z-index: 1000; // Zajistí překrytí všeho ostatního
         display: flex;
         align-items: center;
         justify-content: center;
-        /** křížek */
-        .close {
-            position: absolute;
-            top: 0;
-            right: 10px;
-            background: none;
-            border: none;
-            font-size: 30px;
-            color: white;
-            cursor: pointer;
-        }
-        /*Doleva/doprava */
-        .nav {
-            background: none;
-            border: none;
-            font-size: 30px;
-            color: white;
-            cursor: pointer;
-            position: absolute;
-        }
-        .nav.left {
-            left: 10px;
-        }
+        .modal-content {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 90dvw; // Maximální šířka podle viewportu
+            max-height: 90dvh; // Maximální výška podle viewportu
+            padding: 20px;
+            @media (max-width: 880px) {
+                max-width: 100dvh; 
+                max-height: 100dvh;
+            }
+            /** křížek */
+            .close {
+                position: absolute;
+                top: -50px;
+                right: -20px;
+                background: none;
+                border: none;
+                font-size: 2.5rem;
+                color: $white-color;
+                cursor: pointer;  
+                transition: 0.5s;
+                &:hover {
+                    color: $Yellow;
+                }
+                @media (max-width: 880px) {
+                    right: 10px;
+                }
+            }
+            /*Doleva/doprava */
+            .nav {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 2.5rem;
+                color: $white-color;
+                background: none;
+                border: none;
+                cursor: pointer;  
+                transition: 0.5s;
+                &:hover {
+                    color: $Yellow;
+                }
+            }
+            .nav.left {
+                left: -10px;
+                @media (max-width: 880px) {
+                    left: 5px;
+                }
+            }
 
-        .nav.right {
-            right: 10px;
+            .nav.right {
+                right: -10px;
+                @media (max-width: 880px) {
+                    right: 5px;
+                }
+            }
         }
-    }
-    /** Obrázek dozbrazovaný */
-    .actualViev {
-        text-align: center;
-        margin-top: 1rem;
-        width: 100%;    
-        height: 100%;
-        .modal-image {
-            max-width: 90%;
-            max-height: 80%;
-            box-shadow: 2px 3px 16px 10px $black-color;
+        /** Obrázek dozbrazovaný */
+        .actualViev {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            .modal-image {
+                max-width: 100%;
+                max-height: 80dvh;
+                object-fit: contain;
+                box-shadow: 2px 3px 16px 10px $black-color;                
+            }
         }
     }
 }
@@ -546,8 +586,8 @@ footer {
     position: absolute;
     display: inline;
     height: 1rem;
-    width: 100%; 
-  
+    width: 100%;
+
     @include svg-footer(1rem);
     mask-image: url("./assets/vlny.svg");
     mask-repeat: no-repeat;
