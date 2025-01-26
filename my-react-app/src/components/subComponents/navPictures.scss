@@ -1,14 +1,14 @@
-@use "../partials/mixins" as *; 
-@use "../partials/variables" as *; 
+@use "../partials/mixins" as *;
+@use "../partials/variables" as *;
 
-.navPicture{ 
-    position: fixed; 
-    display: flex; 
-    background-image: url("../img/horseHerd.png"); 
-    width: 20rem;   
-    height: 10.0rem;
-    background-size: cover; 
-    top: -2.5rem; 
-    left: 15rem; 
-    z-index: 1;
+.navPicture {
+  position: fixed;
+  display: flex;
+  background-image: url("../img/horseHerd.png");
+  width: 20rem;
+  height: 10rem;
+  background-size: cover;
+  top: -2.5rem;
+  left: 15rem;
+  z-index: 10000000000000000;
 }

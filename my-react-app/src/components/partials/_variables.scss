@@ -7,7 +7,6 @@ $font-size-hamburger: 2.8rem;
 $btn-hover: #f1c40f;
 /**Základní barvy **/
 $Yellow: #f1c40f;
-
 $Green: rgba(127, 224, 61, 0.5);
 $black-color: #000;
 $GreyColor: #a7a6a6;
@@ -18,8 +17,9 @@ $under-ligting: radial-gradient(
     rgb(255, 50, 4) 100.2%
 );
 $span-contact: rgba(255, 255, 255, 0.1); 
-$content-contact: rgba(255, 255, 255, 0.05);
-$box-shadow: 2px 3px 16px 10px $black-color;
+$content-background: rgba(255, 255, 255, 0.05);
+$box-shadow: 2px 3px 16px 10px $black-color; 
+$box-shadow:  0 5px 15px rgba(0, 0, 0, 0.5);
 /*Přepínač*/
 $switcher-font: MedievalSharp, Arial, Helvetica, sans-serif;
 $slider-color: #f1c40f;

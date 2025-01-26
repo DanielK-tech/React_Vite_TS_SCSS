@@ -1,32 +1,121 @@
-import { useState } from "react";
-import React from "react"; 
+import React, { useState, useEffect } from "react";
+//navigace
+import { useNavigate, useLocation } from "react-router-dom";
 /** Komponenty */
 import OurService from "./OurServices";
 import Foto from "./FotoSection";
+
+/** Styly */
+import "./AboutUs.scss";
+
 const About: React.FC = () => {
-    return (
-        <section className="HomeSection" id="Home" tabIndex={0}>
-            <div className="container">
-                <h2>O nás</h2>
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [isTeamVisible, setIsTeamVisible] = useState(false);
+
+  // Synchronizace stavu s URL
+  useEffect(() => {
+    setIsTeamVisible(location.pathname === "/about/our-team");
+  }, [location.pathname]);
+
+  const toggleTeamVisibility = () => {
+    const newVisibility = !isTeamVisible;
+    setIsTeamVisible(newVisibility);
+    navigate(newVisibility ? "/about/our-team" : "/about");
+  };
+  return (
+    <section className="HomeSection" id="Home" tabIndex={0}>
+      <div className="aboutUs">
+        <h2>O nás</h2>
+        <p>
+          Jsme malá stáj rodinného typu na severní Moravě. V roce 2024 jsme
+          založili spolek zaměřený na volnočasové jezdecké aktivity pro děti a
+          mládež především z blízkého okolí a začali se angažovat v
+          hiporehabilitačních aktivitách, které nabízíme i široké veřejnosti.
+          Jsme členy České jezdecké federace (ČJF), Moravského pony klubu a
+          České hiporehabilitační společnosti (ČHS).
+        </p>
+        <p>
+          Členové našeho týmu se hiporehabilitačním aktivitám věnují již od roku
+          2009, v roce založení spolku se nám proto povedlo získat status
+          Registrovaného střediska ČHS a certifikát pro hiporehabilitaci v
+          pedagogické a sociální praxi.
+        </p>
+        <p>
+          Aktivity našich členů jsou již dlouhodobě spjaty i s péčí a výcvikem
+          různě zrakově znevýhodněných koní. Od roku 2023 jsme v přátelském
+          kontaktu s neziskovkou Naděje pro slepé koně, z.s., se kterou jsme
+          proto od našeho založení navázali úzkou spolupráci a nabízíme v tomto
+          směru pomoc a poradenství majitelům především zde na severovýchodě
+          republiky.
+        </p>
+        <button className="btn" onClick={toggleTeamVisibility}>
+          <a href="#">Náš team</a>
+        </button>
+        {/* Sem vlož obsah týmu */}
+        {isTeamVisible && (
+          <div className="team-content">
+            <div className="contact">
+              <span className="squareSpan"></span>
+              <div className="content">
+                <div className="face worker"></div>
+                <h3>Bc. Jana Pospíšilová </h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Suscipit quos ipsum, earum repudiandae, architecto labore
-                    beatae itaque minima asperiores dolor distinctio quaerat
-                    assumenda, facere odio animi pariatur omnis. Possimus,
-                    reprehenderit.
+                  od roku 2004 je držitelem ČJF licence instruktora jezdectví a
+                  věnuje se jezdeckému výcviku a sportovní přípravě dětí a
+                  mládeže, od roku 2009 se angažuje jako asistent a instruktor
+                  výcviku koní v hiporehabilitaci - od té doby je i
+                  individuálním členem ČHS a od roku 2024 členem pracovní
+                  skupiny Hiporehabilitace v kontaktní terapii. Od roku 2024 je
+                  též certifikovaným rozhodčím pro disciplíny parkur, skok
+                  mohutnosti a drezura pod Českou hobby horsingovou asociací a
+                  trenérsky vede sportovní kroužek hobby horsingu.
                 </p>
+              </div>
             </div>
-            {/* <svg viewBox="0 0 1440 320">
-                <path
-                    fill="#0099ff"
-                    fill-opacity="1"
-                    d="M0,160L48,170.7C96,181,192,203,288,213.3C384,224,480,224,576,213.3C672,203,768,181,864,176C960,171,1056,181,1152,186.7C1248,192,1344,192,1392,192L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-                ></path>
-            </svg> */}
-            <OurService /> 
-            <Foto />
-        </section>
-    );
+            {/* další */}
+            <div className="contact">
+              <span className="squareSpan"></span>
+              <div className="content">
+                <div className="face worker"></div>
+                <h3>Eva Kolegarová, DiS </h3>
+                <p>
+                  již od dětských let se věnuje práci a aktivitám především se
+                  zdravotně znevýhodněnou mládeží, během studií se začala
+                  věnovat zooterapeutickým aktivitám včetně hiporehabilitace, má
+                  bohaté zkušenosti z fungování a praxi v mnoha
+                  hiporehabilitačních střediscích po celé ČR. Profesně se věnuje
+                  sociální práci s dětmi a mládeží, ve volném čase působí jako
+                  jedna z vedoucích 8. Přední hlídky Royal Rangers - Zlín. V
+                  roce 2024 úspěšně dokončila specializační kurz ČHS a stala se
+                  certifikovanou instruktorkou pro hiporehabilitaci v
+                  pedagogické a sociální práci pro ČR.
+                </p>
+              </div>
+            </div>
+            {/* další */}
+            <div className="contact">
+              <span className="squareSpan"></span>
+              <div className="content">
+                <div className="face worker"></div>
+                <h3>Petra Luzarová, DiS </h3>
+                <p>
+                  má dlouholeté zkušenosti s prací s dětmi a mládeží coby
+                  vedoucí vodáckého skautského spolku Poseidon. Aktuálně se
+                  zaměřuje zejména na vozatajské aktivity s poníky, je hlavním
+                  mentorem v přípravě práce na ruce na oprati a přípravě na
+                  zápřah.
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <OurService />
+      <Foto />
+    </section>
+  );
 };
 
 export default About;
