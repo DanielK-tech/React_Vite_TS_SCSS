@@ -140,7 +140,7 @@ const Header: React.FC = () => {
                     </li>
                     <li>
                         <NavLink to="/about" onClick={scrollToTop}>
-                            O mě
+                            O nás
                         </NavLink>
                     </li> 
                     <li className="Aktivity">
