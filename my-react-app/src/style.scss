@@ -148,23 +148,34 @@ h1{
     position: relative;
     font-family: $switcher-font;
     color: $white-color;
-
+    transition: 1s;
     .arrowDown {
         display: inline-block;
         margin-left: 10px;
         font-size: 1rem;
     }
 
-    // Základní stav submenu - skryté
+    // Základní stav submenu - skryté 
+    .submenuContainer{ 
+         display: none;
+        position: absolute;
+        height: 100%;
+        top: 100%; // Umístí submenu pod hlavní položku
+        left: 0;
+        padding-top: 2.5rem; 
+        padding-left: 1rem;
+        
+    }
     .submenu {
         display: none;
         position: absolute;
 
-        top: 100%; // Umístí submenu pod hlavní položku
-        left: 0;
-        padding-top: 2.5rem;
-        min-width: 200px;
-
+        top: 110%; // Umístí submenu pod hlavní položku
+        left: -100%;
+        padding-top: 2.5rem; 
+        padding-left: 1rem;
+        min-width: 300px;
+        
         background-color: var(--body-color);
         @include border-radius(5px);
         box-shadow: 2px 3px 16px 10px $black-color;
@@ -185,6 +196,10 @@ h1{
     // Při hoveru nad .Aktivity se zobrazí submenu
     &:hover {
         .submenu {
+            display: block; 
+            
+        } 
+        .submenuContainer{ 
             display: block;
         }
     }

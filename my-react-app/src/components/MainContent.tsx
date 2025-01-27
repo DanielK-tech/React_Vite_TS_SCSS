@@ -2,12 +2,15 @@ import { useState } from "react";
 import React from "react";  
 /** Komponenty ** */
 import OurService from "./OurServices"; 
-import Foto from "./FotoSection";
+import Foto from "./FotoSection"; 
+/** Styl */ 
+import "./MainContext.scss";
 
 const Main: React.FC = () => {
     return (
         <section className="HomeSection" id="Home" tabIndex={0}>
-            <div className="container">
+            <div className="container"> 
+                <div className="mainText"> 
                 <h1>
                     Vítejte na stránkách spolku SK Blind Guardians - stáj
                     Leskovec, z.s.
@@ -22,6 +25,7 @@ const Main: React.FC = () => {
                     Naší specialitou je osvěta ve výcviku a jezdeckém využití
                     zrakově znevýhodněných koní a poníků.
                 </p>
+                </div>
             </div>
             <OurService />
             <Foto />
