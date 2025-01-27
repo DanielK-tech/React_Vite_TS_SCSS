@@ -9,232 +9,230 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Single+Day&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 body {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    font-family: "Roboto", sans-serif;
-    background-color: var(--body-color);
-    min-height: 100vh;
-    min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--body-color);
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 /** root zastává fci body :) **/
 #root {
-    position: relative;
-    display: flex;
-    font-family: $body-font;
-    flex-direction: column;
-    //   align-items: center;
-    width: 100%;
-    min-height: 100vh;
-    min-height: 100dvh;
-    color: var(--black-color);
+  position: relative;
+  display: flex;
+  font-family: $body-font;
+  flex-direction: column;
+  //   align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  color: var(--black-color);
 }
 header {
-    position: relative;
+  position: relative;
 }
 main {
-    position: relative;
-    // min-height: 100vh;
-    // min-height: 100dvh;
-    margin-top: 13.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
+  position: relative;
+  // min-height: 100vh;
+  // min-height: 100dvh;
+  margin-top: 13.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    background-color: var(--nav-color);
-    color: var(--white-color);
-    width: 100%;
-    height: $footer-height;
-    font-family: var(--switcher-family-font);
-    font-size: 1.2rem;
-    i {
-        font-size: 1.8rem;
-        &:hover {
-            cursor: pointer;
-            color: var(--btn-hover);
-        }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--nav-color);
+  color: var(--white-color);
+  width: 100%;
+  height: $footer-height;
+  font-family: var(--switcher-family-font);
+  font-size: 1.2rem;
+  i {
+    font-size: 1.8rem;
+    &:hover {
+      cursor: pointer;
+      color: var(--btn-hover);
     }
-    p {
-        position: relative;
-        &::before {
-            content: "";
-            width: 100%;
-            height: 100%;
-            background-image: var(--under-lighting);
-            filter: blur(10px);
-            position: absolute;
-            left: 0;
-            top: 0;
-            z-index: -1;
-        }
+  }
+  p {
+    position: relative;
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background-image: var(--under-lighting);
+      filter: blur(10px);
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
     }
-} 
-h1{ 
-    font-size: 2.5rem;
+  }
+}
+h1 {
+  font-size: 2.5rem;
 }
 
 /***********************
           100dvh  Kontakt
  **********************/
 .oneHundertDVH {
-    margin: 0 auto;
-    @include dvh(100dvh);
-    .contact {
-        text-align: center;
-    }
+  margin: 0 auto;
+  @include dvh(100dvh);
+  .contact {
+    text-align: center;
+  }
 }
 /******************************** 
                 Logo 
  ******************* *********/
 .logo-container {
+  position: relative;
+  display: flex;
+  // overflow: hidden;
+  width: 10rem; // Nastaví šířku kontejneru podle obrázku
+  height: 10rem;
+  .LogoSK {
     position: relative;
-    display: flex;
-    // overflow: hidden;
-    width: 10rem; // Nastaví šířku kontejneru podle obrázku
-    height: 10rem;
-    .LogoSK {
-        position: relative;
-        display: block;
-        cursor: pointer;
-        // width: 10rem;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 50%;
-    }
+    display: block;
+    cursor: pointer;
+    // width: 10rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
 }
 /******************************** 
                 Logo další
  ******************* *********/
 
 .hippos {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    .obr1 {
-        width: 6.8rem;
-        height: 3.5rem;
-        background-image: url("./components/img/stredisko.png");
-        background-size: cover;
-        background-position: center;
-        @include border-radius(5px);
-        cursor: pointer;
-    }
-    .obr2 {
-        width: 6.8rem;
-        height: 3.7rem;
-        background-image: url("./components/img/logoped1.jpg");
-        background-size: cover;
-        background-position: center;
-        @include border-radius(5px);
-        cursor: pointer;
-    }
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  .obr1 {
+    width: 6.8rem;
+    height: 3.5rem;
+    background-image: url("./components/img/stredisko.png");
+    background-size: cover;
+    background-position: center;
+    @include border-radius(5px);
+    cursor: pointer;
+  }
+  .obr2 {
+    width: 6.8rem;
+    height: 3.7rem;
+    background-image: url("./components/img/logoped1.jpg");
+    background-size: cover;
+    background-position: center;
+    @include border-radius(5px);
+    cursor: pointer;
+  }
 }
 
 /****************************** 
 *********** Skryté menu ******* 
 ******************************/
 .Aktivity {
-    position: relative;
-    font-family: $switcher-font;
-    color: $white-color;
-    transition: 1s;
-    .arrowDown {
-        display: inline-block;
-        margin-left: 10px;
-        font-size: 1rem;
-    }
+  position: relative;
+  font-family: $switcher-font;
+  color: $white-color;
+  transition: 1s;
+  .arrowDown {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 1rem;
+  }
 
-    // Základní stav submenu - skryté 
-    .submenuContainer{ 
-         display: none;
-        position: absolute;
-        height: 100%;
-        top: 100%; // Umístí submenu pod hlavní položku
-        left: 0;
-        padding-top: 2.5rem; 
-        padding-left: 1rem;
-        
+  // Základní stav submenu - skryté
+  .submenuContainer {
+    display: none;
+    position: absolute;
+    height: 100%;
+    top: 100%; // Umístí submenu pod hlavní položku
+    left: 0;
+    padding-top: 2.5rem;
+    padding-left: 1rem;
+  }
+  .submenu {
+    display: none;
+    position: absolute;
+
+    top: 110%; // Umístí submenu pod hlavní položku
+    left: -100%;
+    padding-top: 2.5rem;
+    padding-left: 1rem;
+    min-width: 300px;
+
+    background-color: var(--body-color);
+    @include border-radius(5px);
+    box-shadow: 2px 3px 16px 10px $black-color;
+    li {
+      margin: 0 auto;
+      i {
+        font-size: 1.5rem;
+        padding-right: 10px;
+        &:hover {
+          color: $Yellow;
+        }
+      }
     }
+    a {
+      font-size: 1.5rem;
+    }
+  }
+  // Při hoveru nad .Aktivity se zobrazí submenu
+  &:hover {
     .submenu {
-        display: none;
-        position: absolute;
-
-        top: 110%; // Umístí submenu pod hlavní položku
-        left: -100%;
-        padding-top: 2.5rem; 
-        padding-left: 1rem;
-        min-width: 300px;
-        
-        background-color: var(--body-color);
-        @include border-radius(5px);
-        box-shadow: 2px 3px 16px 10px $black-color;
-        li {
-            margin: 0 auto;
-            i {
-                font-size: 1.5rem;
-                padding-right: 10px;
-                &:hover {
-                    color: $Yellow;
-                }
-            }
-        }
-        a {
-            font-size: 1.5rem;
-        }
+      display: block;
     }
-    // Při hoveru nad .Aktivity se zobrazí submenu
-    &:hover {
-        .submenu {
-            display: block; 
-            
-        } 
-        .submenuContainer{ 
-            display: block;
-        }
+    .submenuContainer {
+      display: block;
     }
+  }
 }
 
 /*****************************
 *** Univerzální konteiner ***
 ******************************/
 .container {
-    // background-color: #ca2929;
-    width: 80%;
+  // background-color: #ca2929;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* H4 */
+  .Services {
+    font-size: 1.2rem;
+  }
+  /** další kontejner*/
+  .Servicesis {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    /* H4 */
-    .Services {
-        font-size: 1.2rem;
+    height: 20rem;
+    p {
+      position: absolute;
+      bottom: 3.5rem;
     }
-    /** další kontejner*/
-    .Servicesis {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 20rem;
-        p {
-            position: absolute;
-            bottom: 3.5rem;
-        }
-        button {
-            position: absolute;
-            bottom: 2px;
-        }
+    button {
+      position: absolute;
+      bottom: 2px;
     }
+  }
 }
 /*************************************************************************** 
                                                 hlavička 
@@ -245,110 +243,110 @@ h1{
 
 /************/
 .navbar {
-    font-family: var(--switcher-family-font);
-    background-color: var(--nav-color);
+  font-family: var(--switcher-family-font);
+  background-color: var(--nav-color);
+  display: flex;
+  @include nav-bar;
+
+  ul {
     display: flex;
-    @include nav-bar;
+    gap: 40px;
+    width: 83%;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 10041121;
+    li {
+      list-style: none;
+      width: -moz-fit-content;
+      width: fit-content;
+      font-size: 1.7em;
+      transition: 0.5s;
+      a {
+        position: relative;
+        text-decoration: none;
+        color: var(--white-color);
 
-    ul {
-        display: flex;
-        gap: 40px;
-        width: 83%;
-        justify-content: flex-end;
-        align-items: center;
-        z-index: 10041121;
-        li {
-            list-style: none;
-            width: -moz-fit-content;
-            width: fit-content;
-            font-size: 1.7em;
-            transition: 0.5s;
-            a {
-                position: relative;
-                text-decoration: none;
-                color: var(--white-color);
-
-                transition: 0.5s;
-                &::before {
-                    content: "";
-                    width: 100%;
-                    height: 100%;
-                    background-image: var(--under-lighting);
-                    filter: blur(10px);
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    z-index: -1;
-                }
-                &:hover,
-                &:active {
-                    color: var(--btn-hover);
-                    transition: border-bottom 2.5s; //<= začínáme s podtržením
-                    border-bottom: 2px solid transparent;
-                }
-
-                &:hover::after,
-                &:active::after {
-                    width: 100%;
-                }
-                &::after {
-                    content: "";
-                    position: absolute;
-                    // top: 100px;
-                    left: 0;
-                    bottom: 0;
-                    width: 0;
-                    height: 2px;
-                    background-color: $Yellow;
-
-                    /* barva podtržítka*/
-                    transition: width 2.5s;
-                    z-index: 1;
-                }
-            }
+        transition: 0.5s;
+        &::before {
+          content: "";
+          width: 100%;
+          height: 100%;
+          background-image: var(--under-lighting);
+          filter: blur(10px);
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: -1;
         }
-        @media (max-width: 880px) {
-            display: none;
+        &:hover,
+        &:active {
+          color: var(--btn-hover);
+          transition: border-bottom 2.5s; //<= začínáme s podtržením
+          border-bottom: 2px solid transparent;
         }
+
+        &:hover::after,
+        &:active::after {
+          width: 100%;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          // top: 100px;
+          left: 0;
+          bottom: 0;
+          width: 0;
+          height: 2px;
+          background-color: $Yellow;
+
+          /* barva podtržítka*/
+          transition: width 2.5s;
+          z-index: 1;
+        }
+      }
     }
-    &.hidden {
-        display: none; // Skryje navigaci
+    @media (max-width: 950px) {
+      display: none;
     }
+  }
+  &.hidden {
+    display: none; // Skryje navigaci
+  }
 }
 
 /*****************************************************************  
         MainContent komponenta a další (hlavní třída sekcí) 
 *****************************************************************/
 .HomeSection {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    flex-direction: column;
-    width: 100%;
-    h3 {
-        font-size: 2.5rem;
-    }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-direction: column;
+  width: 100%;
+  h3 {
+    font-size: 2.5rem;
+  }
 }
 
 /***********************************
   * Univerzální tlačítko
   ***********************************/
 .btn {
-    letter-spacing: 1px;
-    padding: 10px;
-    border: none;
-    @include border-radius(5px);
-    transition: 0.5s;
+  letter-spacing: 1px;
+  padding: 10px;
+  border: none;
+  @include border-radius(5px);
+  transition: 0.5s;
 
-    a {
-        font-size: 1.2rem;
-        text-decoration: none;
-    }
-    &:hover {
-        background-color: var(--btn-hover);
-        transform: scale(1.1);
-    }
+  a {
+    font-size: 1.2rem;
+    text-decoration: none;
+  }
+  &:hover {
+    background-color: var(--btn-hover);
+    transform: scale(1.1);
+  }
 }
 
 /************************************
@@ -356,119 +354,119 @@ h1{
   ************************************/
 
 .menu-icon {
-    display: none;
-    @media (max-width: 880px) {
-        position: fixed;
-        display: block;
-        font-size: $font-size-hamburger;
-        right: 10px;
-    }
+  display: none;
+  @media (max-width: 950px) {
+    position: fixed;
+    display: block;
+    font-size: $font-size-hamburger;
+    right: 10px;
+  }
 }
 
 /***************************** 
             Mini menu  
 *****************************/
 .menu-container-mini {
-    position: fixed;
-    display: none;
-    text-align: center;
-    padding-top: 10px;
-    font-size: 1.5rem;
-    width: 100%;
-    z-index: 10000000;
-    background-color: var(--nav-color);
-    height: 5.2em;
-    .menu {
-        li {
-            list-style-type: none;
-            .submenu {
-                left: 50%;
-                margin-top: 10px;
-                transform: translate(-50%);
-            }
-            a {
-                text-decoration: none;
-                color: var(--white-color);
-                font-family: var(--switcher-family-font);
-                position: relative;
-                transition: 0.5s;
-                &:hover,
-                &:active {
-                    color: var(--btn-hover);
-                    transition: border-bottom 2.5s; //<= začínáme s podtržením
-                    border-bottom: 2px solid transparent;
-                }
-                &:hover::after,
-                &:active::after {
-                    width: 100%;
-                }
-                &::before {
-                    content: "";
-                    width: 100%;
-                    height: 100%;
-                    background-image: var(--under-lighting);
-                    filter: blur(10px);
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    z-index: -1;
-                }
-                &::after {
-                    content: "";
-                    position: absolute;
-                    // top: 100px;
-                    left: 0;
-                    bottom: 0;
-                    width: 0;
-                    height: 2px;
-                    background-color: $Yellow;
-
-                    /* barva podtržítka*/
-                    transition: width 2.5s;
-                    z-index: 1;
-                }
-            }
+  position: fixed;
+  display: none;
+  text-align: center;
+  padding-top: 10px;
+  font-size: 1.5rem;
+  width: 100%;
+  z-index: 10000000;
+  background-color: var(--nav-color);
+  height: 5.2em;
+  .menu {
+    li {
+      list-style-type: none;
+      .submenu {
+        left: 50%;
+        margin-top: 10px;
+        transform: translate(-50%);
+      }
+      a {
+        text-decoration: none;
+        color: var(--white-color);
+        font-family: var(--switcher-family-font);
+        position: relative;
+        transition: 0.5s;
+        &:hover,
+        &:active {
+          color: var(--btn-hover);
+          transition: border-bottom 2.5s; //<= začínáme s podtržením
+          border-bottom: 2px solid transparent;
         }
+        &:hover::after,
+        &:active::after {
+          width: 100%;
+        }
+        &::before {
+          content: "";
+          width: 100%;
+          height: 100%;
+          background-image: var(--under-lighting);
+          filter: blur(10px);
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: -1;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          // top: 100px;
+          left: 0;
+          bottom: 0;
+          width: 0;
+          height: 2px;
+          background-color: $Yellow;
+
+          /* barva podtržítka*/
+          transition: width 2.5s;
+          z-index: 1;
+        }
+      }
     }
-    .cross {
-        position: fixed;
-        right: 10px;
-        top: 5px;
-        width: 2rem;
-    }
+  }
+  .cross {
+    position: fixed;
+    right: 10px;
+    top: 5px;
+    width: 2rem;
+  }
 }
 
 /*********************************
          Foto Sekce Komponenta 
 ***********************************/
 .sliding-images-container {
-    width: 100%;
-    overflow: hidden; /* Skryje obrázky mimo viewport */
-    background-color: var(--body-color);
+  width: 100%;
+  overflow: hidden; /* Skryje obrázky mimo viewport */
+  background-color: var(--body-color);
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  //
+  .sliding-images-track {
     display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    //
-    .sliding-images-track {
-        display: flex;
-        width: fit-content;
-        animation: slide 30s linear infinite; /* Nekonečná animace */
-        /* Klíčové snímky animace */
-        @keyframes slide {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%); /* Posun o polovinu šířky obsahu */
-            }
-        }
-        img {
-            width: 250px; /* Nastavte šířku obrázku */
-            height: auto;
-            margin-right: 10px; /* Mezera mezi obrázky */
-            @include border-radius(5px);
-        }
+    width: fit-content;
+    animation: slide 30s linear infinite; /* Nekonečná animace */
+    /* Klíčové snímky animace */
+    @keyframes slide {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%); /* Posun o polovinu šířky obsahu */
+      }
     }
+    img {
+      width: 250px; /* Nastavte šířku obrázku */
+      height: auto;
+      margin-right: 10px; /* Mezera mezi obrázky */
+      @include border-radius(5px);
+    }
+  }
 }
 
 /*********************************
@@ -476,124 +474,127 @@ h1{
 ***********************************/
 
 .PhotoGalery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin-bottom: 1rem;
+
+  /** kontejner s fotkami*/
+  .thumbnails {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    perspective: 1000px; // Pro 3D efekt
+
+    //fotky nahoře
+    .thumbnail {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      @include border-radius(5px);
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: transform 0.2s, border-color 0.2s;
+      &:hover {
+        transform: scale(1.1);
+        border-color: $Yellow;
+      }
+    }
+  }
+  /** zobrazení šipek a křížek */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); // Průhledné černé pozadí
+    z-index: 1000; // Zajistí překrytí všeho ostatního
+    display: flex;
     align-items: center;
-    gap: 1rem;
-    min-height: 100vh;
-    min-height: 100dvh;
-    margin-bottom: 1rem; 
-
-    /** kontejner s fotkami*/
-    .thumbnails {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        flex-wrap: wrap; 
-        perspective: 1000px; // Pro 3D efekt 
-        
-
-        //fotky nahoře
-        .thumbnail {
-            width: 250px;
-            height: 250px;
-            object-fit: cover;
-            @include border-radius(5px);
-            cursor: pointer;
-            border: 2px solid transparent;
-            transition: transform 0.2s, border-color 0.2s;
-            &:hover {
-                transform: scale(1.1);
-                border-color: $Yellow;
-            }
+    justify-content: center;
+    //
+    .modal-content {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 8rem;
+      max-width: 90dvw; // Maximální šířka podle viewportu
+      max-height: 90dvh; // Maximální výška podle viewportu
+      padding: 20px;
+      @media (max-width: 880px) {
+        max-width: 100dvh;
+        max-height: 100dvh;
+      }
+      /** křížek */
+      .close {
+        position: absolute;
+        top: -5px;
+        right: -20px;
+        background: none;
+        border: none;
+        font-size: 2.5rem;
+        color: $white-color;
+        cursor: pointer;
+        transition: 0.5s;
+        &:hover {
+          color: $Yellow;
         }
+        @media (max-width: 880px) {
+          top: 5px;
+          right: 10px;
+        }
+      }
+      /*Doleva/doprava */
+      .nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2.5rem;
+        color: $white-color;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: 0.5s;
+        &:hover {
+          color: $Yellow;
+        }
+      }
+      .nav.left {
+        left: -10px;
+        @media (max-width: 880px) {
+          left: 5px;
+        }
+      }
+
+      .nav.right {
+        right: -10px;
+        @media (max-width: 880px) {
+          right: 5px;
+        }
+      }
     }
-    /** zobrazení šipek a křížek */
-    .modal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.9); // Průhledné černé pozadí
-        z-index: 1000; // Zajistí překrytí všeho ostatního
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        .modal-content {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            max-width: 90dvw; // Maximální šířka podle viewportu
-            max-height: 90dvh; // Maximální výška podle viewportu
-            padding: 20px;
-            @media (max-width: 880px) {
-                max-width: 100dvh; 
-                max-height: 100dvh;
-            }
-            /** křížek */
-            .close {
-                position: absolute;
-                top: -50px;
-                right: -20px;
-                background: none;
-                border: none;
-                font-size: 2.5rem;
-                color: $white-color;
-                cursor: pointer;  
-                transition: 0.5s;
-                &:hover {
-                    color: $Yellow;
-                }
-                @media (max-width: 880px) {
-                    right: 10px;
-                }
-            }
-            /*Doleva/doprava */
-            .nav {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                font-size: 2.5rem;
-                color: $white-color;
-                background: none;
-                border: none;
-                cursor: pointer;  
-                transition: 0.5s;
-                &:hover {
-                    color: $Yellow;
-                }
-            }
-            .nav.left {
-                left: -10px;
-                @media (max-width: 880px) {
-                    left: 5px;
-                }
-            }
+    /** Obrázek dozbrazovaný */
+    .actualViev {
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-            .nav.right {
-                right: -10px;
-                @media (max-width: 880px) {
-                    right: 5px;
-                }
-            }
-        }
-        /** Obrázek dozbrazovaný */
-        .actualViev {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-            .modal-image {
-                max-width: 100%;
-                max-height: 80dvh;
-                object-fit: contain;
-                box-shadow: 2px 3px 16px 10px $black-color;                
-            }
-        }
+      width: 100%;
+      height: 100%;
+      .modal-image {
+        max-width: 100%;
+        max-height: 80dvh;
+        object-fit: contain;
+        box-shadow: 2px 3px 16px 10px $black-color;
+      }
     }
+  }
 }
 
 /*********************************
@@ -601,14 +602,14 @@ h1{
 ***********************************/
 
 .FirstSVG {
-    position: absolute;
-    display: inline;
-    height: 1rem;
-    width: 100%;
+  position: absolute;
+  display: inline;
+  height: 1rem;
+  width: 100%;
 
-    @include svg-footer(1rem);
-    mask-image: url("./assets/vlny.svg");
-    mask-repeat: no-repeat;
-    mask-size: cover;
-    background-color: var(--body-color);
+  @include svg-footer(1rem);
+  mask-image: url("./assets/vlny.svg");
+  mask-repeat: no-repeat;
+  mask-size: cover;
+  background-color: var(--body-color);
 }
