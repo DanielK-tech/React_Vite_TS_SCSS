@@ -50,7 +50,7 @@ const About: React.FC = () => {
           republiky.
         </p>
         <button className="btn" onClick={toggleTeamVisibility}>
-          <a href="#">Náš team</a>
+          Náš team
         </button>
         {/* Sem vlož obsah týmu */}
         {isTeamVisible && (

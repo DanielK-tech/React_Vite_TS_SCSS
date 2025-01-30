@@ -1,4 +1,5 @@
 import React from "react";  
+
 /** Obrázky ****/ 
 import Horse1 from "./img/Horse1.jpg";
 import Horse2 from "./img/Horse2.jpg";
@@ -23,13 +24,17 @@ const photos: string[] = [
   Horse8,
   Horse9,
   Horse10,
-];
+]; 
 
+// {`fa-solid ${isDarkMode ? "fa-face-grin-wink" : "fa-face-smile-beam"}`}
 
-const SlidingImages: React.FC = () => {
+const SlidingImages: React.FC = () => { 
+  
+  // Přidáme efekt pro sledování změn
+  ;
   return (  
     <section className="HomeSection" id="Home" tabIndex={0}> 
-    <h3>Fotky z akcí <i className="fa-solid fa-face-smile-beam"></i></h3>     
+    <h3>Fotky z akcí  <i className="fa-solid fa-face-smile-beam"></i></h3>     
      <div className="sliding-images-container"> 
         <div className="sliding-images-track"> 
            {/* Vykreslení obrázků */}

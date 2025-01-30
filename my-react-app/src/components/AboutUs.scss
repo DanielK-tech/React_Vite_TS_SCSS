@@ -28,7 +28,18 @@
   }
   button {
     margin-left: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; 
+    
+  }
+  .btn{ 
+    font-size: 1.2rem;  
+    color: $BTN-color-text;
+    ;
+    &:hover, 
+    &:active{
+      color: $Red-color;
+      
+    }
   }
 }
 
@@ -42,7 +53,8 @@
   justify-content: space-around;
   flex-wrap: wrap;
   width: 100%;
-  gap: 1rem;
+  gap: 1rem; 
+  
   h3 {
     text-align: center;
   }
@@ -64,7 +76,7 @@
       left: 50px;
       width: 50%;
       height: 110%;
-      background: $contact-actvie-card;
+      background: var(--contact-actvie-card);
       @include border-radius(8px);
       transform: skewX(15deg); /* zalomení bílého pozadí */
       transition: 0.5s;
@@ -76,7 +88,7 @@
       left: 50px;
       width: 50%;
       height: 100%;
-      background: $contact-actvie-card;
+      background: var(--contact-actvie-card);
       @include border-radius(8px);
       transform: skewX(15deg); /* zalomení bílého pozadí */
       transition: 0.5s;
