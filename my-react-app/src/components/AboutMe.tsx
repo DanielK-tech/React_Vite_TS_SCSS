@@ -3,7 +3,9 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 /** Komponenty */
 import OurService from "./OurServices";
-import Foto from "./FotoSection";
+import Foto from "./FotoSection"; 
+//data 
+import "./data/dataKone";
 
 /** Styly */
 import "./AboutUs.scss";
