@@ -3,27 +3,46 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 /** Komponenty */
 import OurService from "./OurServices";
-import Foto from "./FotoSection"; 
+import Foto from "./FotoSection";  
+import HorseTeam from "./subComponents/HorseTeam";
 //data 
-import "./data/dataKone";
+import horseData from "./data/dataKone";
 
 /** Styly */
 import "./AboutUs.scss";
 
 const About: React.FC = () => {
   const navigate = useNavigate();
-  const location = useLocation();
+  const location = useLocation(); 
+  //
   const [isTeamVisible, setIsTeamVisible] = useState(false);
-
+  const [isHorseVisible, setIsHorseVisible] = useState(false);
   // Synchronizace stavu s URL
   useEffect(() => {
     setIsTeamVisible(location.pathname === "/about/our-team");
+    setIsHorseVisible(location.pathname === "/about/our-horses");
   }, [location.pathname]);
 
-  const toggleTeamVisibility = () => {
-    const newVisibility = !isTeamVisible;
-    setIsTeamVisible(newVisibility);
-    navigate(newVisibility ? "/about/our-team" : "/about");
+  const toggleTeam = () => {
+    if (isTeamVisible) {
+      setIsTeamVisible(false);
+      navigate("/about");
+    } else {
+      setIsTeamVisible(true);
+      setIsHorseVisible(false);
+      navigate("/about/our-team");
+    }
+  };
+
+   const toggleHorses = () => {
+    if (isHorseVisible) {
+      setIsHorseVisible(false);
+      navigate("/about");
+    } else {
+      setIsHorseVisible(true);
+      setIsTeamVisible(false);
+      navigate("/about/our-horses");
+    }
   };
   return (
     <section className="HomeSection" id="Home" tabIndex={0}>
@@ -50,10 +69,16 @@ const About: React.FC = () => {
           proto od našeho založení navázali úzkou spolupráci a nabízíme v tomto
           směru pomoc a poradenství majitelům především zde na severovýchodě
           republiky.
-        </p>
-        <button className="btn" onClick={toggleTeamVisibility}>
+        </p> 
+        <div className="buttons"> 
+
+        <button className="btn" onClick={toggleTeam}>
           Náš team
+        </button> 
+        <button className="btn" onClick={toggleHorses}>
+          Naše koně
         </button>
+        </div>
         {/* Sem vlož obsah týmu */}
         {isTeamVisible && (
           <div className="team-content">
@@ -111,9 +136,23 @@ const About: React.FC = () => {
               </div>
             </div>
           </div>
-        )}
+        )}  
+        {isHorseVisible && (
+  <div className="horse-content-conatiner">
+    {horseData.map((horse, index) => (
+      <HorseTeam
+        key={index}
+        name={horse.name}
+        origin={horse.origin}
+        born={horse.born}
+        breeder={horse.breeder}
+        owner={horse.owner}
+        description={horse.description}
+      />
+    ))}
+  </div>
+)}
       </div>
-
       <OurService />
       <Foto />
     </section>

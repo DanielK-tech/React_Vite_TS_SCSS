@@ -128,7 +128,8 @@ const Header: React.FC = () => {
                 <div className="menu-icon" onClick={toggleMenu}>
                     <i className="fa-solid fa-bars"></i>
                 </div>
-            </nav>
+            </nav> 
+            {/* Mini menu */}
             <div
                 className="menu-container-mini"
                 style={{ display: isMenuOpen ? "block" : "none" }}
@@ -150,7 +151,7 @@ const Header: React.FC = () => {
                            <div className="submenuContainer"> 
                             <ul className="submenu" id="Submenu"> 
                             <li><NavLink to="/foto-galery"><i className="fa-solid fa-photo-film"></i>Fotogalerie</NavLink></li> {/* dodělat vlastní komponenty a routy v app */}
-                            <li><NavLink to="/hyporehabilitace">*3</NavLink></li>
+                            <li><NavLink to="/hobby-horsing"><i className="fa-solid fa-horse-head"></i>Hobby horsing</NavLink></li>
                             <li><NavLink to="/hyporehabilitace">*3</NavLink></li>
                             <li>*4</li>
                         </ul>

@@ -1,3 +1,64 @@
-@use "../partials/mixins" as *; 
+@use "../partials/mixins" as *;
 @use "../partials/variables" as *;
 
+.team-horse-content {
+    margin-top: 1rem;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 0rem;
+
+    h3 {
+        text-align: center;
+        font-size: 1.8rem;
+    }
+
+    .showcase {
+        p {
+            width: 100%;
+        }
+        //
+        position: relative;
+        display: flex;
+        // justify-content: center;
+        // align-items: center;
+        width: 380px;
+        height: auto;
+        transition: 0.5s;
+        &::before {
+            content: "";
+            position: absolute;
+            top: -15px;
+            left: 50px;
+            width: 50%;
+            height: 110%;
+            background: var(--contact-actvie-card);
+            @include border-radius(8px);
+            transform: skewX(15deg); /* zalomení bílého pozadí */
+            transition: 0.5s;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50px;
+            width: 50%;
+            height: 100%;
+            background: var(--contact-actvie-card);
+            @include border-radius(8px);
+            transform: skewX(15deg); /* zalomení bílého pozadí */
+            transition: 0.5s;
+
+            filter: blur(30px); /* rozostření */
+            transition: 0.5s;
+        }
+        &:hover::before,
+        &:hover::after {
+            transform: skewX(0deg);
+            left: 20px;
+            width: calc(100% - 190px); //<= uprava velikosti zeleného pozadí
+        }
+    }
+}
