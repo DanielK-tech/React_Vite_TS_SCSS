@@ -1,6 +1,7 @@
 @use "../partials/mixins" as *;
 @use "../partials/variables" as *;
 
+/**Skupina koní v navigaci*/
 .navPicture {
   position: fixed;
   display: flex;
