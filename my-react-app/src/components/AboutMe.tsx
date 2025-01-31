@@ -3,7 +3,9 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 /** Komponenty */
 import OurService from "./OurServices";
-import Foto from "./FotoSection";
+import Foto from "./FotoSection"; 
+//data 
+import "./data/dataKone";
 
 /** Styly */
 import "./AboutUs.scss";
@@ -50,7 +52,7 @@ const About: React.FC = () => {
           republiky.
         </p>
         <button className="btn" onClick={toggleTeamVisibility}>
-          <a href="#">Náš team</a>
+          Náš team
         </button>
         {/* Sem vlož obsah týmu */}
         {isTeamVisible && (

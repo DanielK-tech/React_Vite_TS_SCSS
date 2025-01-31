@@ -22,7 +22,7 @@
             left: 50px;
             width: 50%;
             height: 100%;
-            background: $contact-actvie-card;
+            background: var(--contact-actvie-card);
             @include border-radius(8px);
             transform: skewX(15deg); /* zalomení bílého pozadí */
             transition: 0.5s;
@@ -34,7 +34,7 @@
             left: 50px;
             width: 50%;
             height: 100%;
-            background: $contact-actvie-card;
+            background: var(--contact-actvie-card);
             @include border-radius(8px);
             transform: skewX(15deg); /* zalomení bílého pozadí */
             transition: 0.5s;
