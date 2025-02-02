@@ -81,8 +81,7 @@ footer {
 }
 h1 {
   font-size: 2.5rem;
-} 
-
+}
 
 /***********************
           100dvh  Kontakt
@@ -158,7 +157,7 @@ h1 {
 
   // Základní stav submenu - skryté
   .submenuContainer {
-    display: none ;
+    display: none;
     position: absolute;
     height: 100%;
     top: 100%; // Umístí submenu pod hlavní položku
@@ -167,7 +166,7 @@ h1 {
     padding-left: 1rem;
   }
   .submenu {
-    display: none ;
+    display: none;
     position: absolute;
 
     top: 110%; // Umístí submenu pod hlavní položku
@@ -199,12 +198,10 @@ h1 {
     .submenu {
       display: block;
       @media screen and (max-width: 950px) {
-         margin-left: 20rem;
-        
-      } 
+        margin-left: 20rem;
+      }
       @media screen and (max-width: 768px) {
         margin-left: 10rem;
-        
       }
     }
     .submenuContainer {
@@ -217,12 +214,14 @@ h1 {
 *** Univerzální konteiner ***
 ******************************/
 .container {
+  position: relative;
   // background-color: #ca2929;
   width: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   /* H4 */
   .Services {
     font-size: 1.2rem;
@@ -233,8 +232,9 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 20rem;
-    p {
+    height: 20rem;    
+    border: 2px solid red; //
+      p {
       position: absolute;
       bottom: 3.5rem;
     }

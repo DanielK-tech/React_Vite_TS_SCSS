@@ -2,7 +2,8 @@
 import React from "react";  
 /** Komponenty ** */
 import OurService from "./OurServices"; 
-import Foto from "./FotoSection"; 
+import Foto from "./FotoSection";  
+import Mainpicture from "./img/showFoto.jpg";
 /** Styl */ 
 import "./MainContext.scss";
 
@@ -18,14 +19,14 @@ const Main: React.FC = () => {
                 <p>
                     Jsme nezisková organizace zaměřená především na jezdecké
                     aktivity s dětmi a mládeží a hiporehabilitační aktivity v
-                    pedagogické a sociální praxi a v kontaktních terapiích.
-                </p>
-                <p>S dětmi se sportovně věnujeme i hobby horsingu.</p>
-                <p>
+                    pedagogické a sociální praxi a v kontaktních terapiích. <br />
+                S dětmi se sportovně věnujeme i hobby horsingu.                
                     Naší specialitou je osvěta ve výcviku a jezdeckém využití
                     zrakově znevýhodněných koní a poníků.
                 </p>
-                </div>
+                
+                </div> 
+                <img className="MainPicture" src={Mainpicture} alt="Rodina se dvěma koníky" />
             </div>
             <OurService />
             <Foto />
