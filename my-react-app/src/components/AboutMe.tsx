@@ -4,12 +4,15 @@ import { useNavigate, useLocation } from "react-router-dom";
 /** Komponenty */
 import OurService from "./OurServices";
 import Foto from "./FotoSection";  
-import HorseTeam from "./subComponents/HorseTeam";
+import HorseTeam from "./subComponents/HorseTeam"; 
+import PersonTeam from "./subComponents/PersonTeam";
 //data 
-import horseData from "./data/dataKone";
+import horseData from "./data/dataKone"; 
+import personData from "./data/personData";
 
 /** Styly */
-import "./AboutUs.scss";
+import "./AboutUs.scss"; 
+import Picture from "./img/Onas.jpg";
 
 const About: React.FC = () => {
   const navigate = useNavigate();
@@ -47,6 +50,7 @@ const About: React.FC = () => {
   return (
     <section className="HomeSection" id="Home" tabIndex={0}>
       <div className="aboutUs">
+          <img className="pictureOfUs" src={Picture} alt="Kůň, kterého hladí lidi" />
         <h2>O nás</h2>
         <p>
           Jsme malá stáj rodinného typu na severní Moravě. V roce 2024 jsme
@@ -69,9 +73,8 @@ const About: React.FC = () => {
           proto od našeho založení navázali úzkou spolupráci a nabízíme v tomto
           směru pomoc a poradenství majitelům především zde na severovýchodě
           republiky.
-        </p> 
+        </p>  
         <div className="buttons"> 
-
         <button className="btn" onClick={toggleTeam}>
           Náš team
         </button> 
@@ -81,60 +84,14 @@ const About: React.FC = () => {
         </div>
         {/* Sem vlož obsah týmu */}
         {isTeamVisible && (
-          <div className="team-content">
-            <div className="contact">
-              <span className="squareSpan"></span>
-              <div className="content">
-                <div className="face worker"></div>
-                <h3>Bc. Jana Pospíšilová </h3>
-                <p>
-                  od roku 2004 je držitelem ČJF licence instruktora jezdectví a
-                  věnuje se jezdeckému výcviku a sportovní přípravě dětí a
-                  mládeže, od roku 2009 se angažuje jako asistent a instruktor
-                  výcviku koní v hiporehabilitaci - od té doby je i
-                  individuálním členem ČHS a od roku 2024 členem pracovní
-                  skupiny Hiporehabilitace v kontaktní terapii. Od roku 2024 je
-                  též certifikovaným rozhodčím pro disciplíny parkur, skok
-                  mohutnosti a drezura pod Českou hobby horsingovou asociací a
-                  trenérsky vede sportovní kroužek hobby horsingu.
-                </p>
-              </div>
-            </div>
-            {/* další */}
-            <div className="contact">
-              <span className="squareSpan"></span>
-              <div className="content">
-                <div className="face worker"></div>
-                <h3>Eva Kolegarová, DiS </h3>
-                <p>
-                  již od dětských let se věnuje práci a aktivitám především se
-                  zdravotně znevýhodněnou mládeží, během studií se začala
-                  věnovat zooterapeutickým aktivitám včetně hiporehabilitace, má
-                  bohaté zkušenosti z fungování a praxi v mnoha
-                  hiporehabilitačních střediscích po celé ČR. Profesně se věnuje
-                  sociální práci s dětmi a mládeží, ve volném čase působí jako
-                  jedna z vedoucích 8. Přední hlídky Royal Rangers - Zlín. V
-                  roce 2024 úspěšně dokončila specializační kurz ČHS a stala se
-                  certifikovanou instruktorkou pro hiporehabilitaci v
-                  pedagogické a sociální práci pro ČR.
-                </p>
-              </div>
-            </div>
-            {/* další */}
-            <div className="contact">
-              <span className="squareSpan"></span>
-              <div className="content">
-                <div className="face worker"></div>
-                <h3>Petra Luzarová, DiS </h3>
-                <p>
-                  má dlouholeté zkušenosti s prací s dětmi a mládeží coby
-                  vedoucí vodáckého skautského spolku Poseidon. Aktuálně se
-                  zaměřuje zejména na vozatajské aktivity s poníky, je hlavním
-                  mentorem v přípravě práce na ruce na oprati a přípravě na
-                  zápřah.
-                </p>
-              </div>
-            </div>
+          <div className="team-content"> 
+          {personData.map((person, index) => ( 
+            <PersonTeam 
+              key={index} 
+              name={person.name} 
+              text={person.text}
+            /> 
+          ))}            
           </div>
         )}  
         {isHorseVisible && (

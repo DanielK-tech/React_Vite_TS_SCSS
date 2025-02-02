@@ -9,9 +9,20 @@
   background: $content-background;
   box-shadow: $box-shadow;
   text-align: left;
-  width: 80%; 
-  .buttons{ 
-    display: flex; 
+  width: 80%;
+  .pictureOfUs {
+    position: absolute;
+    right: 50px;
+    top: 1rem;
+    width: 38%;
+    @include border-radius(300px 100px 30px 400px);
+
+    @media screen and (max-width: 1280px) {
+      display: none;
+    }
+  }
+  .buttons {
+    display: flex;
     justify-content: space-around;
   }
   h2 {
@@ -22,27 +33,23 @@
   p {
     text-align: justify;
     line-height: 1.5;
-    margin-top: 1rem; 
+    margin-top: 1rem;
     font-size: 1.5rem;
     padding: 1rem;
     width: 50%;
-    @media (max-width: 768px) {
+    @media (max-width: 1280px) {
       width: 100%;
     }
   }
   button {
     margin-left: 1rem;
-    margin-bottom: 1rem; 
-    
+    margin-bottom: 1rem;
   }
-  .btn{ 
-    font-size: 1.2rem;  
+  .btn {
+    font-size: 1.2rem;
     color: $BTN-color-text;
-    ;
-     
-    &:active{
+    &:active {
       color: $Red-color;
-      
     }
   }
 }
@@ -57,8 +64,8 @@
   justify-content: space-around;
   flex-wrap: wrap;
   width: 100%;
-  gap: 1rem; 
-  
+  gap: 1rem;
+
   h3 {
     text-align: center;
   }
@@ -68,8 +75,6 @@
   .contact {
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
     width: 380px;
     height: auto;
     transition: 0.5s;
@@ -79,7 +84,7 @@
       top: -15px;
       left: 50px;
       width: 50%;
-      height: 110%;
+      height: 103%;
       background: var(--contact-actvie-card);
       @include border-radius(8px);
       transform: skewX(15deg); /* zalomení bílého pozadí */
@@ -166,7 +171,7 @@
     }
     //
     &:hover .squareSpan::after {
-      bottom: -50px;
+      bottom: -70px;
       right: 5px;
       width: 100px;
       height: 100px;
@@ -183,36 +188,44 @@
       backdrop-filter: blur(10px);
       z-index: 1;
       transform: 0.5s;
-      text-align: left; 
-       p{ 
-        font-size: 1.0rem;
+      text-align: left;
+      p {
+        font-size: 1rem;
       }
       .face {
         height: 15rem;
         background-color: $Green;
         @include border-radius(50%);
-      } 
-     
+      }
     }
     //druhý span
-    &:nth-of-type(2):hover .squareSpan::after {
-      bottom: -70px;
-    }
-    //posdlení div
-    &:last-of-type {
-      height: 640px;
+    // &:nth-of-type(2):hover .squareSpan::after {
+    //   bottom: -70px;
+    // }
+    // //posdlení div
+    // &:last-of-type {
+    //   height: 640px;
 
-      &::before {
-        height: 100%;
-        top: 3px;
-        left: 80px;
-      }
-      &::after {
-        height: 100%;
-      }
-      @media (max-width: 768px) {
-        height: 100%;
-      }
-    }
+    //   &::before {
+    //     height: 100%;
+    //     top: 3px;
+    //     left: 80px;
+    //   }
+    //   &::after {
+    //     height: 100%;
+    //   }
+    //   @media (max-width: 768px) {
+    //     height: 100%;
+    //   }
+    // }
   }
+}
+/****************************
+  *  Komponenta  s koňmi
+ *************************************/
+
+.horse-content-conatiner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }

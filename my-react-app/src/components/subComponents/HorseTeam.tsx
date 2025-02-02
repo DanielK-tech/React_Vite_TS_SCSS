@@ -17,11 +17,11 @@ const HorseTeam: React.FC<HorseProps> = ({name, origin, born, breeder, owner, de
             <span className="squareSpaner"></span>
             <div className="contente"> 
                 <div className="Horse"></div> 
-                <h2>Jméno: {name}</h2> 
-                <h3>Plemeno: {origin}</h3> 
-                <h3>Narození: {born}</h3> 
-                <h3>Chovatel: {breeder}</h3> 
-                <h3>Vlastník: {owner}</h3> 
+                <h2>{name}</h2> 
+                <h3> <span className="backgroudnder">Plemeno:</span> {origin}</h3> 
+                <h3><span className="backgroudnder">Narození:</span> {born}</h3> 
+                <h3><span className="backgroudnder">Chovatel:</span> {breeder}</h3> 
+                <h3><span className="backgroudnder">Vlastník:</span> {owner}</h3> 
                 <p>{description}</p>
             </div>
         </div>
