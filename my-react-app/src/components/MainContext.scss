@@ -39,8 +39,15 @@
   top: 4.5rem;
   right: -5rem;
   width: 48%;
+  box-shadow: $box-shadow;
   @include border-radius(400px 100px 100px 100px);
+  transition: 1s;
   @media screen and (max-width: 1000px) {
     display: none;
+  }
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.1) rotate(10deg);
+    }
   }
 }

@@ -160,8 +160,8 @@ h1 {
     display: none;
     position: absolute;
     height: 100%;
-    top: 100%; // Umístí submenu pod hlavní položku
-    left: 0;
+    top: -1.5rem; // Umístí submenu pod hlavní položku
+    left: 15rem;
     padding-top: 2.5rem;
     padding-left: 1rem;
   }
@@ -170,17 +170,18 @@ h1 {
     position: absolute;
 
     top: 110%; // Umístí submenu pod hlavní položku
-    left: -100%;
+    left: -150%;
     padding-top: 2.5rem;
     padding-left: 1rem;
-    min-width: 300px;
+    min-width: 40rem;
 
     background-color: var(--body-color);
     @include border-radius(5px);
     box-shadow: 2px 3px 16px 10px $black-color;
 
     li {
-      margin: 0 auto;
+      // margin: 0 auto;
+      text-align: left;
       i {
         font-size: 1.5rem;
         padding-right: 10px;
@@ -232,9 +233,9 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 20rem;    
+    height: 20rem;
     border: 2px solid red; //
-      p {
+    p {
       position: absolute;
       bottom: 3.5rem;
     }

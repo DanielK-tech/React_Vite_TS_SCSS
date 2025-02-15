@@ -133,7 +133,85 @@
 }
 
 /**********************************
-               Kartičky
+               Aktivity
 ***********************************/
-@mixin cardEfect {
+@mixin ActivityComponent {
+  .ActivityContent {
+    text-align: center;
+    width: 80%;
+    box-shadow: $box-shadow;
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin-bottom: 1rem;
+    h2 {
+      font-size: 2rem;
+      padding: 1rem;
+    }
+    .ActivityContentContainer {
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      .TextContent {
+        width: 50%;
+        font-size: 1.5rem;
+        p {
+          text-align: justify;
+          line-height: 1.5;
+          margin-top: 1rem;
+          padding: 1rem;
+          @media screen and (max-width: 458px) {
+            text-align: center;
+          }
+        }
+        @media screen and (max-width: 1280px) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+/**********************************
+          Obrázky v aktivitách
+***********************************/
+@mixin PictureAbilities($Space) {
+  flex: 1;
+  height: 25rem;
+  background-position: center;
+  background-size: cover;
+  margin-right: 1rem;
+  margin-top: $Space;
+  @include border-radius(250px 100px 220px 100px);
+  box-shadow: $box-shadow;
+  transition: 1s;
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.1) rotate(10deg);
+    }
+  }
+  @media screen and (max-width: 1280px) {
+    display: none;
+  }
+}
+/** Další obrázek **/
+@mixin SeconPictureAbilite {
+  position: absolute;
+  height: 25rem;
+  width: 45%;
+  background-size: cover;
+  bottom: 1rem;
+  right: 1rem;
+  @include border-radius(250px 100px 220px 100px);
+  box-shadow: $box-shadow;
+  transition: 1s;
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.1) rotate(10deg);
+    }
+  }
+  @media screen and (max-width: 1280px) {
+    display: none;
+  }
 }

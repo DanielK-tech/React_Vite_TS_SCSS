@@ -4,6 +4,7 @@ import React from "react";
 import OurService from "./OurServices"; 
 import Foto from "./FotoSection";  
 import Mainpicture from "./img/showFoto.jpg";
+
 /** Styl */ 
 import "./MainContext.scss";
 

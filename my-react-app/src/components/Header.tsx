@@ -96,8 +96,10 @@ const Header: React.FC = () => {
                         <ul className="submenu" id="Submenu"> 
                             <li><NavLink to="/foto-galery"><i className="fa-solid fa-photo-film"></i>Fotogalerie</NavLink></li> {/* dodělat vlastní komponenty a routy v app */}
                             <li><NavLink to="/hobby-horsing"><i className="fa-solid fa-horse-head"></i>Hobby horsing</NavLink></li>
-                            <li><NavLink to="/hyporehabilitace">*3</NavLink></li>
-                            <li>*4</li>
+                            <li><NavLink to="/jezdecky-klub"><i className="fa-solid fa-horse"></i>Jezdecký klub</NavLink></li>
+                            <li><NavLink to="/pony-skolicka"><i className="fa-solid fa-school-flag"></i>Pony školička </NavLink></li>
+                            <li><NavLink to="/hiporehabilitace-praxe"><i className="fa-solid fa-house-user"></i>Hiporehabilitace v pedagogickéa sociální praxi </NavLink></li>
+                            <li><NavLink to="/hyporehabilitace-kontakt"><i className="fa-solid fa-house-medical"></i>Hiporehabilitace v kontaktní terapii</NavLink></li>
                         </ul>
                     </li>
                     <li>
@@ -151,7 +153,7 @@ const Header: React.FC = () => {
                            <div className="submenuContainer"> 
                             <ul className="submenu" id="Submenu"> 
                             <li><NavLink to="/foto-galery"><i className="fa-solid fa-photo-film"></i>Fotogalerie</NavLink></li> {/* dodělat vlastní komponenty a routy v app */}
-                            <li><NavLink to="/hobby-horsing"><i className="fa-solid fa-horse-head"></i>Hobby horsing</NavLink></li>
+                            <li><NavLink to="/hobby-horsing/"><i className="fa-solid fa-horse-head"></i>Hobby horsing</NavLink></li>
                             <li><NavLink to="/hyporehabilitace">*3</NavLink></li>
                             <li>*4</li>
                         </ul>

@@ -1,0 +1,14 @@
+@use "../partials/mixins" as *;
+@use "../partials/variables" as *;
+
+@include ActivityComponent;
+
+.backgroundPicture010 {
+  background-image: var(--HipoContact);
+  @include PictureAbilities(-0.5rem);
+}
+.backgroundPicture020 {
+  background-image: var(--HipoContact2);
+  background-position: 55% 40%;
+  @include SeconPictureAbilite;
+}
