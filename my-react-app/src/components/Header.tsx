@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
-import React from "react";
 import { NavLink } from "react-router-dom"; 
 
-//Link, 
+//styl 
+import "./Header.scss";
 /* ikonky */ 
 import "./subComponents/navPictures.scss"
 //obrázky 
 import logo from "./img/Logo.png"; 
 import cross from "./img/cross.png";
+import indianHorse from "./img/indianHorse.png";
 
 const Header: React.FC = () => {
     // Stav pro režim (Light/Dark)
@@ -94,6 +95,7 @@ const Header: React.FC = () => {
                            <i className="fa fa-chevron-down" aria-hidden="true"></i>
                             </div>   
                         <ul className="submenu" id="Submenu"> 
+                            <img className="IndianHorse" src={indianHorse} alt="" />
                             <li><NavLink to="/foto-galery"><i className="fa-solid fa-photo-film"></i>Fotogalerie</NavLink></li> {/* dodělat vlastní komponenty a routy v app */}
                             <li><NavLink to="/hobby-horsing"><i className="fa-solid fa-horse-head"></i>Hobby horsing</NavLink></li>
                             <li><NavLink to="/jezdecky-klub"><i className="fa-solid fa-horse"></i>Jezdecký klub</NavLink></li>
@@ -151,11 +153,13 @@ const Header: React.FC = () => {
                           {/* přidat vyjíždějící menu */}
                            <a href="#">Aktivity </a> 
                            <div className="submenuContainer"> 
-                            <ul className="submenu" id="Submenu"> 
+                            <ul className="submenu miniMenu" id="Submenu"> 
                             <li><NavLink to="/foto-galery"><i className="fa-solid fa-photo-film"></i>Fotogalerie</NavLink></li> {/* dodělat vlastní komponenty a routy v app */}
                             <li><NavLink to="/hobby-horsing/"><i className="fa-solid fa-horse-head"></i>Hobby horsing</NavLink></li>
-                            <li><NavLink to="/hyporehabilitace">*3</NavLink></li>
-                            <li>*4</li>
+                            <li><NavLink to="/jezdecky-klub"><i className="fa-solid fa-horse"></i>Jezdecký klub</NavLink></li>
+                            <li><NavLink to="/pony-skolicka"><i className="fa-solid fa-school-flag"></i>Pony školička </NavLink></li>
+                            <li><NavLink to="/hiporehabilitace-praxe"><i className="fa-solid fa-house-user"></i>Hiporehabilitace v pedagogickéa sociální praxi </NavLink></li>
+                            <li><NavLink to="/hyporehabilitace-kontakt"><i className="fa-solid fa-house-medical"></i>Hiporehabilitace v kontaktní terapii</NavLink></li>
                         </ul>
                            </div>
                         

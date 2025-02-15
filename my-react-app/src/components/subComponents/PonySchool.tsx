@@ -19,7 +19,7 @@ const PonySchool:React.FC = () => {
             <div className="backgroundPicture001"></div>
             <div className="backgroundPicture002"></div>
         </div>
-      </div>
+      </div>      
     </section>
   )
 }

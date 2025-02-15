@@ -19,6 +19,7 @@ const HipoContact: React.FC = () => {
             <div className="backgroundPicture020"></div>
         </div>
       </div>
+     
     </section>
   )
 }

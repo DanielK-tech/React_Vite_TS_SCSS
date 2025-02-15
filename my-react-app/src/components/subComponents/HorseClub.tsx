@@ -18,7 +18,7 @@ const HorseClub: React.FC = () => {
             <div className="backgroundPicture02"></div>
         </div>
       </div>
-
+      
     </section>
 }
 

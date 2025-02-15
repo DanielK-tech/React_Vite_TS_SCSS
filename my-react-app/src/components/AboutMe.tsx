@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 //navigace
 import { useNavigate, useLocation } from "react-router-dom";
-/** Komponenty */
-import OurService from "./OurServices";
-import Foto from "./FotoSection";  
+/** Komponenty */ 
 import HorseTeam from "./subComponents/HorseTeam"; 
 import PersonTeam from "./subComponents/PersonTeam";
 //data 
@@ -110,8 +108,7 @@ const About: React.FC = () => {
   </div>
 )}
       </div>
-      <OurService />
-      <Foto />
+      
     </section>
   );
 };

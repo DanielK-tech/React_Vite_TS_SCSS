@@ -82,6 +82,9 @@ footer {
 h1 {
   font-size: 2.5rem;
 }
+a {
+  text-decoration: none;
+}
 
 /***********************
           100dvh  Kontakt
@@ -160,8 +163,8 @@ h1 {
     display: none;
     position: absolute;
     height: 100%;
-    top: -1.5rem; // Umístí submenu pod hlavní položku
-    left: 15rem;
+    top: 0.5rem; // Umístí submenu pod hlavní položku
+    left: 9rem;
     padding-top: 2.5rem;
     padding-left: 1rem;
   }
@@ -624,3 +627,8 @@ h1 {
   mask-size: cover;
   background-color: var(--body-color);
 }
+
+/***************
+Specialní navigace
+****************/
+@include SpecialNav;

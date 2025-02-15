@@ -1,8 +1,6 @@
 
 import React from "react";  
 /** Komponenty ** */
-import OurService from "./OurServices"; 
-import Foto from "./FotoSection";  
 import Mainpicture from "./img/showFoto.jpg";
 
 /** Styl */ 
@@ -29,8 +27,7 @@ const Main: React.FC = () => {
                 </div> 
                 <img className="MainPicture" src={Mainpicture} alt="Rodina se dvěma koníky" />
             </div>
-            <OurService />
-            <Foto />
+          
         </section>
     );
 };

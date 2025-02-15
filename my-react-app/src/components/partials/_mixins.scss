@@ -215,3 +215,14 @@
     display: none;
   }
 }
+
+/******************
+    Speciální navigace
+******************/
+@mixin SpecialNav {
+  .SpecialNav {
+    text-decoration: none;
+    color: var(--black-color);
+    background-color: $GreyColor;
+  }
+}
