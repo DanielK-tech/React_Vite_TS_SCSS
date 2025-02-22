@@ -39,6 +39,8 @@ $HipoSoc: url("../img/akce03.jpg");
 $HipoSoc2: url("../img/img2.jpg");
 $HipoContact: url("../img/img5.jpg");
 $HipoContact2: url("../img/img6.jpg");
+$ContactUs: url("../img/Z1Luis001.jpg");
+$ContactUs2: url("../img/Z2Latney003.jpg");
 /**Sub Menu*/
 $Sub-menu-image: url("../img/indianHorse.png");
 
@@ -66,6 +68,8 @@ $Sub-menu-image: url("../img/indianHorse.png");
   --HipoSoc2: #{$HipoSoc2};
   --HipoContact: #{$HipoContact};
   --HipoContact2: #{$HipoContact2};
+  --ContactUs: #{$ContactUs};
+  --ContactUs2: #{$ContactUs2};
 }
 [data-theme="dark"] {
   --body-color: #333;
@@ -87,4 +91,6 @@ $Sub-menu-image: url("../img/indianHorse.png");
   --HipoSoc2: url("../img/img0.jpg");
   --HipoContact: url("../img/img4.jpg");
   --HipoContact2: url("../img/img7.jpg");
+  --ContactUs: url("../img/Z3Drago001.jpg");
+  --ContactUs2: url("../img/Z4Azazela002.jpg");
 }

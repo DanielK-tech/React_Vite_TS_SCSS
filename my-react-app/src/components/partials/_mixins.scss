@@ -226,3 +226,31 @@
     background-color: $GreyColor;
   }
 }
+/**********************************
+          Obrázky v ContactUS
+***********************************/
+@mixin ContacUsPicture( $Background) {
+  background-image: $Background;
+  position: absolute;
+  
+  top: -2rem;
+  height: 25rem;
+  width: 40rem;
+  background-position: center;
+  background-size: cover;
+  @include border-radius(200px 100px 50px 400px);
+  transition: 1s;
+  box-shadow: $box-shadow;
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.1) rotate(10deg);
+    }
+  }
+  @media screen and (max-width: 1280px) {
+    //
+    width: 20rem;
+  }
+  @media screen and (max-width: 880px) {
+    display: none;
+  }
+}

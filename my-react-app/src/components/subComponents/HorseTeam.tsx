@@ -1,6 +1,5 @@
 import "./Horseteam.scss";
-// import Horse from "../horseImg/Azazela005.jpg";
-
+/**Vite trick na dynamické načtení URL obrázků */
 const images = import.meta.glob("../horseImg/*.jpg", { eager: true }) as {
   [key: string]: { default: string };
 };

@@ -11,9 +11,14 @@
   background-size: cover;
   top: -2.5rem;
   left: 15rem;
-  z-index: 10000000000000000; 
+  z-index: 10000000000000000;
+  transition: 1s;
+  &.scrolled {
+    width: 20rem;
+    height: 7rem;
+    background-size: cover;
+  }
   @media screen and (max-width: 950px) {
     display: none;
-    
   }
 }
