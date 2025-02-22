@@ -102,7 +102,8 @@ const About: React.FC = () => {
         born={horse.born}
         breeder={horse.breeder}
         owner={horse.owner}
-        description={horse.description}
+        description={horse.description} 
+        imageName={horse.imageName}
       />
     ))}
   </div>
