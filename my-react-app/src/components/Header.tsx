@@ -1,5 +1,7 @@
-import { useState, useEffect } from "react";
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+//
+import { UIContext } from "./utils/UIContext";
 
 //styl
 import "./Header.scss";
@@ -11,68 +13,16 @@ import cross from "./img/cross.png";
 import indianHorse from "./img/indianHorse.png";
 
 const Header: React.FC = () => {
-  // Stav pro režim (Light/Dark)
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    const savedMode = localStorage.getItem("theme"); // Získání hodnoty z localStorage
-    return savedMode === "dark"; // Nastavení na true, pokud je "dark"
-  });
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Stav pro menu
-  const [isScrolled, setIsScrolled] = useState(false); // Nový stav pro scrollování
-
-  // Přepínání režimu
-  const toggleMode = () => {
-    setIsDarkMode((prevMode) => {
-      const newMode = !prevMode;
-      document.body.setAttribute("data-theme", newMode ? "dark" : "light");
-      // Uložení do localStorage
-      localStorage.setItem("theme", newMode ? "dark" : "light");
-      return newMode;
-    });
-  };
-
-  // Efekt pro nastavení režimu při načtení stránky
-  useEffect(() => {
-    const savedMode = localStorage.getItem("theme");
-    if (savedMode) {
-      document.body.setAttribute("data-theme", savedMode);
-    }
-  }, []);
-
-  // Efekt pro detekci scrollování
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true); // Scrollováno dolů
-      } else {
-        setIsScrolled(false); // Není scrollováno
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll); // Cleanup
-  }, []);
-
-  // Funkce pro scrollování nahoru
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  // Přepnutí zobrazení menu
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
-
-  //odkazy
-  const Hippos = () => {
-    window.open("https://hiporehabilitace-cr.com/", "_blank");
-  };
-
-  const Register = () => {
-    window.open(
-      "https://hiporehabilitace-cr.com/provozovatele-hiporehabilitace/registrovana-strediska/",
-      "_blank"
-    );
-  };
+  const {
+    isDarkMode,
+    toggleMode,
+    isMenuOpen,
+    toggleMenu,
+    isScrolled,
+    scrollToTop,
+    Hippos,
+    Register,
+  } = useContext(UIContext);
 
   return (
     <header>

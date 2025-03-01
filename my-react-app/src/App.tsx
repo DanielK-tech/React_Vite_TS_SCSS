@@ -17,6 +17,8 @@ import HipoContact from "./components/subComponents/HipoContact";
 /**FotoGalerie */
 import GaleryPhoto from "./components/subComponents/PhotoGalery";
 import "leaflet/dist/leaflet.css"; //Mapa!!!!!!!!!!
+//Globální logika 
+import UIContextProvider from "./components/utils/UIContext";
 
 function Layout() {
   const location = useLocation();
@@ -53,9 +55,11 @@ function Layout() {
 
 function App() {
   return (
+    <UIContextProvider>
     <BrowserRouter>
       <Layout />
     </BrowserRouter>
+    </UIContextProvider>
   );
 }
 
