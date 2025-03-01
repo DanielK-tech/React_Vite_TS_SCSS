@@ -1,15 +1,6 @@
 import "./Horseteam.scss";
-/**Vite trick na dynamické načtení URL obrázků */
-const images = import.meta.glob("../horseImg/*.jpg", { eager: true }) as {
-  [key: string]: { default: string };
-};
-
-// Funkce, která na základě jména souboru (např. "Azazela005.jpg")
-// vyhledá správnou URL v objektu images.
-const getImageUrl = (fileName: string): string => {
-  const imageKey = Object.keys(images).find((key) => key.endsWith(fileName));
-  return imageKey ? images[imageKey].default : "";
-};
+//globální logika
+import { getImageUrl } from "../utils/getImageUrl";
 
 interface HorseProps {
   name: string;
@@ -30,7 +21,8 @@ const HorseTeam: React.FC<HorseProps> = ({
   description,
   imageName,
 }) => {
-  const backgroundImageUrl = getImageUrl(imageName);
+  const backgroundImageUrl = getImageUrl("horseImg", imageName);
+
   return (
     <div className="team-horse-content">
       <div className="showcase">
@@ -46,7 +38,6 @@ const HorseTeam: React.FC<HorseProps> = ({
           ></div>
           <h2>{name}</h2>
           <h3>
-            {" "}
             <span className="backgroudnder">Plemeno:</span> {origin}
           </h3>
           <h3>

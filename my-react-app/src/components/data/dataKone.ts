@@ -100,7 +100,7 @@ const horse: Horse[] = [
     owner: "SK Blind Guardians",
     description:
       "Silvu, které se údajně už neřekne jinak než Sindy jsme jako klub přijali začátkem roku 2025. Její majitelka se dostala do tíživé osobní situace a nebyla schopná klisně zajistit vhodný management. Klisna trpí v důsledku onemocnění leptospirózou tzv. měsíční slepotou, chorobou způsobující dočasnou až trvalou ztrátu zraku. Malou část zraku má zatím zachovánu, nicméně oči nejsou v optimálním stavu a klisnu musíme připravit na život v trvalé slepotě. Klisna by i přes svůj handicap měla být charakterní a plně jezdecky využitelná. Je kontaktní a přátelská i k dětem, až se adaptuje v novém prostředí budeme jí připravovat pro práci s dětmi a mládeží v jezdeckém klubu, případně i pro využití v parajezdeckém sportu pokud její povaha dovolí. ",
-    imageName: "CLatney002.jpg",
+    imageName: "Silva002.jpg",
   },
 ];
 

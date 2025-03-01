@@ -87,7 +87,8 @@ const About: React.FC = () => {
             <PersonTeam 
               key={index} 
               name={person.name} 
-              text={person.text}
+              text={person.text} 
+              imgPicture={person.imgPicture}
             /> 
           ))}            
           </div>
