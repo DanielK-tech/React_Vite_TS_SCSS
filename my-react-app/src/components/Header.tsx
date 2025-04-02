@@ -1,8 +1,7 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-//
+//globální logika
 import { UIContext } from "./utils/UIContext";
-
 //styl
 import "./Header.scss";
 /* ikonky */
