@@ -1,5 +1,5 @@
-@use "./partials/mixins" as *;
-@use "./partials/variables" as *;
+@use "../components/partials/mixins" as *;
+@use "../components/partials/variables" as *;
 
 .cookie-dialog {
     left: 50rem;
@@ -10,7 +10,7 @@
     padding: 1.5rem;
     max-width: 500px;
     text-align: center;
-    font-family: Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
     background-color: white;
     z-index: 1000;
     &::backdrop {

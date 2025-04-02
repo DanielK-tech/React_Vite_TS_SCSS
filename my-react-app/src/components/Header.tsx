@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 //globální logika
 import { UIContext } from "./utils/UIContext";
 //styl
-import "./Header.scss";
+import "../styles/header.scss";
 /* ikonky */
 import "./subComponents/navPictures.scss";
 //obrázky

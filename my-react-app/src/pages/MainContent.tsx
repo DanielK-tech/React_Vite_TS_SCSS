@@ -1,10 +1,10 @@
 
 import React from "react";  
 /** Komponenty ** */
-import Mainpicture from "./img/showFoto.jpg";
+import Mainpicture from "../components/img/showFoto.jpg";
 
 /** Styl */ 
-import "./MainContext.scss";
+import "../styles/mainContext.scss";
 
 const Main: React.FC = () => {
     return (

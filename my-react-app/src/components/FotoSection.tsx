@@ -1,5 +1,7 @@
 import { UIContext } from "./utils/UIContext";
-import { useContext, useState, useEffect, useCallback } from "react";
+import { useContext, useState, useEffect, useCallback } from "react"; 
+/** scss */ 
+import "../styles/fotosection.scss";
 
 /** Obrázky ****/
 import Horse1 from "./img/Horse1.jpg";
@@ -74,13 +76,25 @@ const SlidingImages: React.FC = () => {
     // Scroll functions
     const scrollLeft = useCallback(() => {
         setIsPaused(true);
-        setPosition((prev) => prev + imageWidth);
-    }, [imageWidth]);
+        setPosition((prev) => {
+            // If already at the beginning or close to it, jump to the end
+            if (prev >= 0) {
+                return -(photos.length - 1) * imageWidth;
+            }
+            return prev + imageWidth;
+        });
+    }, [imageWidth, photos.length]);
 
     const scrollRight = useCallback(() => {
         setIsPaused(true);
-        setPosition((prev) => prev - imageWidth);
-    }, [imageWidth]);
+        setPosition((prev) => {
+            // If already at the end or close to it, jump to the beginning
+            if (prev <= -(photos.length - 1) * imageWidth) {
+                return 0;
+            }
+            return prev - imageWidth;
+        });
+    }, [imageWidth, photos.length]);
 
     return (
         <section className="HomeSection" id="Home" tabIndex={0}>

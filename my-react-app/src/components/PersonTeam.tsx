@@ -1,5 +1,5 @@
-import "./PersonTeam.scss";
-import { getImageUrl } from "../utils/getImageUrl";
+import "../styles/personTeam.scss";
+import { getImageUrl } from "./utils/getImageUrl";
 
 interface PersonProps {
   name: string;

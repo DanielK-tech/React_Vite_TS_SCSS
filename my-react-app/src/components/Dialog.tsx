@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react"; 
 // 
-import "./Dialog.scss";
+import "../styles/dialog.scss";
 
 const Dialog: React.FC = () => { 
      interface CookiePreferences {
