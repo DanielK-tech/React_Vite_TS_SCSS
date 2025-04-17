@@ -1,0 +1,12 @@
+@use "../components/partials/mixins" as *;
+@use "../components/partials/variables" as *;
+@include ActivityComponent;
+
+.backgroundPicture001 {
+  background-image: var(--Pony-School);
+  @include PictureAbilities(-1.5rem);
+}
+.backgroundPicture002 {
+  background-image: var(--Pony-School2);
+  @include SeconPictureAbilite;
+}

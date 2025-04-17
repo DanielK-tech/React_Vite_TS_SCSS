@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
-import "./OurService.scss";
+/**scss */
+import "../styles/OurService.scss";
 const OurService: React.FC = () => {
   // Funkce pro scrollování nahoru
   const scrollToTop = () => {

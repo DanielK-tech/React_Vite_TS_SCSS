@@ -1,0 +1,16 @@
+@use "../components/partials/mixins" as *;
+@use "../components/partials/variables" as *;
+
+@include ActivityComponent;
+
+.backgroundPicture {
+  background-image: var(--Hoby-Horsing);
+  @include PictureAbilities(2.5rem);
+}
+.backgroundPicture2 {
+  background-image: var(--Hoby-Horsing2);
+
+  @include SeconPictureAbilite;
+}
+
+

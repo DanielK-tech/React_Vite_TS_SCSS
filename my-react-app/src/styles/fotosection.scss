@@ -1,0 +1,61 @@
+@use "../components/partials/mixins" as *;
+@use "../components/partials/variables" as *;
+
+/*********************************
+         Foto Sekce Komponenta 
+***********************************/
+.sliding-images-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Skryje obrázky mimo viewport */
+    background-color: var(--body-color);
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    //
+    .sliding-images-track {
+        display: flex;
+        width: fit-content;
+        animation: none !important;
+        transition: transform 0.3s ease-out;
+        img {
+            width: 450px; /* Nastavte šířku obrázku */
+            height: 450px;
+            margin-right: 10px; /* Mezera mezi obrázky */
+            @include border-radius(5px);
+        }
+    }
+    .arrow-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 10;
+        transition: background-color 0.3s;
+
+        &.left {
+            left: 10px;
+        }
+
+        &.right {
+            right: 10px;
+        }
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        i {
+            font-size: 18px;
+        }
+    }
+}

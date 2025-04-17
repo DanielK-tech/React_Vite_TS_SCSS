@@ -245,10 +245,14 @@
     &:hover {
       transform: scale(1.1) rotate(10deg);
     }
-  }
-  @media screen and (max-width: 1280px) {
+  } 
+  @media screen and (max-width: 1880px) {
     //
-    width: 20rem;
+    width: 35rem;
+  }
+  @media screen and (max-width: 1480px) {
+    //
+    width: 28rem;
   }
   @media screen and (max-width: 880px) {
     display: none;

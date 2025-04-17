@@ -1,16 +1,15 @@
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
-//
+//globální logika
 import { UIContext } from "./utils/UIContext";
-
 //styl
-import "./Header.scss";
+import "../styles/header.scss";
 /* ikonky */
-import "./subComponents/navPictures.scss";
+import "../styles/navPictures.scss";
 //obrázky
-import logo from "./img/Logo.png";
-import cross from "./img/cross.png";
-import indianHorse from "./img/indianHorse.png";
+import logo from "/img/Logo.png";
+import cross from "/img/cross.png";
+import indianHorse from "/img/indianHorse.png";
 
 const Header: React.FC = () => {
   const {

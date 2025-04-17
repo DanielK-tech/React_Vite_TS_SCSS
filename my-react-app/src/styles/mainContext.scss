@@ -1,0 +1,53 @@
+@use "../components/partials/mixins" as *;
+@use "../components/partials/variables" as *;
+
+.mainText {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+  box-shadow: $box-shadow;
+  padding: 1rem;
+  min-height: 70dvh;
+  h1 {
+    text-align: center;
+  }
+  p {
+    text-align: justify;
+    line-height: 1.5;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    font-size: 1.5rem;
+    width: 50%;
+    @media (max-width: 1000px) {
+      text-align: center;
+      width: 100%;
+      margin-right: 2rem;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+/**************************
+    * Obrázek
+**************************/
+
+.MainPicture {
+  position: absolute;
+  top: 4.5rem;
+  right: -5rem;
+  width: 48%;
+  box-shadow: $box-shadow;
+  @include border-radius(400px 100px 100px 100px);
+  transition: 1s;
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
+  @media (hover: hover) {
+    &:hover {
+      transform: scale(1.1) rotate(10deg);
+    }
+  }
+}
