@@ -1,11 +1,11 @@
-@use "../partials/mixins" as *;
-@use "../partials/variables" as *;
+@use "../components/partials/mixins" as *;
+@use "../components/partials/variables" as *;
 
 /**Skupina koní v navigaci*/
 .navPicture {
   position: fixed;
   display: flex;
-  background-image: url("../img/horseHerd.png");
+  background-image: url("/img/horseHerd.png");
   width: 20rem;
   height: 10rem;
   background-size: cover;

@@ -1,4 +1,4 @@
-import "./HipoSocial.scss";
+import "../styles/HipoSocial.scss";
 import { NavLink } from "react-router-dom";
 
 const HipoSocial: React.FC = () => {

@@ -1,7 +1,7 @@
 
 import React from "react";  
 /** Komponenty ** */
-import Mainpicture from "../components/img/showFoto.jpg";
+import Mainpicture from "/img/showFoto.jpg";
 
 /** Styl */ 
 import "../styles/mainContext.scss";

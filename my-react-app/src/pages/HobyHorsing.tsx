@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 /** Styl */
-import "./HobyHorsing.scss";
+import "../styles/HobyHorsing.scss";
 
 //vytvoř speciální třídu scss na text v aktivity co bude společná + struktura jako tady a obrázek
 const HobyHorsing: React.FC = () => { 

@@ -9,13 +9,13 @@ import Dialog from "./components/Dialog";
 import ContactUS from "./components/OurServices";
 import FotoSection from "./components/FotoSection";
 /***Subkomponenty  */
-import HobyHorsing from "./components/subComponents/HobyHorsing";
-import HorseClub from "./components/subComponents/HorseClub";
-import PonySchool from "./components/subComponents/PonySchool";
-import HipoSocial from "./components/subComponents/HipoSocial";
-import HipoContact from "./components/subComponents/HipoContact";
+import HobyHorsing from "./pages/HobyHorsing";
+import HorseClub from "./pages/HorseClub";
+import PonySchool from "./pages/PonySchool";
+import HipoSocial from "./pages/HipoSocial";
+import HipoContact from "./pages/HipoContact";
 /**FotoGalerie */
-import GaleryPhoto from "./components/subComponents/PhotoGalery";
+import GaleryPhoto from "./pages/PhotoGalery";
 import "leaflet/dist/leaflet.css"; //Mapa!!!!!!!!!!
 //Globální logika
 import UIContextProvider from "./components/utils/UIContext";

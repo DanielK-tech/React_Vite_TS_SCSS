@@ -1,4 +1,4 @@
-import "./HorseClub.scss";
+import "../styles/HorseClub.scss";
 
 
 

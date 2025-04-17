@@ -127,7 +127,7 @@ a {
     .obr1 {
         width: 6.8rem;
         height: 3.5rem;
-        background-image: url("../components/img/stredisko.png");
+        background-image: url("/img/stredisko.png");
         background-size: cover;
         background-position: center;
         @include border-radius(5px);
@@ -136,7 +136,7 @@ a {
     .obr2 {
         width: 6.8rem;
         height: 3.7rem;
-        background-image: url("../components/img/logoped1.jpg");
+        background-image: url("/img/logoped1.jpg");
         background-size: cover;
         background-position: center;
         @include border-radius(5px);

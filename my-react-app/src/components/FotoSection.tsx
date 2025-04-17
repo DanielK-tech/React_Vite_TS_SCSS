@@ -4,16 +4,16 @@ import { useContext, useState, useEffect, useCallback } from "react";
 import "../styles/fotosection.scss";
 
 /** Obrázky ****/
-import Horse1 from "./img/Horse1.jpg";
-import Horse2 from "./img/Horse2.jpg";
-import Horse3 from "./img/img0.jpg";
-import Horse4 from "./img/tel3.jpg";
-import Horse5 from "./img/img2.jpg";
-import Horse6 from "./img/trofej.jpg";
-import Horse7 from "./img/akce09.jpg";
-import Horse8 from "./img/akce16.jpg";
-import Horse9 from "./img/trofej1.jpg";
-import Horse10 from "./img/akce12.jpg";
+import Horse1 from "/img/Horse1.jpg";
+import Horse2 from "/img/Horse2.jpg";
+import Horse3 from "/img/img0.jpg";
+import Horse4 from "/img/tel3.jpg";
+import Horse5 from "/img/img2.jpg";
+import Horse6 from "/img/trofej.jpg";
+import Horse7 from "/img/akce09.jpg";
+import Horse8 from "/img/akce16.jpg";
+import Horse9 from "/img/trofej1.jpg";
+import Horse10 from "/img/akce12.jpg";
 
 // Pole s obrázky
 const photos: string[] = [

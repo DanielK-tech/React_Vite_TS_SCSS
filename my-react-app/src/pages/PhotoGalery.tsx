@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // Dynamický import obrázků pomocí Vite glob patternu
-const photoModules = import.meta.glob("../galery/*.{jpg,png}", { eager: true }); 
+const photoModules = import.meta.glob("../components/galery/*.{jpg,png}", { eager: true }); 
 
 // 2. Bezpečné zpracování s kontrolou čísel
 const photos = Object.entries(photoModules)

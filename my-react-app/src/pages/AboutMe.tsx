@@ -10,7 +10,7 @@ import personData from "../data/personData";
 
 /** Styly */
 import "../styles/aboutUs.scss";
-import Picture from "../components/img/Onas.jpg";
+import Picture from "/img/Onas.jpg";
 
 const About: React.FC = () => {
     const navigate = useNavigate();

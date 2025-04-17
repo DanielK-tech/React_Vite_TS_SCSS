@@ -1,4 +1,4 @@
-import "./PonySchool.scss";
+import "../styles/PonySchool.scss";
 
 
 

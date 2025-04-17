@@ -1,4 +1,4 @@
-import "./HipoContact.scss"; 
+import "../styles//HipoContact.scss"; 
 
 
 
