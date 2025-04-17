@@ -203,6 +203,13 @@
         height: 15rem;
         background-color: $Green;
         @include border-radius(50%);
+        transition: 1s;
+        @media (hover: hover) {
+          &:hover {
+            height: 25rem;
+            transform: scale(1.9) rotate(10deg);
+          }
+        }
       }
     }
     //druhý span

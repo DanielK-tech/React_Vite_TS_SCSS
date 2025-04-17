@@ -23,7 +23,7 @@
     }
     //
     position: relative;
-    display: flex;   
+    display: flex;
     width: 380px;
     height: auto;
     transition: 0.5s;
@@ -148,6 +148,16 @@
         height: 15rem;
         background-color: $Green;
         @include border-radius(50%);
+        transition: 1s;
+        
+        @media (hover: hover) {
+          &:hover {
+            width: 25rem;
+            height: 25rem;
+            transform: scale(1.9);
+            
+          }
+        }
       }
     }
   }
