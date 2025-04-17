@@ -1,0 +1,21 @@
+@use "../components/partials/mixins" as *;
+@use "../components/partials/variables" as *; 
+
+.BankAccount{ 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 1rem;  
+    color: $black-color; 
+    width: 10rem; 
+    text-align: center; 
+    font-weight: bold;
+    .ColorRed{ 
+        color: $Red-color; 
+        font-weight: bold;
+    }
+    p{ 
+        font-size: .9rem; 
+        
+    }
+}
