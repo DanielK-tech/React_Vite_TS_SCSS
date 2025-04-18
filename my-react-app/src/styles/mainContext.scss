@@ -25,6 +25,10 @@
       margin-right: 2rem;
     }
   }
+  @media screen and (min-width: 1921px) {
+    min-height: 50vh;
+    min-height: 50dvh;
+  }
   @media screen and (max-width: 1000px) {
     justify-content: space-around;
     align-items: center;

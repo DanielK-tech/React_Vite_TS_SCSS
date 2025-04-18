@@ -14,11 +14,11 @@
   box-shadow: $box-shadow;
   margin-bottom: 1rem;
   .PictureLeft {
-    @include ContacUsPicture(var(--ContactUs));
     left: -5rem;
+    @include ContacUsPicture(var(--ContactUs));
   }
   .PictureRight {
-    @include ContacUsPicture( var(--ContactUs2));
     right: -5rem;
+    @include ContacUsPicture( var(--ContactUs2));
   }
 }
