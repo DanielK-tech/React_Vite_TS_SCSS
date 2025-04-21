@@ -1,69 +1,95 @@
-import React from "react"; // Import React for types like ReactNode
+import React from "react";
 import "../styles/ribbonBorder.scss";
 
-// Define an interface for the component's props
 interface RibbonBorderProps {
-    children: React.ReactNode; // Type for children elements
-    fillColor?: string; // Optional string prop
-    strokeColor?: string; // Optional string prop
-    strokeWidth?: number; // Optional number prop
-    cutDepth?: number; // Optional number prop
+  children: React.ReactNode;
+  fillColor?: string;
+  strokeColor?: string;
+  strokeWidth?: number;
+  horseshoeWidth?: number;
+  horseshoeHeight?: number;
 }
 
-// Type the component using React.FC (Functional Component) and the props interface
 const RibbonBorder: React.FC<RibbonBorderProps> = ({
-    children,
-    fillColor = "#e1c671", // Výchozí zlatavá barva výplně
-    strokeColor = "#b8860b", // Výchozí tmavší barva okraje
-    strokeWidth = 1,
-    cutDepth = 15, // Hloubka/odsazení "zástřihu" stuhy
+  children,
+  fillColor = "#e1c671", // Gold fill color
+  strokeColor = "#b8860b", // Darker gold stroke color
+  strokeWidth = 2,
+  horseshoeWidth = 20, // Controls the width of the horseshoe opening
+  horseshoeHeight = 5, // Controls how tall the horseshoe prongs are
 }) => {
-    // Rozměry viewBoxu pro SVG - můžeme je nechat fixní, SVG se přizpůsobí
-    const viewBoxWidth = 200;
-    const viewBoxHeight = 50;
+  // SVG dimensions
+  const viewBoxWidth = 500;
+  const viewBoxHeight = 100;
 
-    // Vytvoření cesty (path) pro SVG stuhu
-    // M x y - Move to (začátek kreslení)
-    // L x y - Line to (rovná čára do bodu)
-    // Z - Close path (spojí konec s začátkem)
-    const pathData = `
-        M 0 ${cutDepth}
-        L ${cutDepth} 0
-        L ${viewBoxWidth - cutDepth} 0
-        L ${viewBoxWidth} ${cutDepth}
-        L ${viewBoxWidth} ${viewBoxHeight - cutDepth}
-        L ${viewBoxWidth - cutDepth} ${viewBoxHeight}
-        L ${cutDepth} ${viewBoxHeight}
-        L 0 ${viewBoxHeight - cutDepth}
-        Z
-    `;
+  // Calculate horseshoe points
+  const leftEdge = horseshoeWidth;
+  const rightEdge = viewBoxWidth - horseshoeWidth;
+  const topEdge = horseshoeHeight;
+  const bottomCurveY = viewBoxHeight - horseshoeHeight;
 
-    return (
-        <div className="ribbon-container">
-            {/* SVG element bude absolutně pozicován za obsahem */}
-            <svg
-                className="ribbon-svg"
-                viewBox={`0 0 ${viewBoxWidth} ${viewBoxHeight}`}
-                // Zachová poměr stran, ale roztáhne se, aby vyplnilo kontejner.
-                // Může lehce deformovat tvar, pokud má kontejner jiný poměr stran.
-                // Alternativy: 'xMidYMid meet' (zachová tvar, může nechávat mezery),
-                // 'xMidYMid slice' (zachová tvar, může oříznout)
-                preserveAspectRatio="none"
-                aria-hidden="true" // Skryje SVG před čtečkami obrazovky (je to dekorace)
-            >
-                <path
-                    d={pathData}
-                    fill={fillColor}
-                    stroke={strokeColor}
-                    strokeWidth={strokeWidth}
-                    // Zajišťuje, že se stroke vykreslí "dovnitř", aby nepřesahoval rozměry SVG
-                    vectorEffect="non-scaling-stroke"
-                />
-            </svg>
-            {/* Obsah bude relativně pozicován nad SVG */}
-            <div className="ribbon-content">{children}</div>
-        </div>
-    );
+  // Create the horseshoe path
+  // The path creates an outer horseshoe shape with nail holes
+  const pathData = `
+    M ${leftEdge} ${topEdge}
+    L ${leftEdge} ${topEdge + horseshoeHeight}
+    C ${leftEdge} ${viewBoxHeight}, ${rightEdge} ${viewBoxHeight}, ${rightEdge} ${
+    topEdge + horseshoeHeight
+  }
+    L ${rightEdge} ${topEdge}
+    
+    /* Inner curve to create the hollow part */
+    M ${leftEdge + horseshoeWidth / 2} ${topEdge + horseshoeHeight / 2}
+    L ${leftEdge + horseshoeWidth / 2} ${topEdge + horseshoeHeight}
+    C ${leftEdge + horseshoeWidth / 2} ${viewBoxHeight - horseshoeHeight / 2}, 
+      ${rightEdge - horseshoeWidth / 2} ${viewBoxHeight - horseshoeHeight / 2}, 
+      ${rightEdge - horseshoeWidth / 2} ${topEdge + horseshoeHeight}
+    L ${rightEdge - horseshoeWidth / 2} ${topEdge + horseshoeHeight / 2}
+  `;
+
+  // Create nail holes
+  const nailHoles = [];
+  for (let i = 0; i < 6; i++) {
+    const x = leftEdge + 10 + ((rightEdge - leftEdge - 20) * i) / 5;
+    const y = bottomCurveY - 10;
+    nailHoles.push(<circle key={i} cx={x} cy={y} r={3} fill={strokeColor} />);
+  }
+
+  return (
+    <div className="ribbon-container">
+      <svg
+        className="ribbon-svg"
+        viewBox={`0 0 ${viewBoxWidth} ${viewBoxHeight}`}
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <path
+          d={pathData}
+          fill="none"
+          stroke={strokeColor}
+          strokeWidth={strokeWidth}
+          strokeLinecap="round"
+          vectorEffect="non-scaling-stroke"
+        />
+        <path
+          d={`
+            M ${leftEdge} ${topEdge}
+            L ${leftEdge} ${topEdge + horseshoeHeight}
+            C ${leftEdge} ${viewBoxHeight}, ${rightEdge} ${viewBoxHeight}, ${rightEdge} ${
+            topEdge + horseshoeHeight
+          }
+            L ${rightEdge} ${topEdge}
+          `}
+          fill={fillColor}
+          stroke={strokeColor}
+          strokeWidth={strokeWidth}
+          vectorEffect="non-scaling-stroke"
+        />
+        {nailHoles}
+      </svg>
+      <div className="ribbon-content">{children}</div>
+    </div>
+  );
 };
 
 export default RibbonBorder;

@@ -104,7 +104,9 @@ a {
           100dvh  Kontakt
  **********************/
 .oneHundertDVH {
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   @include dvh(100dvh);
   .contact {
     text-align: center;

@@ -1,6 +1,7 @@
 import "../styles/footer.scss" 
+import HorseShoe from "../../public/horseshoe-svgrepo-com.svg"
 //komponenty 
-import RibbonBorder from "./RibbonBorder";
+// import RibbonBorder from "./RibbonBorder";
 
 const Footer: React.FC = () => { 
 //     const handleClick = () => {
@@ -11,15 +12,16 @@ const Footer: React.FC = () => {
     };
     return (
         <footer>
-            <RibbonBorder fillColor="#e1c671" strokeColor="#b8860b">
-                <div className="BankAccount">
+            
+                <div className="BankAccount"> 
+                    <img src={HorseShoe} alt="Horseshoe" className="horseshoe" />
                     <p>Transparentní účet</p>
                     <p className="ColorRed">UniCredit Bank</p>
                     <p>
                         <strong>1701279002/2700</strong>{" "}
                     </p>
                 </div>
-            </RibbonBorder>
+            
             <p>&copy; 2025 SK Blind Guardians, všechna práva vyhrazena</p>
             <i className="fa-brands fa-facebook" onClick={handleClick}></i>
         </footer>

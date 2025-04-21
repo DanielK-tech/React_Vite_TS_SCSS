@@ -11,7 +11,7 @@ $Green: rgba(127, 224, 61, 0.5);
 $black-color: #000;
 $GreyColor: #a7a6a6;
 $Red-color: red;
-$Purpe-color: #490894; ;
+$Purpe-color: #490894;
 $BTN-color-text: rgb(85, 26, 139);
 $contact-actvie-card: linear-gradient(315deg, #f1c40f, #2ecc71);
 $under-ligting: radial-gradient(
@@ -23,6 +23,11 @@ $span-contact: rgba(255, 255, 255, 0.1);
 $content-background: rgba(255, 255, 255, 0.05);
 $box-shadow: 2px 3px 16px 10px $black-color;
 $box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+$Gold-color: radial-gradient(
+  circle farthest-corner at 10% 20%,
+  rgba(225, 198, 113, 1) 17.8%,
+  rgba(184, 134, 11, 1) 100.2%
+);
 /*Přepínač*/
 $switcher-font: MedievalSharp, Arial, Helvetica, sans-serif;
 $slider-color: #f1c40f;

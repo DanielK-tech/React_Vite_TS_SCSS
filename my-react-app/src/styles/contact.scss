@@ -1,0 +1,38 @@
+@use "../components/partials/mixins" as *;
+@use "../components/partials/variables" as *;
+.support {
+  margin: 0 auto;
+  width: 80%;
+}
+.paymentChance {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10rem !important;
+  margin: 0 auto;
+  width: 100%;
+  box-shadow: $box-shadow;
+  min-height: 30vh;
+  min-height: 30dvh;
+  margin-bottom: 1rem;
+  .Text {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    .bold {
+      font-weight: bold;
+    }
+    p {
+      text-align: center;
+      line-height: 1.5;
+      margin-top: 1rem;
+      margin-left: 2rem;
+      font-size: 1.5rem;
+      @media (max-width: 1000px) {
+        text-align: center;
+        width: 100%;
+        margin-right: 2rem;
+      }
+    }
+  }
+}

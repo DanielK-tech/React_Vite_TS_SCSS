@@ -70,28 +70,28 @@ const Header: React.FC = () => {
               </li>{" "}
               {/* dodělat vlastní komponenty a routy v app */}
               <li>
-                <NavLink to="/hobby-horsing">
+                <NavLink to="/hobby-horsing" onClick={scrollToTop}>
                   <i className="fa-solid fa-horse-head"></i>Hobby horsing
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/jezdecky-klub">
+                <NavLink to="/jezdecky-klub" onClick={scrollToTop}>
                   <i className="fa-solid fa-horse"></i>Jezdecký klub
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/pony-skolicka">
+                <NavLink to="/pony-skolicka" onClick={scrollToTop}>
                   <i className="fa-solid fa-school-flag"></i>Pony školička{" "}
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/hiporehabilitace-praxe">
+                <NavLink to="/hiporehabilitace-praxe" onClick={scrollToTop}>
                   <i className="fa-solid fa-house-user"></i>Hiporehabilitace v
                   pedagogickéa sociální praxi{" "}
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/hyporehabilitace-kontakt">
+                <NavLink to="/hyporehabilitace-kontakt" onClick={scrollToTop}>
                   <i className="fa-solid fa-house-medical"></i>Hiporehabilitace
                   v kontaktní terapii
                 </NavLink>
