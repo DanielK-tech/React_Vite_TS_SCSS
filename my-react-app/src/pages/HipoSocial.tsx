@@ -1,5 +1,7 @@
 import "../styles/HipoSocial.scss";
 import { NavLink } from "react-router-dom";
+// breadcrubms
+import Breadcrumb from "../components/BreadCrumb";
 
 const HipoSocial: React.FC = () => {
   const handleScroll = () => {
@@ -7,8 +9,9 @@ const HipoSocial: React.FC = () => {
   };
   return (
     <section className=" HomeSection" id="HobyHorsing" tabIndex={0}>
-      <div className="ActivityContent">
+      <div className="ActivityContent socilaBreadcrumb">
         <h2>Hiporehabilitace v pedagogické a sociální praxi</h2>
+        <Breadcrumb currentPage="Pedagogická a sociální praxe" />
         <div className="ActivityContentContainer">
           <div className="TextContent">
             <article>

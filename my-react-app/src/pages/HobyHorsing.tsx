@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
+import Breadcrumb from "../components/BreadCrumb";
 /** Styl */
 import "../styles/HobyHorsing.scss";
 
 //vytvoř speciální třídu scss na text v aktivity co bude společná + struktura jako tady a obrázek
-const HobyHorsing: React.FC = () => { 
+const HobyHorsing: React.FC = () => {
   const handleScroll = () => {
     window.scrollBy({ top: 560, behavior: "smooth" }); // 10rem = 160px
   };
@@ -11,6 +12,7 @@ const HobyHorsing: React.FC = () => {
     <section className=" HomeSection" id="HobyHorsing" tabIndex={0}>
       <div className="ActivityContent">
         <h2>Hobby horsing</h2>
+        <Breadcrumb currentPage="Hobby horsing" />
         <div className="ActivityContentContainer">
           <div className="TextContent">
             <article>

@@ -10,3 +10,42 @@
   background-image: var(--Pony-School2);
   @include SeconPictureAbilite;
 }
+
+.schoolBreadcrumb {
+  .breadcrumb-navigation {
+    top: 0.3rem;
+    padding: 0.5rem 1rem;
+
+    @media screen and (max-width: 900px) {
+      top: 4.8rem;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 999;
+      max-width: 250px;
+      .breadcrumb-current {
+        .breadcrumb-dropdown {
+          left: 50%;
+          transform: translateX(-50%);
+          min-width: 400px;
+          top: 150%;
+        }
+      }
+    }
+    @media screen and (max-width: 491px) {
+      .breadcrumb-current {
+        .breadcrumb-dropdown {
+          font-size: 0.8rem;
+          min-width: 350px;
+          left: 25%;
+        }
+      }
+    } 
+    @media screen and (max-width: 380px){         
+        .breadcrumb-current {
+          .breadcrumb-dropdown {
+            min-width: 300px;
+          }
+        }
+    }
+  }
+}

@@ -503,6 +503,12 @@ a {
   min-height: 100vh;
   min-height: 100dvh;
   margin-bottom: 1rem;
+  .breadcrumb-navigation {
+    top: -4rem !important;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 250px;
+  }
 
   /** kontejner s fotkami*/
   .thumbnails {

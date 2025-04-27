@@ -140,6 +140,7 @@
 ***********************************/
 @mixin ActivityComponent {
   .ActivityContent {
+    position: relative;
     text-align: center;
     width: 80%;
     box-shadow: $box-shadow;

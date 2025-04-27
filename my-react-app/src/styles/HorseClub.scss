@@ -11,3 +11,26 @@
   background-image: var(--Horse-Club2);
   @include SeconPictureAbilite;
 }
+
+.clubBreadcrumb {
+  .breadcrumb-navigation {
+    @media screen and (max-width: 899px) {
+      max-width: 250px;
+    }
+    @media screen and (max-width: 435px) {
+      .breadcrumb-current {
+        font-size: 0.8rem;
+        .breadcrumb-dropdown {
+          min-width: 350px;
+        }
+      }
+    } 
+    @media screen and (max-width: 370px) {
+      .breadcrumb-current {
+        .breadcrumb-dropdown {
+          min-width: 300px;
+        }
+      }
+    }
+  }
+}

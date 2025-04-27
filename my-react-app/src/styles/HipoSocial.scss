@@ -11,3 +11,52 @@
   background-image: var(--HipoSoc2);
   @include SeconPictureAbilite;
 }
+
+.socilaBreadcrumb {
+  .breadcrumb-navigation {
+    @media screen and (max-width: 1730px) {
+      top: 4.8rem;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 999;
+      .breadcrumb-current {
+        .breadcrumb-dropdown {
+          left: 50%;
+          transform: translateX(-50%);
+          min-width: 400px;
+          max-width: 90vw;
+          top: 150%;
+        }
+      }
+    }
+    @media screen and (max-width: 885px) {
+      top: 7.3rem;
+      .breadcrumb-current {
+        max-width: 350px;
+      }
+    }
+    @media screen and (max-width: 850px) {
+      min-width: 350px;
+    }
+    @media screen and (max-width: 550px) {
+      top: 9.8rem;
+      min-width: 250px;
+      .breadcrumb-current {
+        font-size: 0.8rem;
+        .breadcrumb-dropdown {
+          min-width: 350px;
+          left: 20%;
+        }
+      }
+    }
+    @media screen and (max-width: 365px) {
+      .breadcrumb-current{ 
+        //
+        .breadcrumb-dropdown {
+          min-width: 300px;
+        }
+      } 
+        
+    }
+  }
+}
