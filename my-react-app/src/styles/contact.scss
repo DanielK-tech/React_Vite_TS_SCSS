@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: center;
   margin-top: 10rem !important;
+  // overflow: hidden;
   margin: 0 auto;
   width: 100%;
   box-shadow: $box-shadow;
@@ -17,8 +18,9 @@
   margin-bottom: 1rem;
   .Text {
     display: flex;
-    flex-direction: column;
-    width: 100%;
+    flex-direction: column; 
+    align-items: center;
+    width: 80% !important;
     .bold {
       font-weight: bold;
     }
@@ -32,6 +34,7 @@
         text-align: center;
         width: 100%;
         margin-right: 2rem;
+        
       }
     }
   }
