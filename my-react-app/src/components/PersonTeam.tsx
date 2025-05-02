@@ -11,7 +11,7 @@ const PersonTeam: React.FC<PersonProps> = ({ name, text, imgPicture }) => {
   const backgroundImageUrl = getImageUrl("teamImg", imgPicture);
   return (
     <div className="contact">
-      <span className="squareSpan"></span>
+      {/* <span className="squareSpan"></span> */}
       <div className="content">
         <div
           className="face worker"

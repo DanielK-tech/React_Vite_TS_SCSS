@@ -112,6 +112,9 @@ const Contact: React.FC = () => {
             <p>
               <span>Telefon:</span> +420 777 082 915
             </p>
+            <p>
+              <span>Email:</span> jana.stixova@seznam.cz
+            </p>
           </div>
         </div>
         {mapLoaded && (
@@ -174,12 +177,13 @@ const Contact: React.FC = () => {
                   onChange={(e) => setMessage(e.target.value)}
                   required
                   placeholder="Co máte na srdci?"
-                  rows={5}
+                  rows={15}
+                  cols={50}
                 />
                 {messageError && <span className="error">{messageError}</span>}
               </div>
 
-              <button type="submit" disabled={isSubmitting}>
+              <button type="submit" disabled={isSubmitting} className="btn">
                 {isSubmitting ? "Odesílání..." : "Odeslat zprávu"}
               </button>
 

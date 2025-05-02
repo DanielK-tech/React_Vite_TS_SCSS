@@ -26,7 +26,7 @@ const HorseTeam: React.FC<HorseProps> = ({
     return (
         <div className="team-horse-content">
             <div className="showcase">
-                <span className="squareSpaner"></span>
+                {/* <span className="squareSpaner"></span> */}
                 <div className="contente">
                     <div
                         className="Horse"

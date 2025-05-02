@@ -5,8 +5,8 @@
   margin-top: 1rem;
   padding: 10px;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 0rem;
 
   .backgroudnder {
     background-color: $GreyColor;
@@ -24,7 +24,7 @@
     //
     position: relative;
     display: flex;
-    width: 380px;
+    width: 390px;
     height: auto;
     transition: 0.5s;
     &::before {
@@ -149,15 +149,28 @@
         background-color: $Green;
         @include border-radius(50%);
         transition: 1s;
-        
+
         @media (hover: hover) {
           &:hover {
             width: 25rem;
             height: 25rem;
             transform: scale(1.9);
-            
           }
         }
+      }
+    }
+    @media screen and (max-width: 768px) {
+      // width: 90%;
+      &::before {
+        background: none;
+      }
+      &::after {
+        background: none;
+      }
+      .contente {
+        width: 100%;
+        text-align: left; 
+        padding: 0;
       }
     }
   }
