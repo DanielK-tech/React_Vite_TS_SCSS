@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // breadcrubms
-import Breadcrumb from "../components/BreadCrumb";
+// import Breadcrumb from "../components/BreadCrumb";
 // Dynamický import obrázků pomocí Vite glob patternu
 const photoModules = import.meta.glob("../components/galery/*.{jpg,png}", {
   eager: true,
@@ -54,7 +54,7 @@ const GaleryPhoto: React.FC = () => {
   return (
     <section className="HomeSection photoCrumbs" id="Home" tabIndex={0}>
       <div className="PhotoGalery">
-        <Breadcrumb currentPage="Fotogalerie" />
+        {/* <Breadcrumb currentPage="Fotogalerie" /> */}
         <div className="pohotoConteiner">
           <div className="thumbnails">
             {photos.map((photo, index) => (

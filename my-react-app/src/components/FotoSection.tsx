@@ -71,7 +71,7 @@ const SlidingImages: React.FC = () => {
             if (animationInterval) clearInterval(animationInterval);
             if (pauseTimeout) clearTimeout(pauseTimeout);
         };
-    }, [isPaused, imageWidth, photos.length]);
+    }, [isPaused, imageWidth]);
 
     // Scroll functions
     const scrollLeft = useCallback(() => {
@@ -83,7 +83,7 @@ const SlidingImages: React.FC = () => {
             }
             return prev + imageWidth;
         });
-    }, [imageWidth, photos.length]);
+    }, [imageWidth]);
 
     const scrollRight = useCallback(() => {
         setIsPaused(true);
@@ -94,7 +94,7 @@ const SlidingImages: React.FC = () => {
             }
             return prev - imageWidth;
         });
-    }, [imageWidth, photos.length]);
+    }, [imageWidth]);
 
     return (
         <section className="HomeSection" id="Home" tabIndex={0}>

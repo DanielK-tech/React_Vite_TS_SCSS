@@ -521,6 +521,16 @@ a {
     left: 50%;
     transform: translate(-50%, -50%);
     max-width: 250px;
+    .breadcrumb-current {
+      .breadcrumb-dropdown {
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 400px;
+        max-width: 90vw;
+        top: 150%;
+        z-index: 1000000;
+      }
+    }
   }
 
   /** kontejner s fotkami*/

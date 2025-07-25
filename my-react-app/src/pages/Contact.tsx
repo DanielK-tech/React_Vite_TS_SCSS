@@ -65,12 +65,16 @@ const Contact: React.FC = () => {
     setSubmitStatus(null);
 
     try {
-      const response = await fetch("http://localhost:3001/api/contact", {
+      const formData = new URLSearchParams();
+      formData.append("email", email);
+      formData.append("message", message);
+
+      const response = await fetch("https://skblindguardians.cz/contact.php", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/x-www-form-urlencoded",
         },
-        body: JSON.stringify({ email, message }),
+        body: formData.toString(),
       });
 
       if (response.ok) {
@@ -78,7 +82,6 @@ const Contact: React.FC = () => {
           type: "success",
           message: "Zpráva byla úspěšně odeslána. Děkujeme!",
         });
-        // Reset form
         setEmail("");
         setMessage("");
       } else {
@@ -175,7 +178,6 @@ const Contact: React.FC = () => {
                   id="message"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  required
                   placeholder="Co máte na srdci?"
                   rows={15}
                   cols={50}
@@ -184,9 +186,11 @@ const Contact: React.FC = () => {
               </div>
 
               <button type="submit" disabled={isSubmitting} className="btn">
+                <p> 
                 {isSubmitting ? "Odesílání..." : "Odeslat zprávu"}
+                </p>
               </button>
-
+        <input type="text" name="fax" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
               {submitStatus && (
                 <div className={`submitStatus ${submitStatus.type}`}>
                   {submitStatus.message}
