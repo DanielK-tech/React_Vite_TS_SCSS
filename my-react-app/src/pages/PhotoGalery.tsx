@@ -64,6 +64,7 @@ const GaleryPhoto: React.FC = () => {
                 alt={`Photo ${index + 1}`}
                 onClick={() => openModal(index)}
                 className="thumbnail"
+                loading="lazy"
               />
             ))}
           </div>
