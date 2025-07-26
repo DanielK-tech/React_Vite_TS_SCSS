@@ -26,7 +26,7 @@ const horse: Horse[] = [
                   opět v postupném zatěžovacím procesu a pokud vše zdravotně a charakterně ustojí je v
                   plánu s ní absolvovat specializační zkoušky koní pro hiporehabilitaci v pedagogické a
                   sociální praxi.`,
-    imageName: "Azazela005.jpg",
+    imageName: "Azazela001.jpg",
   },
   {
     name: "HONZÍK",
@@ -64,7 +64,7 @@ const horse: Horse[] = [
         HPSP, bohužel se v\u00A0sezóně objevily potíže s\u00A0dušností, kterou klisna údajně již nějaký čas
         trpí a tak jsme ji ze zkoušek museli stáhnout. Prozatím tedy funguje s\u00A0ohledem na aktuální
         zdravotní stav jako vycházkový rekreační koník.`,
-    imageName: "Latney005.jpg",
+    imageName: "Clatney001.jpg",
   },
   {
     name: "ZAJEČICE",
@@ -115,7 +115,7 @@ const horse: Horse[] = [
         činnost. Podobně jako Zaječice je úžasně citlivý na osobní prostor a manipulaci na ruce. Již
         nyní ho využíváme v\u00A0chovatelském kroužku k\u00A0výuce nesmělejších dětí ohledně zacházení a
         vedení koně na ruce a tak by se v\u00A0této problematice určitě časem uplatnil i v\u00A0rámci HPSP.`,
-    imageName: "FLuis015.jpg",
+    imageName: "Fluis01.jpg",
   },
   {
     name: "MIRADOR",
@@ -146,7 +146,7 @@ const horse: Horse[] = [
                   terénu nebo na lonži. Jinak se s ním majitelka věnuje vozatajské přípravě. Je to úspěšný
                   účastník výstav a speciálních výstavních tříd právě v opraťových disciplínách. V roce 2023
                   byl úspěšně licentován a působí v přirozené plemenitbě pro klisny plemene shetland.`,
-    imageName: "Hrago005.jpg",
+    imageName: "Hrago001.jpg",
   },
   {
     name: "SILVA",
@@ -165,7 +165,7 @@ const horse: Horse[] = [
         jízdárně i s\u00A0pokročilejšími. Jeví se prozatím slibně jako další adept pro drezurní přípravu,
         časem by snad mohla sekundovat Miradorovi i při formování parajezdců. Přes svůj handicap
         se už v\u00A0sezóně 2025 skvěle popasovala i s\u00A0vožením klientů na obecních akcích.`,
-    imageName: "Silva002.jpg",
+    imageName: "Silva001.jpg",
   },
   {
     name: "Marlot V.D. Ebenvelt",

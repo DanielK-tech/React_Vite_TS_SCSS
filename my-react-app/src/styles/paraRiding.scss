@@ -1,0 +1,12 @@
+@use "../components/partials/mixins" as *;
+@use "../components/partials/variables" as *;
+// @include ActivityComponent;
+
+.backgroundParaPicture01 {
+  background-image: var(--Para-Riding);
+  @include PictureAbilities(-1.5rem);
+}
+.backgroundParaPicture02 {
+  background-image: var(--Para-Riding2);
+  @include SeconPictureAbilite;
+}

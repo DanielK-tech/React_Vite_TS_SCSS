@@ -96,6 +96,11 @@ const Header: React.FC = () => {
                   v kontaktní terapii
                 </NavLink>
               </li>
+              <li>
+                <NavLink to="/para-jezdectvi" onClick={scrollToTop}>
+                  <i className="fa-solid fa-wheelchair-move"></i>Parajezdectví
+                </NavLink>
+              </li>
             </ul>
           </li>
           <li>
@@ -173,6 +178,11 @@ const Header: React.FC = () => {
                   <NavLink to="/hyporehabilitace-kontakt">
                     <i className="fa-solid fa-house-medical"></i>
                     Hiporehabilitace v kontaktní terapii
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/para-jezdectvi" onClick={scrollToTop}>
+                    <i className="fa-solid fa-wheelchair-move"></i>Parajezdectví
                   </NavLink>
                 </li>
               </ul>

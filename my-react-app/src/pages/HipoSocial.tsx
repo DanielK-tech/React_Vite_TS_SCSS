@@ -12,7 +12,7 @@ const HipoSocial: React.FC = () => {
   return (
     <section className=" HomeSection" id="HobyHorsing" tabIndex={0}>
       <div className="ActivityContent socilaBreadcrumb">
-        <h2>Hiporehabilitace v pedagogické a sociální praxi</h2>
+        <h2>{hipoSocial.title}</h2>
         <Breadcrumb currentPage="Pedagogická a sociální praxe" />
         <div className="ActivityContentContainer">
           <div className="TextContent">

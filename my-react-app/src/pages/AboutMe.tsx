@@ -54,7 +54,7 @@ const About: React.FC = () => {
           src={Picture}
           alt="Kůň, kterého hladí lidi"
         />
-        <h2>O nás</h2>
+        <h2>{aboutMe.title}</h2>
         <p>
           {aboutMe.paragraph1} Jsme členy České jezdecké federace{" "}
           <a
@@ -64,9 +64,17 @@ const About: React.FC = () => {
           >
             <span className="SpecialNav">(ČJF)</span>
           </a>
-          , Moravského pony klubu a České hiporehabilitační společnosti
+          ,{" "}
           <a
             href="https://www.moravskyponyclub.cz/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="SpecialNav">Moravského pony klubu</span>
+          </a>{" "}
+          a České hiporehabilitační společnosti
+          <a
+            href="https://hiporehabilitace-cr.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -76,13 +84,28 @@ const About: React.FC = () => {
         </p>
         <p>{aboutMe.paragraph2}</p>
         <p>{aboutMe.paragraph3}</p>
-        <p>{aboutMe.paragraph4}</p>
+        <p>
+          {aboutMe.paragraph4}
+          <a
+            href="https://proslepekone.webnode.cz/o-nas/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span className="SpecialNav">Naděje pro slepé koně, z.s.</span>
+          </a>{" "}
+          {""}
+          {aboutMe.paragraph5}
+        </p>
         <p>
           Od roku 2024 se aktivně věnujeme i Hobby Horsingu – jsme členy České{" "}
-          <a href="https://www.chha.cz/" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.chha.cz/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <span className="SpecialNav">Hobby Horsing Asociace</span>
           </a>
-          , {aboutMe.paragraph5}
+          , {aboutMe.paragraph6}
         </p>
         {/* Dynamické zobrazení obsahu */}
         <div className="buttons">

@@ -1,12 +1,17 @@
 interface AboutMe {
+  title: string;
   paragraph1: string;
   paragraph2: string;
   paragraph3: string;
   paragraph4: string;
-  paragraph5?: string; // Optional property for additional information
+  paragraph5?: string; 
+  paragraph6?: string;
 }
 
 export const aboutMe: AboutMe = {
+
+  title: "O nás",
+
   paragraph1: `Jsme malá stáj rodinného typu na severní Moravě. V roce 2024 jsme založili spolek
 zaměřený na volnočasové jezdecké aktivity pro děti a mládež především z blízkého
 okolí a začali se angažovat v hiporehabilitačních aktivitách. Tyto služby nabízíme i
@@ -27,12 +32,15 @@ paradrezurní jezdci.`,
 
   paragraph4: `Aktivity našich členů jsou již dlouhodobě spjaty i s péčí a výcvikem různě zrakově
 znevýhodněných koní. Od roku 2023 jsme v přátelském kontaktu s neziskovkou
-Naděje pro slepé koně, z.s., se kterou jsme proto od našeho založení navázali úzkou
+ `,
+
+paragraph5: `se kterou jsme proto od našeho založení navázali úzkou
 spolupráci a nabízíme v tomto směru pomoc a poradenství majitelům především zde
 na severovýchodě republiky.`,
 
-  paragraph5: ` máme jejich certifikovaného rozhodčího, který vede pravidelné
+  paragraph6: ` máme jejich certifikovaného rozhodčího, který vede pravidelné
 tréninky a účastníme se kvalifikačních i mistrovských HH soutěží.`,
+
 };
 
 export default aboutMe;

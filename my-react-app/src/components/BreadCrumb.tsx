@@ -61,6 +61,11 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ currentPage }) => {
                 kontaktní terapii
               </NavLink>
             </li>
+            <li>
+              <NavLink to="/para-jezdectvi">
+                <i className="fa-solid fa-wheelchair-move"></i>Parajezdectví
+              </NavLink>
+            </li>
           </ul>
         )}
       </div>

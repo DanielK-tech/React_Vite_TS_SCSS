@@ -1,10 +1,13 @@
 interface HipoSocial {
+  title?: string;
   paragraph1: string;
   paragraph2: string;
   paragraph3: string;
 }
 
 export const hipoSocial: HipoSocial = {
+  title: "Hiporehabilitace v pedagogické a sociální praxi",
+
   paragraph1: `Hiporehabilitace v pedagogické a sociální praxi (dále jen HPSP) je jedna z disciplín hiporehabilitace -
 certifikovaný instruktor HPSP (pedagogické, sociální nebo zdravotně-sociální vzdělání) cíleně využívá
 kontakt a interakci s koněm a prostředí určené pro chov koní, jako prostředku k motivaci, aktivizaci,

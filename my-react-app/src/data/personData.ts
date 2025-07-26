@@ -15,7 +15,7 @@ const PersonData: Person[] = [
           horsingovou asociací a trenérsky vede sportovní kroužek hobby horsingu. Od
           roku 2025 je aktivní i v oblasti parajezdectví – věnuje se výcviku a přípravě koní
           a\u00A0jezdců pro paradrezurní sport.`,
-    imgPicture: "JanaPospisilova.jpg",
+    imgPicture: "JanaPospisilova01.jpg",
   },
 
   {
@@ -33,7 +33,7 @@ const PersonData: Person[] = [
   {
     name: "Petra Luzarová, DiS",
     text: "má dlouholeté zkušenosti s prací s dětmi a mládeží coby vedoucí vodáckého skautského spolku Poseidon. V letech 2010-2011 pracovala mj. jako asistent při hiporehabilitacích v areálu Dětského ranče Hlučín. Aktuálně se zaměřuje zejména na vozatajské aktivity s poníky, je hlavním mentorem v přípravě práce na ruce na oprati a\u00A0přípravě na zápřah.",
-    imgPicture: "Luzarka002.jpg",
+    imgPicture: "Luzarka001.jpg",
   },
 ];
 

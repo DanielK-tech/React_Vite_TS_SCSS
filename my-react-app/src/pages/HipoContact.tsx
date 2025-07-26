@@ -8,7 +8,7 @@ const HipoContact: React.FC = () => {
   return (
     <section className=" HomeSection" id="HobyHorsing" tabIndex={0}>
       <div className="ActivityContent contactBreadcrumb">
-        <h2>Hiporehabilitace v kontaktní terapii</h2>
+        <h2>{hipoContact.title}</h2>
         <Breadcrumb currentPage="Kontaktní praxe" />
         <div className="ActivityContentContainer">
           <div className="TextContent">
