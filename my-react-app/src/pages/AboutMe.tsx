@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,  } from "react";
+// import { UIContext } from "../components/utils/UIContext";
 //navigace
 import { useNavigate, useLocation } from "react-router-dom";
 /** Komponenty */
@@ -11,9 +12,10 @@ import { aboutMe } from "../data/aboutMe";
 
 /** Styly */
 import "../styles/aboutUs.scss";
-import Picture from "/img/Onas.jpg";
 
 const About: React.FC = () => {
+  // const { isDarkMode } = useContext(UIContext);
+  // const pictureSrc = isDarkMode ? "/img/contactTerapy.jpg" : "/img/Onas.jpg";
   const navigate = useNavigate();
   const location = useLocation();
   //
@@ -49,64 +51,73 @@ const About: React.FC = () => {
   return (
     <section className="HomeSection" id="Home" tabIndex={0}>
       <div className="aboutUs">
-        <img
-          className="pictureOfUs"
-          src={Picture}
-          alt="Kůň, kterého hladí lidi"
-        />
-        <h2>{aboutMe.title}</h2>
-        <p>
-          {aboutMe.paragraph1} Jsme členy České jezdecké federace{" "}
-          <a
-            href="https://www.cjf.cz"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="SpecialNav">(ČJF)</span>
-          </a>
-          ,{" "}
-          <a
-            href="https://www.moravskyponyclub.cz/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="SpecialNav">Moravského pony klubu</span>
-          </a>{" "}
-          a České hiporehabilitační společnosti
-          <a
-            href="https://hiporehabilitace-cr.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="SpecialNav">(ČHS)</span>
-          </a>
-          .
-        </p>
-        <p>{aboutMe.paragraph2}</p>
-        <p>{aboutMe.paragraph3}</p>
-        <p>
-          {aboutMe.paragraph4}
-          <a
-            href="https://proslepekone.webnode.cz/o-nas/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="SpecialNav">Naděje pro slepé koně, z.s.</span>
-          </a>{" "}
-          {""}
-          {aboutMe.paragraph5}
-        </p>
-        <p>
-          Od roku 2024 se aktivně věnujeme i Hobby Horsingu – jsme členy České{" "}
-          <a
-            href="https://www.chha.cz/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span className="SpecialNav">Hobby Horsing Asociace</span>
-          </a>
-          , {aboutMe.paragraph6}
-        </p>
+        <div className="GridContainer">
+          <div className="Gridphotos">
+            {/* <img
+              className="pictureOfUs"
+              src={pictureSrc}
+              alt="Kůň, kterého hladí lidi"
+            /> */}
+            <div className="backgroundAboutMe1"></div>
+            <div className="backgroundAboutMe"></div>
+          </div>
+          <div className="GridItem">
+            <h2>{aboutMe.title}</h2>
+            <p>
+              {aboutMe.paragraph1} Jsme členy České jezdecké federace{" "}
+              <a
+                href="https://www.cjf.cz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="SpecialNav">(ČJF)</span>
+              </a>
+              ,{" "}
+              <a
+                href="https://www.moravskyponyclub.cz/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="SpecialNav">Moravského pony klubu</span>
+              </a>{" "}
+              a České hiporehabilitační společnosti
+              <a
+                href="https://hiporehabilitace-cr.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="SpecialNav">(ČHS)</span>
+              </a>
+              .
+            </p>
+            <p>{aboutMe.paragraph2}</p>
+            <p>{aboutMe.paragraph3}</p>
+            <p>
+              {aboutMe.paragraph4}
+              <a
+                href="https://proslepekone.webnode.cz/o-nas/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="SpecialNav">Naděje pro slepé koně, z.s.</span>
+              </a>{" "}
+              {""}
+              {aboutMe.paragraph5}
+            </p>
+            <p>
+              Od roku 2024 se aktivně věnujeme i Hobby Horsingu – jsme členy
+              České{" "}
+              <a
+                href="https://www.chha.cz/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="SpecialNav">Hobby Horsing Asociace</span>
+              </a>
+              , {aboutMe.paragraph6}
+            </p>
+          </div>
+        </div>
         {/* Dynamické zobrazení obsahu */}
         <div className="buttons">
           <button className="btn" onClick={toggleTeam}>

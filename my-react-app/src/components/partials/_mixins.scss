@@ -265,3 +265,70 @@
     display: none;
   }
 }
+/**********************************
+          Grid Parajezdectví
+***********************************/
+@mixin Grid($Picture1, $Picture2, $Picture3) {
+  .GridContainer {
+    display: grid;
+    grid-template-areas:
+      "TextContent Gridphoto"
+      "TextContent Gridphoto2"
+      "TextContent Gridphoto3";
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    .GridItem {
+      grid-area: TextContent;
+      font-size: 1.5rem;
+      p {
+        text-align: justify;
+        line-height: 1.5;
+        margin-top: 1rem;
+        padding: 1rem;
+      }
+      @media screen and (max-width: 458px) {
+        text-align: center !important;
+      }
+    }
+    .Gridphoto {
+      grid-area: Gridphoto;
+      height: 35rem;
+      background-position: center;
+      background-size: cover;
+      margin-right: 1rem;
+      @include border-radius(250px 100px 220px 100px);
+      box-shadow: $box-shadow;
+      transition: 1s;
+      @media (hover: hover) {
+        &:hover {
+          transform: scale(1.1) rotate(10deg);
+        }
+      }
+    }
+    .backgroundParaPicture01 {
+      background-image: $Picture1;
+      background-position: top;
+      grid-area: Gridphoto;
+    }
+    .backgroundParaPicture02 {
+      background-image: $Picture2;
+      grid-area: Gridphoto2;
+    }
+    .backgroundParaPicture03 {
+      background-image: $Picture3;
+      grid-area: Gridphoto3;
+    }
+    @media screen and (max-width: 1080px) {
+      grid-template-areas: "TextContent ";
+      grid-template-columns: 1fr;
+      gap: 0;
+      .Gridphoto,
+      .backgroundParaPicture01,
+      .backgroundParaPicture03,
+      .backgroundParaPicture02 {
+        display: none;
+      }
+    }
+  }
+}

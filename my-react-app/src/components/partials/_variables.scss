@@ -35,6 +35,8 @@ $slider-active: #2ecc71;
 /** Veliksoti */
 $footer-height: 7.5rem;
 /** Obrázky*/
+$AboutMe: url("/img/tel1.jpg");
+$AboutMe2: url("/img/Onas.jpg");
 $Hoby-Horsing: url("/img/akce12.jpg");
 $Hoby-Horsing2: url("/img/akce14.jpg");
 $Horse-Club: url("/img/akce04.jpg");
@@ -43,12 +45,14 @@ $Pony-School: url("/img/PonySchool.jpg");
 $Pony-School2: url("/img/akce15.jpg");
 $Para-Riding: url("/img/Parariding001.jpg");
 $Para-Riding2: url("/img/ParaRiding002.jpg");
+$Para-Riding3: url("/img/Latney001.jpg");
 $HipoSoc: url("/img/akce03.jpg");
 $HipoSoc2: url("/img/img2.jpg");
 $HipoContact: url("/img/img5.jpg");
 $HipoContact2: url("/img/img6.jpg");
 $ContactUs: url("/img/Z1Luis001.jpg");
 $ContactUs2: url("/img/akce09.jpg");
+$IndiananHorse: url("/img/indianHorse.png");
 /**Sub Menu*/
 $Sub-menu-image: url("/img/indianHorse.png");
 
@@ -66,6 +70,8 @@ $Sub-menu-image: url("/img/indianHorse.png");
   /*karty itemu*/
   --contact-actvie-card: #{$contact-actvie-card};
   /*Obrázky*/
+  --AboutMe: #{$AboutMe};
+  --AboutMe2: #{$AboutMe2};
   --Hoby-Horsing: #{$Hoby-Horsing};
   --Hoby-Horsing2: #{$Hoby-Horsing2};
   --Horse-Club: #{$Horse-Club};
@@ -74,12 +80,14 @@ $Sub-menu-image: url("/img/indianHorse.png");
   --Pony-School2: #{$Pony-School2};
   --Para-Riding: #{$Para-Riding};
   --Para-Riding2: #{$Para-Riding2};
+  --Para-Riding3: #{$Para-Riding3};
   --HipoSoc: #{$HipoSoc};
   --HipoSoc2: #{$HipoSoc2};
   --HipoContact: #{$HipoContact};
   --HipoContact2: #{$HipoContact2};
   --ContactUs: #{$ContactUs};
   --ContactUs2: #{$ContactUs2};
+  --IndiananHorse: #{$IndiananHorse};
 }
 [data-theme="dark"] {
   --body-color: #333;
@@ -91,12 +99,17 @@ $Sub-menu-image: url("/img/indianHorse.png");
     rgba(238, 197, 12, 0.856) 17.8%,
     rgb(62, 228, 12) 100.2%
   );
+  --AboutMe: url("/img/akce02.jpg");
+  --AboutMe2: url("/img/contactTerapy.jpg");
   --Hoby-Horsing: url("/img/akce11.jpg");
   --Hoby-Horsing2: url("/img/trofej1.jpg");
   --Horse-Club: url("/img/akce15.jpg");
   --Horse-Club2: url("/img/img1.jpg");
   --Pony-School: url("/img/akce14.jpg");
   --Pony-School2: url("/img/akce13.jpg");
+  --Para-Riding: url("/img/img2.jpg");
+  --Para-Riding2: url("/img/Nachos005.jpg");
+  --Para-Riding3: url("/img/akce03.jpg");
   --HipoSoc: url("/img/img5.jpg");
   --HipoSoc2: url("/img/img0.jpg");
   --HipoContact: url("/img/img4.jpg");

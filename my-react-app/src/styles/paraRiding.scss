@@ -1,12 +1,6 @@
 @use "../components/partials/mixins" as *;
 @use "../components/partials/variables" as *;
-// @include ActivityComponent;
 
-.backgroundParaPicture01 {
-  background-image: var(--Para-Riding);
-  @include PictureAbilities(-1.5rem);
-}
-.backgroundParaPicture02 {
-  background-image: var(--Para-Riding2);
-  @include SeconPictureAbilite;
-}
+@include Grid(var(--Para-Riding), var(--Para-Riding2), var(--Para-Riding3));
+
+
