@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // breadcrubms
 // import Breadcrumb from "../components/BreadCrumb";
 // Dynamický import obrázků pomocí Vite glob patternu
-const photoModules = import.meta.glob("../components/galery/*.{jpg,png}", {
+const photoModules = import.meta.glob("../galery/*.{jpg,png}", {
   eager: true,
 });
 

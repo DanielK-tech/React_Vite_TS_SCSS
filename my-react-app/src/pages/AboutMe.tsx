@@ -1,4 +1,4 @@
-import React, { useState, useEffect,  } from "react";
+import React, { useState, useEffect, useRef } from "react";
 // import { UIContext } from "../components/utils/UIContext";
 //navigace
 import { useNavigate, useLocation } from "react-router-dom";
@@ -16,15 +16,41 @@ import "../styles/aboutUs.scss";
 const About: React.FC = () => {
   // const { isDarkMode } = useContext(UIContext);
   // const pictureSrc = isDarkMode ? "/img/contactTerapy.jpg" : "/img/Onas.jpg";
+  const teamRef = useRef<HTMLDivElement>(null);
+  const horseRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
   const location = useLocation();
   //
   const [isTeamVisible, setIsTeamVisible] = useState(false);
   const [isHorseVisible, setIsHorseVisible] = useState(false);
+  const [isGridView, setIsGridView] = useState(() => {
+    const savedState = localStorage.getItem("isGridView");
+    return savedState ? savedState === "true" : true;
+  }); // true = grid-team, false = team-horse-content
   // Synchronizace stavu s URL
   useEffect(() => {
-    setIsTeamVisible(location.pathname === "/about/our-team");
-    setIsHorseVisible(location.pathname === "/about/our-horses");
+    if (location.pathname === "/about/our-team") {
+      setIsTeamVisible(true);
+      setIsHorseVisible(false);
+      setTimeout(() => {
+        if (teamRef.current) {
+          const y =
+            teamRef.current.getBoundingClientRect().top + window.scrollY - 150;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
+      }, 100);
+    }
+    if (location.pathname === "/about/our-horses") {
+      setIsHorseVisible(true);
+      setIsTeamVisible(false);
+      setTimeout(() => {
+        if (horseRef.current) {
+          const y =
+            horseRef.current.getBoundingClientRect().top + window.scrollY - 150;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
+      }, 100);
+    }
   }, [location.pathname]);
 
   const toggleTeam = () => {
@@ -35,6 +61,13 @@ const About: React.FC = () => {
       setIsTeamVisible(true);
       setIsHorseVisible(false);
       navigate("/about/our-team");
+      setTimeout(() => {
+        const el = teamRef.current;
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.scrollY - 150;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
+      }, 100);
     }
   };
 
@@ -46,8 +79,26 @@ const About: React.FC = () => {
       setIsHorseVisible(true);
       setIsTeamVisible(false);
       navigate("/about/our-horses");
+      setTimeout(() => {
+        const el = horseRef.current;
+        if (el) {
+          const y = el.getBoundingClientRect().top + window.scrollY - 150;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
+      }, 100);
     }
   };
+
+  // Upravíme funkci pro přepínání stylů
+  const toggleViewStyle = () => {
+    setIsGridView((prevState) => {
+      const newState = !prevState;
+      // Uložíme nový stav do localStorage
+      localStorage.setItem("isGridView", String(newState));
+      return newState;
+    });
+  };
+
   return (
     <section className="HomeSection" id="Home" tabIndex={0}>
       <div className="aboutUs">
@@ -123,25 +174,34 @@ const About: React.FC = () => {
           <button className="btn" onClick={toggleTeam}>
             Náš team
           </button>
+          <div className="button-with-label">
+            <button className="btn" onClick={toggleViewStyle}>
+              {isGridView ? "Kartičky" : "Linky"}
+            </button>
+            <span className="button-label">Změna vzhledu</span>
+          </div>
           <button className="btn" onClick={toggleHorses}>
             Naše koně
           </button>
         </div>
-        {/* Sem vlož obsah týmu */}
+
+        {/* Upravíme komponenty tak, aby používaly správnou třídu podle stavu */}
         {isTeamVisible && (
-          <div className="team-content">
+          <div className="horse-content-conatiner" ref={teamRef}>
             {personData.map((person, index) => (
               <PersonTeam
                 key={index}
                 name={person.name}
                 text={person.text}
                 imgPicture={person.imgPicture}
+                isGridView={isGridView}
               />
             ))}
           </div>
         )}
+
         {isHorseVisible && (
-          <div className="horse-content-conatiner">
+          <div className="horse-content-conatiner" ref={horseRef}>
             {horseData.map((horse, index) => (
               <HorseTeam
                 key={index}
@@ -152,6 +212,7 @@ const About: React.FC = () => {
                 owner={horse.owner}
                 description={horse.description}
                 imageName={horse.imageName}
+                isGridView={isGridView}
               />
             ))}
           </div>

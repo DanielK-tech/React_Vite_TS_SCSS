@@ -411,6 +411,7 @@ a {
   a {
     font-size: 1.2rem;
     text-decoration: none;
+    color: $BTN-color-text;
   }
   &:hover {
     background-color: var(--btn-hover);

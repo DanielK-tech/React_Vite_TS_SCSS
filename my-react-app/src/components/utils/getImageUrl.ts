@@ -1,8 +1,8 @@
 // utils/getImageUrl.ts
-const horseImages = import.meta.glob("../horseImg/*.jpg", {
+const horseImages = import.meta.glob("../../horseImg/*.jpg", {
   eager: true,
 }) as Record<string, { default: string }>;
-const teamImages = import.meta.glob("../teamImg/*.jpg", {
+const teamImages = import.meta.glob("../../teamImg/*.jpg", {
   eager: true,
 }) as Record<string, { default: string }>;
 
