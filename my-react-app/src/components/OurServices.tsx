@@ -1,12 +1,9 @@
-import { NavLink } from "react-router-dom";
 /**scss */
-import "../styles/OurService.scss";
+import "../styles/ourService.scss";
+
 const OurService: React.FC = () => {
-  // Funkce pro scrollování nahoru
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
   const text: string = "Chcete využít našich služeb?";
+
   return (
     <section className="HomeSection marginer" id="Service" tabIndex={0}>
       <div className="container">
@@ -27,9 +24,7 @@ const OurService: React.FC = () => {
             </h4>
             <p>Napiště nebo zavolejte</p>
             <button className="btn">
-              <NavLink to="/contact" onClick={scrollToTop}>
-                Kontakt
-              </NavLink>
+              <a href="/contact/">Kontakt</a>
             </button>
           </div>
         </div>

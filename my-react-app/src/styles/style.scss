@@ -28,25 +28,21 @@ body {
   flex-direction: column;
   font-family: "Roboto", sans-serif;
   background-color: var(--body-color);
+  color: var(--black-color);
   min-height: 100vh;
   min-height: 100dvh;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
   @media screen and (min-width: 1920px) {
     max-width: 1920px;
     justify-content: center;
     min-height: 10dvh;
   }
 }
-/** root zastává fci body :) **/
-#root {
-  position: relative;
-  display: flex;
-  font-family: $body-font;
-  flex-direction: column;
-  //   align-items: center;
-  width: 100%;
-  min-height: 100vh;
-  min-height: 100dvh;
-  color: var(--black-color);
+/** Astro island nahrazuje puvodni #root z Vite SPA */
+astro-island {
+  display: contents;
 }
 header {
   position: relative;
@@ -219,12 +215,52 @@ a {
     li {
       // margin: 0 auto;
       text-align: left;
+      height: 52px;
       i {
         font-size: 1.5rem;
         padding-right: 10px;
         &:hover {
           color: $Yellow;
         }
+      }
+    }
+    button {
+      position: relative;
+      &::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background-image: var(--under-lighting);
+        filter: blur(10px);
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+      }
+      &:hover,
+      &:active {
+        color: var(--btn-hover);
+        transition: border-bottom 2.5s; //<= začínáme s podtržením
+        border-bottom: 2px solid transparent;
+      }
+
+      &:hover::after,
+      &:active::after {
+        width: 100%;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        // top: 100px;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-color: $Yellow;
+
+        /* barva podtržítka*/
+        transition: width 2.5s;
+        z-index: 1;
       }
     }
     a {
@@ -411,7 +447,7 @@ a {
   a {
     font-size: 1.2rem;
     text-decoration: none;
-    color: $BTN-color-text;
+    color: var(--btn-color-text);
   }
   &:hover {
     background-color: var(--btn-hover);
@@ -551,7 +587,9 @@ a {
       @include border-radius(5px);
       cursor: pointer;
       border: 2px solid transparent;
-      transition: transform 0.2s, border-color 0.2s;
+      transition:
+        transform 0.2s,
+        border-color 0.2s;
       &:hover {
         transform: scale(1.1);
         border-color: $Yellow;
@@ -661,7 +699,7 @@ a {
   width: 100%;
 
   @include svg-footer(1rem);
-  mask-image: url("./assets/vlny.svg");
+  mask-image: url("../assets/vlny.svg");
   mask-repeat: no-repeat;
   mask-size: cover;
   background-color: var(--body-color);

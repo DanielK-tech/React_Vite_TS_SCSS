@@ -1,22 +1,9 @@
-import React, { useState, useEffect } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import L from "leaflet";
+import React, { useState } from "react";
 import "../styles/contactMap.scss";
-import icon from "leaflet/dist/images/marker-icon.png";
-import iconShadow from "leaflet/dist/images/marker-shadow.png";
 /**styl */
 import "../styles/contact.scss";
 
-const DefaultIcon = L.icon({
-  iconUrl: icon,
-  shadowUrl: iconShadow,
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-});
-
 const Contact: React.FC = () => {
-  const [position] = useState({ lat: 49.8209, lng: 17.8794 });
-  const [mapLoaded, setMapLoaded] = useState(false);
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [emailError, setEmailError] = useState("");
@@ -26,10 +13,6 @@ const Contact: React.FC = () => {
     type: string;
     message: string;
   } | null>(null);
-
-  useEffect(() => {
-    setMapLoaded(true);
-  }, []);
 
   const validateForm = () => {
     let valid = true;
@@ -120,21 +103,13 @@ const Contact: React.FC = () => {
             </p>
           </div>
         </div>
-        {mapLoaded && (
-          <MapContainer
-            center={[position.lat, position.lng]}
-            zoom={13}
-            className="contact-map"
-          >
-            <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              attribution="&copy; OpenStreetMap contributors"
-            />
-            <Marker position={[position.lat, position.lng]} icon={DefaultIcon}>
-              <Popup>Kontaktní adresa: Leskovec 22, Březová</Popup>
-            </Marker>
-          </MapContainer>
-        )}
+        <iframe
+          className="contact-map"
+          title="Mapa kontaktní adresy Blind Guardians"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=17.8575%2C49.8123%2C17.9011%2C49.8295&layer=mapnik&marker=49.8209%2C17.8794"
+        />
       </div>
       <div className="support ">
         <div className="paymentChance">
@@ -186,11 +161,15 @@ const Contact: React.FC = () => {
               </div>
 
               <button type="submit" disabled={isSubmitting} className="btn">
-                <p> 
-                {isSubmitting ? "Odesílání..." : "Odeslat zprávu"}
-                </p>
+                <p>{isSubmitting ? "Odesílání..." : "Odeslat zprávu"}</p>
               </button>
-        <input type="text" name="fax" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+              <input
+                type="text"
+                name="fax"
+                style={{ display: "none" }}
+                tabIndex={-1}
+                autoComplete="off"
+              />
               {submitStatus && (
                 <div className={`submitStatus ${submitStatus.type}`}>
                   {submitStatus.message}

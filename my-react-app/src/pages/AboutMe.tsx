@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 // import { UIContext } from "../components/utils/UIContext";
-//navigace
-import { useNavigate, useLocation } from "react-router-dom";
 /** Komponenty */
 import HorseTeam from "../components/HorseTeam";
 import PersonTeam from "../components/PersonTeam";
@@ -9,84 +7,114 @@ import PersonTeam from "../components/PersonTeam";
 import horseData from "../data/dataKone";
 import personData from "../data/personData";
 import { aboutMe } from "../data/aboutMe";
+import type { AboutSection } from "../data/site";
 
 /** Styly */
 import "../styles/aboutUs.scss";
 
-const About: React.FC = () => {
+interface AboutProps {
+  initialSection?: AboutSection;
+}
+
+const getSectionFromPath = (pathname: string): AboutSection => {
+  if (pathname.startsWith("/about/our-team")) {
+    return "team";
+  }
+
+  if (pathname.startsWith("/about/our-horses")) {
+    return "horses";
+  }
+
+  return "overview";
+};
+
+const About: React.FC<AboutProps> = ({ initialSection = "overview" }) => {
   // const { isDarkMode } = useContext(UIContext);
   // const pictureSrc = isDarkMode ? "/img/contactTerapy.jpg" : "/img/Onas.jpg";
   const teamRef = useRef<HTMLDivElement>(null);
   const horseRef = useRef<HTMLDivElement>(null);
-  const navigate = useNavigate();
-  const location = useLocation();
   //
-  const [isTeamVisible, setIsTeamVisible] = useState(false);
-  const [isHorseVisible, setIsHorseVisible] = useState(false);
+  const [activeSection, setActiveSection] =
+    useState<AboutSection>(initialSection);
   const [isGridView, setIsGridView] = useState(() => {
-    const savedState = localStorage.getItem("isGridView");
+    if (typeof window === "undefined") {
+      return true;
+    }
+
+    const savedState = window.localStorage.getItem("isGridView");
     return savedState ? savedState === "true" : true;
   }); // true = grid-team, false = team-horse-content
-  // Synchronizace stavu s URL
+
+  const syncUrl = (section: AboutSection) => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const nextUrl =
+      section === "team"
+        ? "/about/our-team/#team-section"
+        : section === "horses"
+          ? "/about/our-horses/#horse-section"
+          : "/about/";
+
+    window.history.pushState({}, "", nextUrl);
+  };
+
+  const scrollToSection = (section: AboutSection) => {
+    const targetRef = section === "team" ? teamRef : horseRef;
+    const target = targetRef.current;
+
+    if (!target || typeof window === "undefined") {
+      return;
+    }
+
+    const y = target.getBoundingClientRect().top + window.scrollY - 150;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  };
+
   useEffect(() => {
-    if (location.pathname === "/about/our-team") {
-      setIsTeamVisible(true);
-      setIsHorseVisible(false);
-      setTimeout(() => {
-        if (teamRef.current) {
-          const y =
-            teamRef.current.getBoundingClientRect().top + window.scrollY - 150;
-          window.scrollTo({ top: y, behavior: "smooth" });
-        }
+    setActiveSection(initialSection);
+  }, [initialSection]);
+
+  useEffect(() => {
+    if (activeSection === "team" || activeSection === "horses") {
+      const timer = window.setTimeout(() => {
+        scrollToSection(activeSection);
       }, 100);
+
+      return () => window.clearTimeout(timer);
     }
-    if (location.pathname === "/about/our-horses") {
-      setIsHorseVisible(true);
-      setIsTeamVisible(false);
-      setTimeout(() => {
-        if (horseRef.current) {
-          const y =
-            horseRef.current.getBoundingClientRect().top + window.scrollY - 150;
-          window.scrollTo({ top: y, behavior: "smooth" });
-        }
-      }, 100);
+
+    return undefined;
+  }, [activeSection]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return undefined;
     }
-  }, [location.pathname]);
+
+    const handlePopState = () => {
+      setActiveSection(getSectionFromPath(window.location.pathname));
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
 
   const toggleTeam = () => {
-    if (isTeamVisible) {
-      setIsTeamVisible(false);
-      navigate("/about");
-    } else {
-      setIsTeamVisible(true);
-      setIsHorseVisible(false);
-      navigate("/about/our-team");
-      setTimeout(() => {
-        const el = teamRef.current;
-        if (el) {
-          const y = el.getBoundingClientRect().top + window.scrollY - 150;
-          window.scrollTo({ top: y, behavior: "smooth" });
-        }
-      }, 100);
-    }
+    setActiveSection((previousSection) => {
+      const nextSection = previousSection === "team" ? "overview" : "team";
+      syncUrl(nextSection);
+      return nextSection;
+    });
   };
 
   const toggleHorses = () => {
-    if (isHorseVisible) {
-      setIsHorseVisible(false);
-      navigate("/about");
-    } else {
-      setIsHorseVisible(true);
-      setIsTeamVisible(false);
-      navigate("/about/our-horses");
-      setTimeout(() => {
-        const el = horseRef.current;
-        if (el) {
-          const y = el.getBoundingClientRect().top + window.scrollY - 150;
-          window.scrollTo({ top: y, behavior: "smooth" });
-        }
-      }, 100);
-    }
+    setActiveSection((previousSection) => {
+      const nextSection = previousSection === "horses" ? "overview" : "horses";
+      syncUrl(nextSection);
+      return nextSection;
+    });
   };
 
   // Upravíme funkci pro přepínání stylů
@@ -94,7 +122,9 @@ const About: React.FC = () => {
     setIsGridView((prevState) => {
       const newState = !prevState;
       // Uložíme nový stav do localStorage
-      localStorage.setItem("isGridView", String(newState));
+      if (typeof window !== "undefined") {
+        window.localStorage.setItem("isGridView", String(newState));
+      }
       return newState;
     });
   };
@@ -186,8 +216,12 @@ const About: React.FC = () => {
         </div>
 
         {/* Upravíme komponenty tak, aby používaly správnou třídu podle stavu */}
-        {isTeamVisible && (
-          <div className="horse-content-conatiner" ref={teamRef}>
+        {activeSection === "team" && (
+          <div
+            className="horse-content-conatiner"
+            id="team-section"
+            ref={teamRef}
+          >
             {personData.map((person, index) => (
               <PersonTeam
                 key={index}
@@ -200,8 +234,12 @@ const About: React.FC = () => {
           </div>
         )}
 
-        {isHorseVisible && (
-          <div className="horse-content-conatiner" ref={horseRef}>
+        {activeSection === "horses" && (
+          <div
+            className="horse-content-conatiner"
+            id="horse-section"
+            ref={horseRef}
+          >
             {horseData.map((horse, index) => (
               <HorseTeam
                 key={index}

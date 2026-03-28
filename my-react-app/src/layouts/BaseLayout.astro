@@ -1,0 +1,90 @@
+---
+import "../styles/style.scss";
+import DialogShell from "../components/DialogShell.astro";
+import { SITE, getCanonicalUrl } from "../data/site";
+
+interface Props {
+  title: string;
+  description: string;
+  path: string;
+  image?: string;
+  children?: unknown;
+}
+
+const {
+  title,
+  description,
+  path,
+  image = SITE.defaultImage,
+} = Astro.props;
+
+const canonical = getCanonicalUrl(path);
+const socialImage = new URL(image, SITE.siteUrl).toString();
+const fullTitle = title === SITE.name ? SITE.name : `${title} | ${SITE.name}`;
+const recaptchaSiteKey =
+  import.meta.env.PUBLIC_RECAPTCHA_SITE_KEY ||
+  import.meta.env.PUBLIC_SITE_KEY ||
+  import.meta.env.SITE_KEY;
+const structuredDataJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: SITE.name,
+  url: SITE.siteUrl,
+  image: socialImage,
+  email: SITE.contactEmail,
+  telephone: SITE.contactPhone,
+});
+---
+
+<!doctype html>
+<html lang="cs" data-recaptcha-site-key={recaptchaSiteKey}>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/png" href="/horseFav.jpg" />
+    <meta property="og:locale" content="cs_CZ" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script is:inline>
+      (() => {
+        const savedTheme = window.localStorage.getItem("theme");
+        const prefersDarkMode = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        const theme = savedTheme ?? (prefersDarkMode ? "dark" : "light");
+
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <script type="application/ld+json">{structuredDataJson}</script>
+  </head>
+  <body>
+    <slot />
+    <DialogShell />
+  </body>
+</html>

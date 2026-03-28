@@ -1,0 +1,19 @@
+---
+import PageIsland from "./PageIsland";
+import type { AboutSection } from "../data/site";
+import type { PageKey } from "./PageIsland";
+
+interface Props {
+  pathname: string;
+  page: PageKey;
+  aboutSection?: AboutSection;
+}
+
+const {
+  pathname,
+  page,
+  aboutSection = "overview",
+} = Astro.props;
+---
+
+<PageIsland pathname={pathname} page={page} aboutSection={aboutSection} client:load />

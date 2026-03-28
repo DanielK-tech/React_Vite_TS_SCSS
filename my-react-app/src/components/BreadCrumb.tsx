@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
 import "../styles/breadCrumb.scss";
 
 interface BreadcrumbProps {
@@ -21,7 +20,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ currentPage }) => {
         <span>{currentPage}</span>
         <button
           className="breadcrumb-dropdown-btn"
-          onPointerUp={toggleDropdown}
+          onClick={toggleDropdown}
           aria-label="Zobrazit další aktivity"
         >
           <i className="fa fa-chevron-down" aria-hidden="true"></i>
@@ -30,41 +29,41 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ currentPage }) => {
         {isDropdownOpen && (
           <ul className="breadcrumb-dropdown">
             <li>
-              <NavLink to="/foto-galery">
+              <a href="/foto-galery/">
                 <i className="fa-solid fa-photo-film"></i>Fotogalerie
-              </NavLink>
+              </a>
             </li>
             <li>
-              <NavLink to="/hobby-horsing">
+              <a href="/hobby-horsing/">
                 <i className="fa-solid fa-horse-head"></i>Hobby horsing
-              </NavLink>
+              </a>
             </li>
             <li>
-              <NavLink to="/jezdecky-klub">
+              <a href="/jezdecky-klub/">
                 <i className="fa-solid fa-horse"></i>Jezdecký klub
-              </NavLink>
+              </a>
             </li>
             <li>
-              <NavLink to="/pony-skolicka">
+              <a href="/pony-skolicka/">
                 <i className="fa-solid fa-school-flag"></i>Pony školička
-              </NavLink>
+              </a>
             </li>
             <li>
-              <NavLink to="/hiporehabilitace-praxe">
+              <a href="/hiporehabilitace-praxe/">
                 <i className="fa-solid fa-house-user"></i>Hiporehabilitace v
                 pedagogické a sociální praxi
-              </NavLink>
+              </a>
             </li>
             <li>
-              <NavLink to="/hyporehabilitace-kontakt">
+              <a href="/hyporehabilitace-kontakt/">
                 <i className="fa-solid fa-house-medical"></i>Hiporehabilitace v
                 kontaktní terapii
-              </NavLink>
+              </a>
             </li>
             <li>
-              <NavLink to="/para-jezdectvi">
+              <a href="/para-jezdectvi/">
                 <i className="fa-solid fa-wheelchair-move"></i>Parajezdectví
-              </NavLink>
+              </a>
             </li>
           </ul>
         )}

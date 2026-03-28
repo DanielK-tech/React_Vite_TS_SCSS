@@ -1,14 +1,10 @@
 import "../styles/HipoSocial.scss";
-import { NavLink } from "react-router-dom";
 /**data */
 import { hipoSocial } from "../data/hipoSocial";
 // breadcrubms
 import Breadcrumb from "../components/BreadCrumb";
 
 const HipoSocial: React.FC = () => {
-  const handleScroll = () => {
-    window.scrollBy({ top: 560, behavior: "smooth" }); // 10rem = 160px
-  };
   return (
     <section className=" HomeSection" id="HobyHorsing" tabIndex={0}>
       <div className="ActivityContent socilaBreadcrumb">
@@ -20,9 +16,9 @@ const HipoSocial: React.FC = () => {
               <p>{hipoSocial.paragraph1}</p>
               <p>
                 Naše certifikovaná instruktorka{" "}
-                <NavLink to="/about/our-team" onClick={handleScroll}>
+                <a href="/about/our-team/#team-section">
                   <span className="SpecialNav">Bc. Eva Kolegarová, DiS</span>
-                </NavLink>{" "}
+                </a>{" "}
                 {hipoSocial.paragraph2}
               </p>
               <p>{hipoSocial.paragraph3}</p>

@@ -1,5 +1,6 @@
 // src/context/UIContext.tsx
-import React, { createContext, useState, useEffect, ReactNode } from "react";
+import React, { createContext, useState, useEffect } from "react";
+import type { ReactNode } from "react";
 
 interface UIContextProps {
   isDarkMode: boolean;
@@ -25,16 +26,24 @@ const defaultValue: UIContextProps = {
 
 export const UIContext = createContext<UIContextProps>(defaultValue);
 
+const applyTheme = (theme: "light" | "dark") => {
+  if (typeof document === "undefined") {
+    return;
+  }
+
+  document.documentElement.setAttribute("data-theme", theme);
+
+  if (document.body) {
+    document.body.setAttribute("data-theme", theme);
+  }
+};
+
 interface UIContextProviderProps {
   children: ReactNode;
 }
 
 const UIContextProvider: React.FC<UIContextProviderProps> = ({ children }) => {
-  // Stav pro režim (Light/Dark)
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
-    const savedMode = localStorage.getItem("theme");
-    return savedMode === "dark";
-  });
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   // Stav pro menu
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   // Stav pro scroll
@@ -44,32 +53,53 @@ const UIContextProvider: React.FC<UIContextProviderProps> = ({ children }) => {
   const toggleMode = () => {
     setIsDarkMode((prevMode) => {
       const newMode = !prevMode;
-      document.body.setAttribute("data-theme", newMode ? "dark" : "light");
-      localStorage.setItem("theme", newMode ? "dark" : "light");
+      const theme = newMode ? "dark" : "light";
+
+      applyTheme(theme);
+
+      if (typeof window !== "undefined") {
+        window.localStorage.setItem("theme", theme);
+      }
+
       return newMode;
     });
   };
 
   // Nastavení režimu při načtení stránky
   useEffect(() => {
-    const savedMode = localStorage.getItem("theme");
-    if (savedMode) {
-      document.body.setAttribute("data-theme", savedMode);
+    if (typeof window === "undefined") {
+      return;
     }
+
+    const savedMode = window.localStorage.getItem("theme");
+    const prefersDarkMode = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+    const resolvedDarkMode = savedMode ? savedMode === "dark" : prefersDarkMode;
+
+    setIsDarkMode(resolvedDarkMode);
+    applyTheme(resolvedDarkMode ? "dark" : "light");
   }, []);
 
   // Detekce scrollování
   useEffect(() => {
+    if (typeof window === "undefined") {
+      return undefined;
+    }
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Funkce pro scroll nahoru
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   // Přepnutí zobrazení menu
@@ -79,14 +109,18 @@ const UIContextProvider: React.FC<UIContextProviderProps> = ({ children }) => {
 
   // Odkazy
   const Hippos = () => {
-    window.open("https://hiporehabilitace-cr.com/", "_blank");
+    if (typeof window !== "undefined") {
+      window.open("https://hiporehabilitace-cr.com/", "_blank");
+    }
   };
 
   const Register = () => {
-    window.open(
-      "https://hiporehabilitace-cr.com/provozovatele-hiporehabilitace/registrovana-strediska/",
-      "_blank"
-    );
+    if (typeof window !== "undefined") {
+      window.open(
+        "https://hiporehabilitace-cr.com/provozovatele-hiporehabilitace/registrovana-strediska/",
+        "_blank",
+      );
+    }
   };
 
   return (

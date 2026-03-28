@@ -1,19 +1,21 @@
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
 //globální logika
 import { UIContext } from "./utils/UIContext";
 //komponenta
 import MiniMenu from "./MiniMenu";
+import NavigationLinks from "./NavigationLinks.tsx";
 //styl
 import "../styles/header.scss";
 /* ikonky */
 import "../styles/navPictures.scss";
-//obrázky
-import logo from "/img/Logo.png";
-// import cross from "/img/cross.png";
-import indianHorse from "/img/indianHorse.png";
 
-const Header: React.FC = () => {
+const logo = "/img/Logo.png";
+
+interface HeaderProps {
+  currentPath: string;
+}
+
+const Header: React.FC<HeaderProps> = ({ currentPath }) => {
   const {
     isDarkMode,
     toggleMode,
@@ -33,11 +35,15 @@ const Header: React.FC = () => {
           isScrolled ? "scrolled" : ""
         }`}
       >
-        <NavLink to="/" onClick={scrollToTop}>
+        <a
+          href="/"
+          onClick={scrollToTop}
+          aria-current={currentPath === "/" ? "page" : undefined}
+        >
           <div className="logo-container">
             <img id="Logo" src={logo} alt="Logo" className="LogoSK" />
           </div>
-        </NavLink>
+        </a>
         <div className="hippos">
           <div className="obr1" onClick={Register}>
             <div className="glare"></div>
@@ -46,71 +52,18 @@ const Header: React.FC = () => {
             <div className="glare"></div>
           </div>
         </div>
-        <ul>
-          <li>
-            {" "}
-            <NavLink to="/" onClick={scrollToTop}>
-              Úvod
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/about" onClick={scrollToTop}>
-              O nás
-            </NavLink>
-          </li>
-          <li className="Aktivity">
-            <a href="#">Aktivity </a>
-            <div className="arrowDown ">
-              <i className="fa fa-chevron-down" aria-hidden="true"></i>
-            </div>
-            <ul className="submenu" id="Submenu">
-              <img className="IndianHorse" src={indianHorse} alt="" />              
-              <li>
-                <NavLink to="/foto-galery">
-                  <i className="fa-solid fa-photo-film"></i>Fotogalerie
-                </NavLink>
-              </li>{" "}
-              {/* dodělat vlastní komponenty a routy v app */}
-              <li>
-                <NavLink to="/hobby-horsing" onClick={scrollToTop}>
-                  <i className="fa-solid fa-horse-head"></i>Hobby horsing
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/jezdecky-klub" onClick={scrollToTop}>
-                  <i className="fa-solid fa-horse"></i>Jezdecký klub
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/pony-skolicka" onClick={scrollToTop}>
-                  <i className="fa-solid fa-school-flag"></i>Pony školička{" "}
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/hiporehabilitace-praxe" onClick={scrollToTop}>
-                  <i className="fa-solid fa-house-user"></i>Hiporehabilitace v
-                  pedagogickéa sociální praxi{" "}
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/hyporehabilitace-kontakt" onClick={scrollToTop}>
-                  <i className="fa-solid fa-house-medical"></i>Hiporehabilitace
-                  v kontaktní terapii
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/para-jezdectvi" onClick={scrollToTop}>
-                  <i className="fa-solid fa-wheelchair-move"></i>Parajezdectví
-                </NavLink>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <NavLink to="/contact" onClick={scrollToTop}>
-              Kontakt
-            </NavLink>
-          </li>
-        </ul>
+        <NavigationLinks
+          currentPath={currentPath}
+          getMainLinkClickHandler={() => scrollToTop}
+          getActivityItemClickHandler={(item) =>
+            item.type === "link" && item.href !== "/foto-galery/"
+              ? scrollToTop
+              : undefined
+          }
+          showActivitiesArrow
+          showActivitiesImage
+          activitiesSubmenuId="activities-submenu"
+        />
         <div className="switcher-box">
           <span className="switcher-description">
             <p>{isDarkMode ? "Dark Mode" : "Light Mode"}</p>
@@ -133,6 +86,7 @@ const Header: React.FC = () => {
         isMenuOpen={isMenuOpen}
         toggleMenu={toggleMenu}
         scrollToTop={scrollToTop}
+        currentPath={currentPath}
       />
     </header>
   );

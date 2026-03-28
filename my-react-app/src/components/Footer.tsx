@@ -1,5 +1,5 @@
 import "../styles/footer.scss";
-import HorseShoe from "../../src/horseshoe-svgrepo-com.svg";
+import HorseShoe from "../horseshoe-svgrepo-com.svg";
 //komponenty
 // import RibbonBorder from "./RibbonBorder";
 
@@ -10,13 +10,13 @@ const Footer: React.FC = () => {
   const handleClick = () => {
     window.open(
       "https://www.facebook.com/profile.php?id=61557178208916",
-      "_blank"
+      "_blank",
     );
   };
   return (
     <footer>
       <div className="BankAccount">
-        <img src={HorseShoe} alt="Horseshoe" className="horseshoe" />
+        <img src={HorseShoe.src} alt="Horseshoe" className="horseshoe" />
         <p>Transparentní účet</p>
         <p className="ColorRed">UniCredit Bank</p>
         <p>

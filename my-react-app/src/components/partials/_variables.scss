@@ -11,7 +11,10 @@ $Green: rgba(127, 224, 61, 0.5);
 $black-color: #000;
 $GreyColor: #a7a6a6;
 $Red-color: red;
+$red-light: rgba(160, 50, 50, 0.1);
 $Purpe-color: #490894;
+$Brown-color: #4f3324;
+$Brown-light: #6b4630;
 $BTN-color-text: rgb(85, 26, 139);
 $contact-actvie-card: linear-gradient(315deg, #f1c40f, #2ecc71);
 $under-ligting: radial-gradient(
@@ -60,7 +63,13 @@ $Sub-menu-image: url("/img/indianHorse.png");
   --body-color: #{$body-color};
   --nav-color: #{$nav-color};
   --white-color: #{$white-color};
+  --red-color: #{$red-light};
   --black-color: #{$black-color};
+  --brown-color: #{$Brown-color};
+  --brown-light: #{$Brown-light};
+  --content-background: #{$content-background};
+  --btn-color-text: #{$BTN-color-text};
+  --muted-text-color: rgba(0, 0, 0, 0.7);
   --btn-hover: #{$btn-hover};
   --under-lighting: #{$under-ligting};
   /*Přepínač*/
@@ -93,6 +102,11 @@ $Sub-menu-image: url("/img/indianHorse.png");
   --body-color: #333;
   --nav-color: rgba(165, 42, 13, 0.5);
   --black-color: #fff;
+  --brown-color: rgb(173, 27, 27);
+  --brown-light: rgb(139, 42, 42);
+  --content-background: rgba(255, 255, 255, 0.12);
+  --btn-color-text: #11100e;
+  --muted-text-color: rgba(255, 255, 255, 0.75);
   --contact-actvie-card: linear-gradient(315deg, #c9161f, #0c298a);
   --under-lighting: radial-gradient(
     circle farthest-corner at 10% 20%,

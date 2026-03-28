@@ -121,7 +121,7 @@
 
     left: 0;
     padding: 20px 40px;
-    background: $content-background;
+    background: var(--content-background);
     box-shadow: $box-shadow;
     border-radius: 8px;
     backdrop-filter: blur(10px);

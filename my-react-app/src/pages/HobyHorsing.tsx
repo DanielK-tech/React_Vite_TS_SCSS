@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import Breadcrumb from "../components/BreadCrumb";
 /** Data */
 import { hobbyHorsing } from "../data/hobbyHorsing";
@@ -7,9 +6,6 @@ import "../styles/HobyHorsing.scss";
 
 //vytvoř speciální třídu scss na text v aktivity co bude společná + struktura jako tady a obrázek
 const HobyHorsing: React.FC = () => {
-  const handleScroll = () => {
-    window.scrollBy({ top: 560, behavior: "smooth" }); // 10rem = 160px
-  };
   return (
     <section className=" HomeSection" id="HobyHorsing" tabIndex={0}>
       <div className="ActivityContent">
@@ -18,12 +14,8 @@ const HobyHorsing: React.FC = () => {
         <div className="ActivityContentContainer">
           <div className="TextContent">
             <article>
-              <p>
-                {hobbyHorsing.paragraph1}
-              </p>
-              <p>
-                {hobbyHorsing.paragraph2}
-              </p>
+              <p>{hobbyHorsing.paragraph1}</p>
+              <p>{hobbyHorsing.paragraph2}</p>
               <p>
                 Náš klub je členem České {""}
                 <a
@@ -34,9 +26,9 @@ const HobyHorsing: React.FC = () => {
                   <span className="SpecialNav">Hobby Horsing Asociace</span>
                 </a>
                 , pravidlené tréninky vede{" "}
-                <NavLink to="/about/our-team" onClick={handleScroll}>
+                <a href="/about/our-team/#team-section">
                   <span className="SpecialNav">Bc. Jana Pospíšilová</span>
-                </NavLink>{" "}
+                </a>{" "}
                 , která je od roku 2024 také certifikovaným rozhodčím ČHHA pro
                 disciplíny drezura, parkur a skok mohutnosti.
               </p>

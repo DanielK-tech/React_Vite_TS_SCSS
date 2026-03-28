@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://skblindguardians.cz/sitemap-index.xml

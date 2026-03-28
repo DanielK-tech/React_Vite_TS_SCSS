@@ -1,0 +1,11 @@
+---
+import { pageSeo } from "../data/site";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageShell from "../reactPages/PageShell.astro";
+
+const seo = pageSeo.contact;
+---
+
+<BaseLayout title={seo.title} description={seo.description} path={seo.path}>
+  <PageShell pathname={seo.path} page="contact" />
+</BaseLayout>
