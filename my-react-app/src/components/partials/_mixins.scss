@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "./variables" as *;
 
 /** navigace **/
@@ -450,3 +451,32 @@
     }
   }
 }
+//responzivita
+$breakpoints: (
+  1900: 1900px,
+  1315: 1315px,
+  1200: 1200px,
+  920: 920px,
+  820: 820px,
+  800: 800px,
+  750: 750px,
+  720: 720px,
+  600: 600px,
+  570: 570px,
+  550: 550px,
+  500: 500px,
+  480: 480px,
+  400: 400px,
+  375: 375px,
+);
+
+@mixin respond-to($breakpoint) {
+  $size: map.get($breakpoints, $breakpoint);
+
+  @if $size {
+    @media screen and (max-width: $size) {
+      @content;
+    }
+  }
+}
+//

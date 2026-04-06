@@ -30,6 +30,13 @@ interface PdfDocumentConfig {
   fileName?: string;
 }
 
+interface PublicPdfDocumentConfig {
+  publicFileName: string;
+  label: string;
+  description?: string;
+  fileName?: string;
+}
+
 export interface ActivitiesMenuLinkItem {
   type: "link";
   href: string;
@@ -61,6 +68,18 @@ const createPdfDocument = ({
   label,
   description,
   fileName: fileName ?? `${slug}.pdf`,
+});
+
+const createPublicPdfDocument = ({
+  publicFileName,
+  label,
+  description,
+  fileName,
+}: PublicPdfDocumentConfig): DownloadDocument => ({
+  href: encodeURI(`/pdf/${publicFileName}`),
+  label,
+  description,
+  fileName: fileName ?? publicFileName,
 });
 
 export const primaryNavigationItems = [
@@ -134,14 +153,41 @@ export const activitiesMenuItems = [
     iconClassName: "fa-solid fa-file-arrow-down",
     label: "Dokumenty ke stažení",
     pickerTitle: "Dokumenty ke stažení",
-    pickerDescription: "Vyberte dokument, který chcete stáhnout.",
-    downloadButtonLabel: "Stáhnout vybraný dokument",
+    pickerDescription:
+      "Vyberte jeden nebo více dokumentů, které chcete stáhnout.",
+    downloadButtonLabel: "Stáhnout vybrané dokumenty",
     documents: [
       createPdfDocument({
         slug: "vyrocni-zprava-sk-blind-guardians-2025",
         label: "Výroční zpráva SK Blind Guardians 2025",
         description: "PDF dokument uložený ve veřejné složce webu.",
         fileName: "Vyrocni-zprava-SK-Blind-Guardians-2025.pdf",
+      }),
+      createPdfDocument({
+        slug: "vyrocni-zprava-sk-blind-guardians-2024",
+        label: "Výroční zpráva SK Blind Guardians 2024",
+        description: "PDF dokument uložený ve veřejné složce webu.",
+        fileName: "Vyrocni-zprava-SK-Blind-Guardians-2024.pdf",
+      }),
+      createPublicPdfDocument({
+        publicFileName: "chovatelsky-krouzek-uvodni-instrukce.pdf",
+        label: "Chovatelský kroužek - úvodní instrukce",
+        description: "PDF dokument uložený ve veřejné složce webu.",
+      }),
+      createPublicPdfDocument({
+        publicFileName: "hpsp-uvodni-instrukce.pdf",
+        label: "HPSP - úvodní instrukce",
+        description: "PDF dokument uložený ve veřejné složce webu.",
+      }),
+      createPublicPdfDocument({
+        publicFileName: "jezdecky-klub-uvodni-instrukce.pdf",
+        label: "Jezdecký klub - úvodní instrukce",
+        description: "PDF dokument uložený ve veřejné složce webu.",
+      }),
+      createPublicPdfDocument({
+        publicFileName: "pony-skolicka-uvodni-instrukce.pdf",
+        label: "Pony školička - úvodní instrukce",
+        description: "PDF dokument uložený ve veřejné složce webu.",
       }),
     ],
   },

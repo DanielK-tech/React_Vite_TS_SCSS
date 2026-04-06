@@ -78,7 +78,7 @@ const Dialog: React.FC<DialogProps> = () => {
               Informace o cookies
             </Typography>
             <Typography variant="body2">
-              Tento web používá pouze technické cookies a localStorage pro
+              Tento web používá pouze technické cookies pro
               správné fungování stránek, uložení volby vzhledu a potvrzení
               tohoto oznámení. Nepoužíváme reklamní ani analytické trackery
               třetích stran.

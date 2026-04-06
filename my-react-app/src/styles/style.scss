@@ -195,6 +195,7 @@ a {
     height: 100%;
     top: 0.5rem; // Umístí submenu pod hlavní položku
     left: 9rem;
+    width: 100%;
     padding-top: 2.5rem;
     padding-left: 1rem;
   }
@@ -488,7 +489,19 @@ a {
       .submenu {
         left: 50%;
         margin-top: 10px;
-        transform: translate(-50%);
+        transform: translate(-38.4%);
+        @include respond-to(920) {
+          transform: translate(-15.6%);
+        }
+        @include respond-to(720) {
+          transform: translate(-20.1%);
+        }
+        @include respond-to(570) {
+          transform: translate(-25%);
+        }
+        @include respond-to(400) {
+          transform: translate(-38.2%);
+        }
       }
       a {
         text-decoration: none;

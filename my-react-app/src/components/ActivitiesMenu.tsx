@@ -41,7 +41,9 @@ function ActivitiesMenu({
 }: ActivitiesMenuProps) {
   const [activeDocumentItem, setActiveDocumentItem] =
     useState<ActivitiesMenuDocumentsItem | null>(null);
-  const [selectedDocumentHref, setSelectedDocumentHref] = useState("");
+  const [selectedDocumentHrefs, setSelectedDocumentHrefs] = useState<string[]>(
+    [],
+  );
   const titleId = useId();
 
   useEffect(() => {
@@ -64,37 +66,47 @@ function ActivitiesMenu({
 
   const openDocumentPicker = (item: ActivitiesMenuDocumentsItem) => {
     setActiveDocumentItem(item);
-    setSelectedDocumentHref(item.documents[0]?.href ?? "");
+    setSelectedDocumentHrefs(item.documents[0] ? [item.documents[0].href] : []);
   };
 
   const closeDocumentPicker = () => {
     setActiveDocumentItem(null);
-    setSelectedDocumentHref("");
+    setSelectedDocumentHrefs([]);
   };
 
-  const selectedDocument = activeDocumentItem?.documents.find(
-    ({ href }) => href === selectedDocumentHref,
+  const selectedDocuments = activeDocumentItem?.documents.filter(({ href }) =>
+    selectedDocumentHrefs.includes(href),
   );
 
+  const toggleDocumentSelection = (href: string) => {
+    setSelectedDocumentHrefs((currentSelection) =>
+      currentSelection.includes(href)
+        ? currentSelection.filter((selectedHref) => selectedHref !== href)
+        : [...currentSelection, href],
+    );
+  };
+
   const handleDocumentDownload = () => {
-    if (!selectedDocument) {
+    if (!selectedDocuments || selectedDocuments.length === 0) {
       return;
     }
 
-    const downloadLink = window.document.createElement("a");
+    for (const selectedDocument of selectedDocuments) {
+      const downloadLink = window.document.createElement("a");
 
-    downloadLink.href = selectedDocument.href;
-    downloadLink.download =
-      selectedDocument.fileName ??
-      decodeURIComponent(
-        selectedDocument.href.split("/").pop() ?? "dokument.pdf",
-      );
-    downloadLink.rel = "noopener";
-    downloadLink.style.display = "none";
+      downloadLink.href = selectedDocument.href;
+      downloadLink.download =
+        selectedDocument.fileName ??
+        decodeURIComponent(
+          selectedDocument.href.split("/").pop() ?? "dokument.pdf",
+        );
+      downloadLink.rel = "noopener";
+      downloadLink.style.display = "none";
 
-    window.document.body.appendChild(downloadLink);
-    downloadLink.click();
-    window.document.body.removeChild(downloadLink);
+      window.document.body.appendChild(downloadLink);
+      downloadLink.click();
+      window.document.body.removeChild(downloadLink);
+    }
 
     closeDocumentPicker();
     onDocumentDownload?.();
@@ -190,10 +202,9 @@ function ActivitiesMenu({
               {activeDocumentItem.documents.map((document) => (
                 <label key={document.href} className="documentsPickerOption">
                   <input
-                    type="radio"
-                    name={titleId}
-                    checked={selectedDocumentHref === document.href}
-                    onChange={() => setSelectedDocumentHref(document.href)}
+                    type="checkbox"
+                    checked={selectedDocumentHrefs.includes(document.href)}
+                    onChange={() => toggleDocumentSelection(document.href)}
                   />
                   <span>
                     <strong>{document.label}</strong>
@@ -207,10 +218,14 @@ function ActivitiesMenu({
             <div className="documentsPickerActions">
               <button
                 type="button"
-                className={`documentsPickerDownload ${selectedDocument ? "" : "isDisabled"}`}
+                className={`documentsPickerDownload ${selectedDocuments && selectedDocuments.length > 0 ? "" : "isDisabled"}`}
                 onClick={handleDocumentDownload}
-                disabled={!selectedDocument}
-                aria-disabled={selectedDocument ? undefined : true}
+                disabled={!selectedDocuments || selectedDocuments.length === 0}
+                aria-disabled={
+                  selectedDocuments && selectedDocuments.length > 0
+                    ? undefined
+                    : true
+                }
               >
                 {activeDocumentItem.downloadButtonLabel}
               </button>
