@@ -24,7 +24,10 @@ const Footer: React.FC = () => {
         </p>
       </div>
 
-      <p>&copy; {new Date().getFullYear()} SK Blind Guardians, všechna práva vyhrazena</p>
+      <p>
+        &copy; {new Date().getFullYear()} SK Blind Guardians, všechna práva
+        vyhrazena
+      </p>
       <i className="fa-brands fa-facebook" onClick={handleClick}></i>
     </footer>
   );
