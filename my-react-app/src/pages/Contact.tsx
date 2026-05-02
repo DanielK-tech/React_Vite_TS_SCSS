@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { QRCodeSVG } from "qrcode.react";
 import "../styles/contactMap.scss";
 /**styl */
 import "../styles/contact.scss";
@@ -119,6 +120,12 @@ const Contact: React.FC = () => {
               transparentní účet
             </p>
             <p className="bold">1701279002/2700</p>
+            <QRCodeSVG
+              value="SPD*1.0*ACC:CZ7627000000001701279002*CC:CZK"
+              size={160}
+              style={{ display: "block", margin: "0.75rem auto" }}
+              aria-label="QR kód pro platbu na transparentní účet"
+            />
             <p>
               Pokud preferujete raději hmotný dar či přímou nefinanční pomoc,
               budeme vděční, když nás podpoříte nákupem krmiva a vybavení pro

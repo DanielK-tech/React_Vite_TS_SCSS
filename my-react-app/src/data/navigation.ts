@@ -157,12 +157,12 @@ export const activitiesMenuItems = [
       "Vyberte jeden nebo více dokumentů, které chcete stáhnout.",
     downloadButtonLabel: "Stáhnout vybrané dokumenty",
     documents: [
-      createPdfDocument({
-        slug: "vyrocni-zprava-sk-blind-guardians-2025",
-        label: "Výroční zpráva SK Blind Guardians 2025",
-        description: "PDF dokument uložený ve veřejné složce webu.",
-        fileName: "Vyrocni-zprava-SK-Blind-Guardians-2025.pdf",
-      }),
+      // createPdfDocument({
+      //   slug: "vyrocni-zprava-sk-blind-guardians-2025",
+      //   label: "Výroční zpráva SK Blind Guardians 2025",
+      //   description: "PDF dokument uložený ve veřejné složce webu.",
+      //   fileName: "Vyrocni-zprava-SK-Blind-Guardians-2025.pdf",
+      // }),
       createPdfDocument({
         slug: "vyrocni-zprava-sk-blind-guardians-2024",
         label: "Výroční zpráva SK Blind Guardians 2024",
