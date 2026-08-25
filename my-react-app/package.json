@@ -31,14 +31,14 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.8",
-    "@astrojs/react": "^5.0.2",
-    "@astrojs/sitemap": "^3.7.2",
+    "@astrojs/check": "^0.9.10",
+    "@astrojs/react": "^6.0.4",
+    "@astrojs/sitemap": "^3.7.3",
     "@eslint/js": "^9.17.0",
     "@types/node": "^22.13.17",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
-    "astro": "^6.1.1",
+    "astro": "^7.2.6",
     "eslint": "^9.17.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.16",
